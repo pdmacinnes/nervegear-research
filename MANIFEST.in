@@ -8,3 +8,6 @@ include docs/experiments/decoder-diagnostics-v1.md
 include research/emg2pose/calibration-v1.json
 include specs/003-limited-label-calibration.md
 include docs/experiments/limited-label-calibration-v1.md
+include research/emg2pose/alignment-v1.json
+include specs/004-temporal-alignment-audit.md
+include docs/experiments/temporal-alignment-v1.md

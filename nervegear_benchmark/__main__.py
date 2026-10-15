@@ -7,14 +7,17 @@ from pathlib import Path
 
 def main():
     parser = argparse.ArgumentParser(description="Run the software-only EMG research commands")
-    parser.add_argument("command", choices=["run", "diagnose", "calibrate"])
+    parser.add_argument("command", choices=["run", "diagnose", "calibrate", "align"])
     parser.add_argument("--manifest", type=Path, default=Path("research/emg2pose/pilot-v1.json"))
     parser.add_argument("--data-dir", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--calibration-protocol", type=Path)
+    parser.add_argument("--alignment-protocol", type=Path)
     args = parser.parse_args()
     if args.calibration_protocol is not None and args.command != "calibrate":
         parser.error("--calibration-protocol is only valid for calibrate")
+    if args.alignment_protocol is not None and args.command != "align":
+        parser.error("--alignment-protocol is only valid for align")
     for key in [
         "OPENBLAS_NUM_THREADS",
         "MKL_NUM_THREADS",
@@ -32,7 +35,16 @@ def main():
     watchdog.daemon = True
     watchdog.start()
     try:
-        if args.command == "calibrate":
+        if args.command == "align":
+            from .alignment import run
+
+            run(
+                args.manifest,
+                args.data_dir,
+                args.output,
+                args.alignment_protocol or Path("research/emg2pose/alignment-v1.json"),
+            )
+        elif args.command == "calibrate":
             from .calibration import run
 
             run(

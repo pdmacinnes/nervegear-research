@@ -1,0 +1,56 @@
+# Spec: Temporal alignment audit of the fixed RMS ridge decoder
+
+## Requirements & Goals
+
+Status: Explicitly approved by the maintainer on October 15, 2026 with "Looks good" in response to the spec-review request. Implement and run this audit against the fixed protocol.
+
+Completed: The [result report](../docs/experiments/temporal-alignment-v1.md) records all nine supported folds, independent verification, repeatability, and limits. Linux and Windows checks passed on the [implementation commit](https://github.com/pdmacinnes/nervegear-research/actions/runs/38798097638).
+
+Test whether the fixed decoder benefits from correct timing within a held-out recording. Compare its aligned predictions with predictions shifted by fixed intervals within that same recording. The [calibration study](../docs/experiments/limited-label-calibration-v1.md) found no aggregate benefit from intercept calibration. This audit asks whether the existing decoder tracks movement before proposing another model or calibration method.
+
+Use only original custom-pilot training recordings 1-9, with each recording held out once. These recordings and earlier outcomes have been inspected. This is exploratory analysis of one person and session, not a blind test, an official emg2pose benchmark, or a preregistration. Original validation and test files remain excluded from verification, loading, fitting, and scoring.
+
+Retain 400-sample trailing log1p RMS features, train-only standardization, ridge alpha 10, and an unpenalized intercept. Fit on the other eight recordings. Do not optimize a lag, add a model, adjust calibration, or select settings after results. Future-shifted predictions are diagnostic controls that cannot run causally. Time shifts are not randomized experimental interventions or a formal statistical null distribution.
+
+The complete project requires no hardware, new recordings, participants, downloads, GPU, paid service, or new Python dependency. Use the existing CPU environment with two numerical-library threads and a 15-minute command limit. Preserve all previous protocols and results.
+
+## Inputs, Outputs & Behavior
+
+Inputs are the existing source manifest, the nine training HDF5 files, and a new versioned `research/emg2pose/alignment-v1.json` protocol. Commit the numeric protocol after approval and before real-data fitting or coverage inspection. Add `python -m nervegear_benchmark align --data-dir <directory> --output <new-directory>`. Support `--alignment-protocol` for an explicitly validated manifest, and reject that option for other commands. Preserve existing commands and options.
+
+Produce a fresh output directory containing the numeric protocol and canonical fingerprint, verified nine-file inventory, aggregate metrics, coverage counts, integrity digests, a Markdown report, SVG plots, resource measurements, and a completion marker. Publish no raw signals, per-sample labels or predictions, or fitted coefficients.
+
+The normal flow is:
+
+1. Validate source metadata, select only custom training entries, and verify their checksums and schemas. Require finite, strictly increasing timestamps. Reuse existing input-history and reference-validity rules. Construct the full output grid before removing invalid rows: first sample index 399, stride 40 samples, nominally 50 outputs per second.
+2. Fit each fold using only eligible outputs from the other eight recordings. Reuse the fixed ridge fit and training-median calculation. No held-out EMG, label, or timestamp enters fitting or standardization. Recording chronology does not restrict the other eight files, so this remains offline cross-validation.
+3. Define the held-out prefix by elapsed time strictly below 10.0 seconds, using the existing valid-label rule. Compute a prefix-median pose from those labels only, with a minimum of 25 valid prefix outputs. No held-out label changes ridge parameters. The prefix-median control represents access to dataset reference angles, not a hardware-free live calibration capability.
+4. Define five ridge prediction sources for target output-grid row `k`: aligned at `k`, past 1 second at `k - 50`, future 1 second at `k + 50`, past 5 seconds at `k - 250`, and future 5 seconds at `k + 250`. Shift output-grid indices before masking. Never shift a compressed sequence of valid rows, wrap around, cross a recording, interpolate, or substitute a nearest valid row.
+5. Construct one common target mask for every method. The target must have valid input and reference data. All five source rows must exist, have valid input histories, and have endpoint elapsed time at least 10.2 seconds with their full histories starting at or after 10.0 seconds. For each shifted source, require `abs((source_time - target_time) - nominal_signed_shift) <= 0.010` seconds, inclusive. The tolerance is fixed at half the nominal output interval. Source reference labels are unnecessary and must not affect source validity. Target labels alone determine scored reference validity.
+6. Report successive coverage counts in this order: all grid rows, valid target input and reference, all source indices in bounds, all source inputs valid, all source histories after the prefix and embargo, and all shift-duration tolerances satisfied. Report each signed shift's realized minimum and maximum duration on retained targets. A fold with fewer than 25 prefix labels or fewer than 100 retained target outputs is unsupported. Do not extend recordings, move boundaries, relax tolerances, or drop individual shifts. Keep unsupported folds visible and exclude them from all paired aggregates together.
+7. Evaluate seven methods at the identical retained targets: the five ridge sources, training-median pose, and prefix-median pose. Score original predictions without intercept calibration or clipping. Report per-fold and per-joint angular MAE, MSE, and RMSE. Aggregate MAE with equal supported-fold weight. Report sample-weighted MAE separately. Macro RMSE is the square root of mean fold MSE. Compute in radians and display degrees.
+8. The primary comparison per fold is aligned ridge MAE minus the arithmetic mean of past-5-second and future-5-second ridge MAEs. Average the two error scores, not the prediction vectors. Negative means aligned predictions have lower error. Report the same paired difference against each individual shift and prefix median as secondary comparisons. Publish all five ridge errors, both constants, differences, and improved, tied, and worsened fold counts with a 1e-12-radian tie tolerance. Do not select the most favorable shift or report significance tests.
+9. Write fit, prefix-control, common-target-mask, and per-method prediction digests. Measure internal wall time, CPU time, peak process memory, and complete-process wall time separately. Refuse existing output directories. Write the completion marker only after all outputs succeed. If every fold is unsupported, publish null aggregates and explicit reasons rather than zero errors.
+10. Interpret results within this audit. Lower aligned error supports useful temporal alignment for this fixed decoder and subset. Similar errors leave the source of the decoder's advantage unresolved. Shifted predictions can still share pose information with the target, and shifts can change pose composition or encounter drift. Asymmetry may reflect slow movement, drift, or model errors. Do not interpret the best shift as neural latency or use this audit to establish a biological mechanism, absence of EMG information, live control, stationary intention decoding, perception, or full-dive capability.
+
+The scoring subset is narrower than spec 003 because both 5-second source directions must exist. Recompute aligned and constant errors on that subset. Do not compare those errors with spec 003 as if only timing changed. Folds share fitting recordings and are not independent biological replicates. Nominal output timestamps are temporally correlated. No population confidence interval is justified here.
+
+## Edge Cases & Error Handling
+
+- Missing or unusable original validation and test files cannot affect results. Missing, corrupt, or incompatible required training files fail with a useful filename and no successful completion marker.
+- Invalid timestamps fail rather than reordering records or inferring timing. Positive gaps can invalidate input histories or shift-duration checks. Never fill missing inputs or labels.
+- An invalid reference at a shifted source does not exclude a target when that source's input remains valid. An invalid target reference excludes that target for every method. Report nonfinite predictions or metrics as errors, not unsupported folds or null numerical results.
+- An empty eligible fitting set fails explicitly. A short recording or insufficient common coverage produces an unsupported fold with the successive counts and reason. Realized shift durations are null when no targets remain.
+- Unsupported or unexpected protocol fields fail. Canonical fingerprints ignore whitespace and line endings. Source-file hashes identify exact bytes. Reject command-specific options when supplied to unrelated commands.
+- A failed or timed-out run cannot publish a successful completion marker. Preserve partial outputs for diagnosis without treating them as complete. Do not download more data or expand compute as a fallback.
+
+## Acceptance Criteria
+
+- [x] The maintainer explicitly approves this specification before implementation, and the numeric protocol is committed before real-data analysis.
+- [x] Test-first known-answer fixtures prove shift signs, original-grid pairing, no wrapping, inclusive duration tolerances, prefix and embargo boundaries, common masks, source-label independence, minimum support, paired-error arithmetic, and null unsupported aggregates.
+- [x] Synthetic tracking predictions outperform their shifted controls, while constant predictions tie every shift on the common mask. Tests also cover a deliberately better shifted prediction without assuming aligned predictions must win.
+- [x] End-to-end tests run with only nine training files and yield identical scientific output with corrupt validation and test files added. Held-out changes cannot alter that fold's fit. Later label changes that preserve target validity cannot alter predictions, prefix control, or the common mask.
+- [x] All nine folds publish support status and successive coverage counts. Every method uses identical targets. The report includes both shift directions and actual durations without selecting a favorable result.
+- [x] A separate direct index-and-error calculation agrees with a supported real-data fold. Five complete-process runs and an installed-package command reproduce scientific outputs within the existing CPU limits.
+- [x] Prior scientific artifacts remain unchanged, and published artifacts exclude raw and per-sample data and fitted coefficients. The report distinguishes causal aligned predictions from future-access diagnostic controls and states the exposed-data and single-session limits.
+- [x] Update the reproduction guide, feature map, README, and roadmap after implementation. Existing and new tests, lint, formatting, package builds, document links, inspected plots, and Linux and Windows CI pass before delivery through a branch and PR. Keep automatic merging disabled.
