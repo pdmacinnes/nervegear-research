@@ -1,10 +1,10 @@
 # Spec: Software-only causal EMG hand-pose benchmark
 
-Status: Software-only scope and continuation approved by the maintainer on October 14, 2026. Dataset audit complete. The audit-derived pilot protocol is documented for implementation review.
+Status: Software-only scope and audit-derived pilot protocol approved by the maintainer on October 14, 2026. The bounded v1 pilot is implemented and measured. See the [results report](../docs/experiments/emg2pose-pilot-v1.md).
 
 Created: October 14, 2026. Revised after the maintainer clarified that specialized hardware will not be available.
 
-The filename is retained to preserve existing links. This proposal replaces the earlier recording-and-tactile-feedback experiment. The starter dataset is downloaded and inspected. No decoder, model training, hardware purchase, or human experiment has started.
+The filename is retained to preserve existing links. This specification replaces the earlier recording-and-tactile-feedback experiment. The starter dataset is downloaded and inspected. The next deliverable is executable benchmark code and a measured report.
 
 The [dataset audit](../docs/datasets/emg2pose.md) found one person, one session, and 15 stages in the starter archive. The [pilot manifest](../research/emg2pose/pilot-v1.json) therefore specifies a custom left-hand regression pilot with recordings 1-9 for training, 10-12 for validation, and 13-15 for testing. This narrows the initial evaluation to held-out stage recordings within a session. It is not the official population-generalization benchmark. No initial reference pose is supplied. Default outputs use all 20 joint angles, with macro per-recording MAE as the primary score.
 
@@ -23,6 +23,10 @@ Use a CPU-compatible baseline, such as regularized regression on past-only EMG f
 The primary metric is mean absolute joint-angle error on a frozen held-out manifest, in declared angular units. Report per-joint and per-subject or per-session results so long recordings do not silently dominate the aggregate. A lower error is a scientific outcome, not a completion condition. A negative result is acceptable.
 
 ## Inputs, Outputs & Behavior
+
+Implementation decisions fixed before fitting: use Python with NumPy and h5py, standard-library behavior tests, and a command-line runner. A timestamp step outside 0.5-1.5 nominal sample intervals invalidates every common 400-sample history containing that step. Nonfinite EMG similarly invalidates common histories. Reference failures affect scoring, not feature construction. No predictions cross recording boundaries. Train pose statistics use eligible training output timestamps. Ridge minimizes summed squared error plus alpha times squared coefficients, with an unpenalized intercept. Zero-variance feature scales become one. Ties follow manifest history and alpha order.
+
+Report valid, invalid-input, and invalid-reference counts separately. Delayed-output diagnostics use fixed delays of 0, 20, 40, and 100 ms at the 50 Hz output cadence, on common paired timestamps. These are replayed prediction delays, not a model of human feedback. Timing uses five repeated passes of the same complete rolling window feature extraction and prediction, after warm-up. Report component and combined percentiles, with no simulated wall-clock waiting. The runner caps numerical library threads at two and stops at the 15-minute wall-clock limit. Output directories must be new so an accidental rerun cannot overwrite evidence.
 
 Inputs are licensed public EMG recordings, aligned reference joint angles, available source metadata, and a versioned experiment configuration. Use generated synthetic fixtures for tests of alignment, causal processing, splits, and known failure conditions.
 
@@ -73,25 +77,25 @@ The dataset audit will set a provisional run-time cap for the chosen computer be
 Scope and readiness:
 
 - [x] The maintainer approves the software-only scope and continuation before implementation. Audit-derived protocol details are recorded in the linked pilot manifest.
-- [ ] Every required milestone works without specialized hardware, new recordings, lab access, a GPU, or paid cloud services.
-- [ ] A dataset card states source version, license, targets, units, masks, acquisition conditions, supported comparisons, and unsupported claims.
-- [ ] A bounded acquisition manifest records checksums and sizes within the declared limits. No full-archive dependency exists.
-- [ ] A frozen evaluation manifest defines grouping, train and validation separation, test membership, joint selection, primary metric, and calibration allowances.
+- [x] Every required milestone works without specialized hardware, new recordings, lab access, a GPU, or paid cloud services.
+- [x] A dataset card states source version, license, targets, units, masks, acquisition conditions, supported comparisons, and unsupported claims.
+- [x] A bounded acquisition manifest records checksums and sizes within the declared limits. No full-archive dependency exists.
+- [x] A frozen evaluation manifest defines grouping, train and validation separation, test membership, joint selection, primary metric, and calibration allowances.
 
 Implementation and measurement:
 
-- [ ] Behavior tests fail for expected faults before fixes and pass afterward. Appropriate unit, lint, and execution checks pass before the implementation PR. A user-facing replay, if added, has a journey check and inspected screenshot.
-- [ ] Tests prove alignment and that changing future samples cannot change earlier causal predictions or features. They also check train-only normalization and split isolation.
-- [ ] The baseline and decoder use matched reference inputs and report initial-pose access explicitly.
-- [ ] Missing, invalid, and stale segments produce documented outputs and scoring exclusions, with coverage reported.
-- [ ] A repeatable CPU command reproduces the baseline and a small evaluation on public data within the machine-specific run budget.
-- [ ] `FEATURE_MAP.md` describes the implemented commands and checks once executable features exist.
+- [x] Behavior tests fail for expected faults before fixes and pass afterward. Appropriate unit, lint, and execution checks pass before the implementation PR. A user-facing replay, if added, has a journey check and inspected screenshot.
+- [x] Tests prove alignment and that changing future samples cannot change earlier causal predictions or features. They also check train-only normalization and split isolation.
+- [x] The baseline and decoder use matched reference inputs and report initial-pose access explicitly.
+- [x] Missing, invalid, and stale segments produce documented outputs and scoring exclusions, with coverage reported.
+- [x] A repeatable CPU command reproduces the baseline and a small evaluation on public data within the machine-specific run budget.
+- [x] `FEATURE_MAP.md` describes the implemented commands and checks once executable features exist.
 
 Results and interpretation:
 
-- [ ] The report gives held-out angular error, per-group aggregation, scored coverage, window length, prediction horizon, buffering, processing-time distribution, and resource use.
-- [ ] Corruption tests use declared seeded parameters and the same test examples as the clean condition.
-- [ ] Supported generalization comparisons are reported. Unsupported people, task, session, day, rest, or replacement comparisons are named as unavailable.
-- [ ] Results include null or negative findings and do not require beating the baseline to count as complete.
-- [ ] Published materials include reproducible configuration and manifests without credentials or restricted recordings.
-- [ ] The report explicitly limits conclusions to offline prediction and simulated perturbations. It makes no claim of live physiological control, tactile benefit, subjective perception, full-dive capability, or clinical safety.
+- [x] The report gives held-out angular error, per-group aggregation, scored coverage, window length, prediction horizon, buffering, processing-time distribution, and resource use.
+- [x] Corruption tests use declared seeded parameters and the same test examples as the clean condition.
+- [x] Supported generalization comparisons are reported. Unsupported people, task, session, day, rest, or replacement comparisons are named as unavailable.
+- [x] Results include null or negative findings and do not require beating the baseline to count as complete.
+- [x] Published materials include reproducible configuration and manifests without credentials or restricted recordings.
+- [x] The report explicitly limits conclusions to offline prediction and simulated perturbations. It makes no claim of live physiological control, tactile benefit, subjective perception, full-dive capability, or clinical safety.

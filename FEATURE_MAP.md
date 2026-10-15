@@ -1,0 +1,13 @@
+# Executable features
+
+| Feature | Entry point | Behavior and verification |
+| --- | --- | --- |
+| CPU pilot | `python -m nervegear_benchmark run` | Reads the frozen manifest, verifies 15 file hashes and schema, fits only training data, chooses settings on validation data, scores held-out recordings, and writes a new run directory. `tests/test_pipeline.py` runs the real command against synthetic HDF5 fixtures. |
+| Causal features | `nervegear_benchmark/core.py` | Trailing log1p RMS, no cross-file windows, common 400-sample eligibility. `tests/test_core.py` verifies exact alignment, future invariance, missing-input recovery, and short recordings. |
+| Fitting and selection | `core.fit_ridge`, `pipeline.select_candidate` | Training-only standardization and pose statistics, unpenalized intercept, validation-only history and alpha choice. Tests verify fixed training statistics and unchanged fitted model/selection after test-label changes. |
+| Scoring and exclusions | `core.errors`, `core.aggregate`, `pipeline.coverage` | Finite nonzero reference heuristic, equal recording weight, per-joint and per-recording errors, explicit coverage. Tests distinguish reference failure from input failure and check unequal recording lengths. |
+| Synthetic sensitivity | `core.corrupt`, `pipeline.delayed_scores` | Seeded channel dropout, gain, noise, and delayed predictions on paired timestamps. Tests check deterministic conditions. These are offline diagnostics. |
+| Timing and output | `pipeline.measure_timing`, `report.write_report` | Five warm passes time unbatched window features plus prediction. Summary JSON, completion marker, Markdown, and three SVG plots contain aggregate results. Command tests require real scored outputs and reject existing output directories. |
+| Resource and file boundaries | `__main__.main`, `pipeline.load_record` | Two numerical-library threads, 15-minute watchdog, size guard, path containment, exact recording checksums, canonical JSON protocol fingerprints, no automatic data fetch. Tests reject duplicate records, unsupported protocol changes, path traversal, and corrupt files; equivalent JSON formatting preserves its protocol fingerprint. |
+
+Run the checks with the commands in [the reproduction guide](docs/reproduce-pilot.md). CI runs synthetic checks and builds the package on Linux and Windows. CI does not download the research dataset or assert scientific model quality.

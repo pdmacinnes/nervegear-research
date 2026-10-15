@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="340" viewBox="0 0 900 340" role="img" aria-label="Held-out recording accuracy">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial,sans-serif" fill="#182637">
+<text x="24" y="34" font-size="21">Held-out recording accuracy</text>
+<text x="24" y="60" font-size="14">Macro recording MAE in degrees; one person, one session</text>
+<text x="24" y="105" font-size="15">Train mean</text>
+<rect x="230" y="86" width="307.57" height="28" fill="#2563a6" rx="3"/>
+<text x="547.57" y="105" font-size="15">13.97</text>
+<text x="24" y="151" font-size="15">Train median</text>
+<rect x="230" y="132" width="307.39" height="28" fill="#2563a6" rx="3"/>
+<text x="547.39" y="151" font-size="15">13.96</text>
+<text x="24" y="197" font-size="15">Ridge 50 ms</text>
+<rect x="230" y="178" width="451.73" height="28" fill="#2563a6" rx="3"/>
+<text x="691.73" y="197" font-size="15">20.51</text>
+<text x="24" y="243" font-size="15">Ridge 100 ms</text>
+<rect x="230" y="224" width="475.59" height="28" fill="#2563a6" rx="3"/>
+<text x="715.59" y="243" font-size="15">21.59</text>
+<text x="24" y="289" font-size="15">Ridge 200 ms</text>
+<rect x="230" y="270" width="486.96" height="28" fill="#2563a6" rx="3"/>
+<text x="726.96" y="289" font-size="15">22.11</text>
+</g></svg>

@@ -6,7 +6,7 @@ Evidence baseline: October 14, 2026. Time windows are research planning horizons
 
 The maintainer has no specialized hardware and expects no future access. Every required milestone must finish on an ordinary computer using public data, analysis, or simulation. Do not make hardware purchases, laboratory access, new recordings, participant recruitment, GPUs, or paid cloud services prerequisites.
 
-The first project asks how hand-pose prediction accuracy and responsiveness change under causal processing and held-out evaluation. The maintainer approved the software-only scope and continuation. The [dataset audit](docs/datasets/emg2pose.md) is complete. The starter archive is downloaded and inspected, with no model training yet. See [spec 001](specs/001-stationary-virtual-hand.md) and the [pilot proposal](research/emg2pose/pilot-v1.json).
+The first project asks how hand-pose prediction accuracy and responsiveness change under causal processing and held-out evaluation. The maintainer approved the software-only scope and pilot protocol. The [dataset audit](docs/datasets/emg2pose.md) and [first CPU pilot](docs/experiments/emg2pose-pilot-v1.md) are complete. The simple ridge decoder loses to train-only constant-pose baselines. See [spec 001](specs/001-stationary-virtual-hand.md), the [frozen protocol](research/emg2pose/pilot-v1.json), and the [reproduction guide](docs/reproduce-pilot.md).
 
 The available starter data cover one person in one session. The first pilot therefore uses disjoint stage recordings within that session. It cannot establish new-person, new-session, or actual sensor-replacement performance. Broader data access is not a dependency for completing the pilot.
 
@@ -19,6 +19,8 @@ The available starter data cover one person in one session. The first pilot ther
 | 5. Test robustness | Apply reproducible channel dropout, noise, gain changes, and added software delay | Sensitivity curves explicitly labeled as simulated perturbations |
 | 6. Publish the benchmark | Release code, manifests, environment details, and results without restricted recordings | A reproducible report that states limitations and includes negative findings |
 | 7. Choose the next question | Follow the strongest observed failure or compare a sensory-encoding model | One bounded follow-on hypothesis supported by the benchmark |
+
+Steps 1-6 are complete for the bounded v1 pilot. The next question is why RMS ridge underperforms constant pose. Diagnose training/validation feature shifts and joint-specific residuals before proposing another model. The v1 test outcomes are now known, so future work must disclose that exposure rather than call them an unseen test.
 
 Read source metadata before downloading large recordings. The small starter subset checks software; it is not automatically sufficient for subject or session generalization. If the available subset cannot support a claim, narrow that claim. Do not expand automatically to the full archive or rent compute.
 
