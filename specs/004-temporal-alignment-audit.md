@@ -2,7 +2,7 @@
 
 ## Requirements & Goals
 
-Status: Proposed on October 15, 2026. Awaiting maintainer approval before implementation or real-data analysis.
+Status: Explicitly approved by the maintainer on October 15, 2026 with "Looks good" in response to the spec-review request. Implement and run this audit against the fixed protocol.
 
 Test whether the fixed decoder benefits from correct timing within a held-out recording. Compare its aligned predictions with predictions shifted by fixed intervals within that same recording. The [calibration study](../docs/experiments/limited-label-calibration-v1.md) found no aggregate benefit from intercept calibration. This audit asks whether the existing decoder tracks movement before proposing another model or calibration method.
 
