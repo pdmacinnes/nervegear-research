@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="386" viewBox="0 0 900 386" role="img" aria-label="Fixed-prefix calibration comparison">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial,sans-serif" fill="#182637">
+<text x="24" y="34" font-size="21">Fixed-prefix calibration comparison</text>
+<text x="24" y="60" font-size="14">Equal supported-fold weight; MAE in degrees; one person/session</text>
+<text x="24" y="105" font-size="15">ridge</text>
+<rect x="230" y="86" width="382.63" height="28" fill="#2563a6" rx="3"/>
+<text x="622.63" y="105" font-size="15">16.89</text>
+<text x="24" y="151" font-size="15">calibrated_ridge</text>
+<rect x="230" y="132" width="387.55" height="28" fill="#2563a6" rx="3"/>
+<text x="627.55" y="151" font-size="15">17.10</text>
+<text x="24" y="197" font-size="15">train_mean</text>
+<rect x="230" y="178" width="481.36" height="28" fill="#2563a6" rx="3"/>
+<text x="721.36" y="197" font-size="15">21.24</text>
+<text x="24" y="243" font-size="15">train_median</text>
+<rect x="230" y="224" width="486.96" height="28" fill="#2563a6" rx="3"/>
+<text x="726.96" y="243" font-size="15">21.49</text>
+<text x="24" y="289" font-size="15">prefix_mean</text>
+<rect x="230" y="270" width="361.80" height="28" fill="#2563a6" rx="3"/>
+<text x="601.80" y="289" font-size="15">15.97</text>
+<text x="24" y="335" font-size="15">prefix_median</text>
+<rect x="230" y="316" width="367.47" height="28" fill="#2563a6" rx="3"/>
+<text x="607.47" y="335" font-size="15">16.22</text>
+</g></svg>

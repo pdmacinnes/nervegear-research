@@ -24,9 +24,9 @@ Steps 1-6 are complete for the bounded v1 pilot. The next question is why RMS ri
 
 The approved diagnostic command in [spec 002](specs/002-decoder-failure-diagnostics.md) is implemented. The [report](docs/experiments/decoder-diagnostics-v1.md) shows better training fit, loss of validation advantage, substantial recording-specific bias, and agreement between independent solvers. The command opens only training and validation recordings. Tests prove that test files are unnecessary and cannot change its scientific outputs.
 
-The next proposed question is whether a small, fixed labeled prefix can reduce recording-specific bias on held-out training recordings. That requires a new exploratory protocol with matched label access for constant-pose controls. It has not been implemented, and no improvement is promised.
+The approved [spec 003](specs/003-limited-label-calibration.md) is implemented: nine original-training folds, a fixed 10-second prefix, a 200 ms embargo, and six matched comparisons. The [calibration report](docs/experiments/limited-label-calibration-v1.md) finds no aggregate MAE improvement over uncalibrated ridge or the primary equally informed constant. All nine folds are supported and reported.
 
-The concrete proposal is [spec 003](specs/003-limited-label-calibration.md): nine original-training folds, a fixed 10-second prefix, a 200 ms embargo, and six matched comparisons. This is the final planned task for October 14, 2026. Implementation awaits spec confirmation.
+The October 14, 2026 work stops after this verified delivery. Further experiments require a later scope decision and a new protocol; no additional study or recurring task is started tonight.
 
 Read source metadata before downloading large recordings. The small starter subset checks software; it is not automatically sufficient for subject or session generalization. If the available subset cannot support a claim, narrow that claim. Do not expand automatically to the full archive or rent compute.
 

@@ -57,6 +57,18 @@ This command verifies and opens only the nine training and three validation reco
 
 The [diagnostic report](experiments/decoder-diagnostics-v1.md) explains the findings and limitations. A successful run has a completion marker. The same CPU, time, data-integrity, and no-overwrite rules apply. No additional data or dependencies are required.
 
+## Reproduce the fixed-prefix calibration study
+
+```powershell
+python -m nervegear_benchmark calibrate --data-dir data/emg2pose-audit/extracted/emg2pose_dataset_mini --output runs/my-calibration-01
+```
+
+The default study is [calibration-v1.json](../research/emg2pose/calibration-v1.json). Use `--calibration-protocol <path>` to name an explicit copy; unsupported settings fail. That option is valid only for `calibrate`. Fingerprints use canonical parsed JSON, independently of indentation and line endings.
+
+The command opens only original training recordings 1-9. Each fold fits on the other eight, uses a fixed 10-second labeled prefix for intercept calibration and equally informed constants, and scores after a 200 ms embargo. It cannot use original validation/test recordings. A short or label-deficient fold is explicitly unsupported; an entirely unsupported study has null aggregate metrics and still reports its reasons.
+
+Read the generated `report.md`, `summary.json`, `study.json`, two SVG plots, and completion marker. The [published report](experiments/limited-label-calibration-v1.md) explains the negative result and label-access limitations. Integrity fingerprints allow repeatability checks without publishing fitted coefficients or per-sample predictions. Existing resource, data-integrity, and no-overwrite rules apply. No new download or dependency is required.
+
 ## Verify the software
 
 ```powershell

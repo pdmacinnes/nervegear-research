@@ -45,13 +45,13 @@ The nine folds overlap in their training recordings and belong to one person/ses
 ## Acceptance Criteria
 
 - [x] The maintainer confirms this specification before implementation.
-- [ ] A versioned calibration manifest fixes the nine folds, prefix, gap, minimum counts, history, alpha, methods, metrics, and resource limits before model fitting.
-- [ ] Tests fail for missing behavior before implementation, then pass. Known-answer tests verify prefix/gap boundaries, nonoverlapping histories, fixed offsets, equally informed constants, paired metrics, tie handling, and unsupported folds.
-- [ ] End-to-end tests succeed with only nine training files present and produce unchanged scientific output when unusable validation/test files are added.
-- [ ] Isolation tests prove that held-out prefix or future changes cannot alter the initial fold fit, and that changing future reference labels cannot alter calibration or predictions. Every method uses the same scored timestamps.
-- [ ] All nine folds have explicit support status, actual calibration-label counts, and exclusion counts. Six-method per-fold and aggregate results follow the fixed definitions without post-hoc changes.
-- [ ] A CPU command completes within existing limits without hardware, downloads, GPUs, or paid services. Repeated real-data runs and an installed-package command reproduce scientific results.
-- [ ] Prior v1 and diagnostic protocols and result artifacts remain unchanged. Raw and per-sample data and model coefficients remain excluded from publication.
-- [ ] The report explains measured outcomes, known data exposure, matched-label comparisons, and unsupported claims. Negative or unsupported results satisfy the research goal.
+- [x] A versioned calibration manifest fixes the nine folds, prefix, gap, minimum counts, history, alpha, methods, metrics, and resource limits before model fitting.
+- [x] Tests fail for missing behavior before implementation, then pass. Known-answer tests verify prefix/gap boundaries, nonoverlapping histories, fixed offsets, equally informed constants, paired metrics, tie handling, and unsupported folds.
+- [x] End-to-end tests succeed with only nine training files present and produce unchanged scientific output when unusable validation/test files are added.
+- [x] Isolation tests prove that held-out prefix or future changes cannot alter the initial fold fit, and that changing future reference labels cannot alter calibration or predictions. Every method uses the same scored timestamps.
+- [x] All nine folds have explicit support status, actual calibration-label counts, and exclusion counts. Six-method per-fold and aggregate results follow the fixed definitions without post-hoc changes.
+- [x] A CPU command completes within existing limits without hardware, downloads, GPUs, or paid services. Repeated real-data runs and an installed-package command reproduce scientific results.
+- [x] Prior v1 and diagnostic protocols and result artifacts remain unchanged. Raw and per-sample data and model coefficients remain excluded from publication.
+- [x] The report explains measured outcomes, known data exposure, matched-label comparisons, and unsupported claims. Negative or unsupported results satisfy the research goal.
 - [ ] Update the reproduction guide and feature map. Tests, lint, formatting, builds, link/result checks, inspected plots, and Linux/Windows CI pass before delivery through a branch and PR with automatic merging disabled.
 - [ ] Stop after delivering this study tonight. Do not start another experiment, create a recurring task, or spend the remaining usage window on unrequested follow-on work.
