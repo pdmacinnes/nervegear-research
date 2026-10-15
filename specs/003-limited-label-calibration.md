@@ -53,5 +53,5 @@ The nine folds overlap in their training recordings and belong to one person/ses
 - [x] A CPU command completes within existing limits without hardware, downloads, GPUs, or paid services. Repeated real-data runs and an installed-package command reproduce scientific results.
 - [x] Prior v1 and diagnostic protocols and result artifacts remain unchanged. Raw and per-sample data and model coefficients remain excluded from publication.
 - [x] The report explains measured outcomes, known data exposure, matched-label comparisons, and unsupported claims. Negative or unsupported results satisfy the research goal.
-- [ ] Update the reproduction guide and feature map. Tests, lint, formatting, builds, link/result checks, inspected plots, and Linux/Windows CI pass before delivery through a branch and PR with automatic merging disabled.
-- [ ] Stop after delivering this study tonight. Do not start another experiment, create a recurring task, or spend the remaining usage window on unrequested follow-on work.
+- [x] Update the reproduction guide and feature map. Tests, lint, formatting, builds, link/result checks, inspected plots, and Linux/Windows CI pass before delivery through a branch and PR with automatic merging disabled.
+- [x] Stop after delivering this study tonight. Do not start another experiment, create a recurring task, or spend the remaining usage window on unrequested follow-on work.
