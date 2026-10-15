@@ -22,6 +22,8 @@ The available starter data cover one person in one session. The first pilot ther
 
 Steps 1-6 are complete for the bounded v1 pilot. The next question is why RMS ridge underperforms constant pose. Diagnose training/validation feature shifts and joint-specific residuals before proposing another model. The v1 test outcomes are now known, so future work must disclose that exposure rather than call them an unseen test.
 
+The proposed diagnostic command and report are defined in [spec 002](specs/002-decoder-failure-diagnostics.md). The specification is ready for review before implementation. It uses only the existing training and validation recordings and requires a test proving that test files are never needed.
+
 Read source metadata before downloading large recordings. The small starter subset checks software; it is not automatically sufficient for subject or session generalization. If the available subset cannot support a claim, narrow that claim. Do not expand automatically to the full archive or rent compute.
 
 Offline replay is a complete research method with limited claims. Predictions cannot change the actions in a fixed recording. It does not establish live user control, stationary movement, tactile benefit, embodiment, or clinical safety. A simulated feedback controller adds model assumptions rather than human evidence.
