@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "study_id": "fixed-prefix-calibration-v1",
+  "source_protocol_id": "emg2pose-starter-left-pilot-v1",
+  "fold_recordings": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "history_samples": 400,
+  "first_output_sample_index": 399,
+  "output_stride_samples": 40,
+  "ridge_alpha": 10.0,
+  "prefix_seconds": 10.0,
+  "embargo_seconds": 0.2,
+  "minimum_calibration_outputs": 25,
+  "minimum_scored_outputs": 1,
+  "tie_tolerance_rad": 1e-12,
+  "methods": ["ridge", "calibrated_ridge", "train_mean", "train_median", "prefix_mean", "prefix_median"],
+  "primary_comparisons": ["calibrated_ridge_minus_ridge", "calibrated_ridge_minus_prefix_median"],
+  "maximum_threads": 2,
+  "maximum_run_seconds": 900,
+  "scope": "Exploratory leave-one-recording-out folds using only original training recordings from one person/session. Prior recordings and v1 outcomes have been inspected.",
+  "label_access": "Only eligible labels strictly before 10 seconds of the held-out recording. Identical prefix labels for calibrated ridge and prefix constants. No later labels enter fitting or calibration."
+}

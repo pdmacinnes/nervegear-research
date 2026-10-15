@@ -2,7 +2,7 @@
 
 ## Requirements & Goals
 
-Status: Issue #9 scope accepted October 14, 2026. The concrete protocol below awaits confirmation before implementation. This is the final task for tonight. Finish the approved study, publish its results, and stop without starting another experiment.
+Status: Explicitly approved by the maintainer through the spec-review prompt on October 14, 2026. This is the final task for tonight. Finish the approved study, publish its results, and stop without starting another experiment.
 
 Test whether a small, fixed labeled prefix reduces recording-specific bias in the original RMS ridge decoder, and whether any benefit exceeds equally informed constant-pose controls. Use only original training recordings 1-9. Original validation and test recordings are excluded from loading, fitting, calibration, and scoring. These public recordings and previous v1 outcomes have already been inspected; this is exploratory analysis, not a new blind test or preregistration.
 
@@ -44,7 +44,7 @@ The nine folds overlap in their training recordings and belong to one person/ses
 
 ## Acceptance Criteria
 
-- [ ] The maintainer confirms this specification before implementation.
+- [x] The maintainer confirms this specification before implementation.
 - [ ] A versioned calibration manifest fixes the nine folds, prefix, gap, minimum counts, history, alpha, methods, metrics, and resource limits before model fitting.
 - [ ] Tests fail for missing behavior before implementation, then pass. Known-answer tests verify prefix/gap boundaries, nonoverlapping histories, fixed offsets, equally informed constants, paired metrics, tie handling, and unsupported folds.
 - [ ] End-to-end tests succeed with only nine training files present and produce unchanged scientific output when unusable validation/test files are added.
