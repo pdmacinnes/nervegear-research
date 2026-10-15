@@ -69,6 +69,20 @@ The command opens only original training recordings 1-9. Each fold fits on the o
 
 Read the generated `report.md`, `summary.json`, `study.json`, two SVG plots, and completion marker. The [published report](experiments/limited-label-calibration-v1.md) explains the negative result and label-access limitations. Integrity fingerprints allow repeatability checks without publishing fitted coefficients or per-sample predictions. Existing resource, data-integrity, and no-overwrite rules apply. No new download or dependency is required.
 
+## Reproduce the temporal alignment audit
+
+```powershell
+python -m nervegear_benchmark align --data-dir data/emg2pose-audit/extracted/emg2pose_dataset_mini --output runs/my-alignment-01
+```
+
+The default protocol is [alignment-v1.json](../research/emg2pose/alignment-v1.json). Use `--alignment-protocol <path>` for an explicit copy. This option is valid only for `align`. Unsupported settings fail. The command verifies and opens only original custom training recordings 1-9. Original validation and test files can be absent.
+
+Each fold fits the fixed decoder on the other eight recordings. Predictions at the aligned time and at fixed signed shifts of 1 and 5 seconds share one scoring mask. Shifts use the original output grid, never a compressed list of valid rows. Source references are unnecessary. All source histories must follow the 10-second prefix, with endpoints after its 200 ms embargo and realized shift durations within the fixed 10 ms tolerance. Future sources are noncausal diagnostic controls.
+
+The training-median and prefix-median controls use the same retained targets. Prefix median uses at least 25 valid prefix labels from the public recording. A fold needs at least 100 common scored outputs. Unsupported folds retain counts and reasons, while all-unsupported studies have null metrics. Empty fitting data cause an error even when target folds would be unsupported.
+
+Read `summary.json`, `study.json`, `report.md`, the two SVG plots, and the completion marker. The [published report](experiments/temporal-alignment-v1.md) explains the primary mean-of-errors comparison, actual shift durations, and limits. Existing CPU, integrity, timeout, and no-overwrite rules apply. No new data or dependencies are required. For an installed package launched outside the checkout, supply absolute paths with both `--manifest` and `--alignment-protocol`.
+
 ## Verify the software
 
 ```powershell

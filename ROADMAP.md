@@ -28,7 +28,9 @@ The approved [spec 003](specs/003-limited-label-calibration.md) is implemented: 
 
 The October 14, 2026 session ended after that verified delivery. All five completed PRs are merged into `main`.
 
-The October 15 follow-up is a proposed [temporal alignment audit](specs/004-temporal-alignment-audit.md). Compare aligned predictions with fixed past and future shifts using the same retained targets in each held-out training recording. This audit asks whether correct timing helps the existing decoder before changing models. Future shifts are diagnostic controls with future access. The specification awaits approval before implementation or real-data analysis.
+The approved October 15 [temporal alignment audit](docs/experiments/temporal-alignment-v1.md) is complete. Aligned ridge scores 17.111 degrees macro MAE versus 18.529 for the mean of the past and future 5-second errors, with seven improved and two worsened folds. All nine folds are supported. Correct timing helps this decoder on aggregate, but the prefix-median constant retains slightly lower MAE at 17.059 degrees on the same targets. Future shifts are diagnostic controls with future access. This result supports temporal information in the fixed decoder without establishing neural latency or live control.
+
+The next scope decision is whether to improve the representation of movement or pursue a separate sensory-encoding simulation. Another experiment requires its own hypothesis and approved protocol. The existing pilot, diagnostic, calibration, and alignment artifacts remain separate so their different scoring subsets and label access stay explicit.
 
 Read source metadata before downloading large recordings. The small starter subset checks software; it is not automatically sufficient for subject or session generalization. If the available subset cannot support a claim, narrow that claim. Do not expand automatically to the full archive or rent compute.
 

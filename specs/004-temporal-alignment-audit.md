@@ -44,11 +44,11 @@ The scoring subset is narrower than spec 003 because both 5-second source direct
 
 ## Acceptance Criteria
 
-- [ ] The maintainer explicitly approves this specification before implementation, and the numeric protocol is committed before real-data analysis.
-- [ ] Test-first known-answer fixtures prove shift signs, original-grid pairing, no wrapping, inclusive duration tolerances, prefix and embargo boundaries, common masks, source-label independence, minimum support, paired-error arithmetic, and null unsupported aggregates.
-- [ ] Synthetic tracking predictions outperform their shifted controls, while constant predictions tie every shift on the common mask. Tests also cover a deliberately better shifted prediction without assuming aligned predictions must win.
-- [ ] End-to-end tests run with only nine training files and yield identical scientific output with corrupt validation and test files added. Held-out changes cannot alter that fold's fit. Later label changes that preserve target validity cannot alter predictions, prefix control, or the common mask.
-- [ ] All nine folds publish support status and successive coverage counts. Every method uses identical targets. The report includes both shift directions and actual durations without selecting a favorable result.
-- [ ] A separate direct index-and-error calculation agrees with a supported real-data fold. Five complete-process runs and an installed-package command reproduce scientific outputs within the existing CPU limits.
-- [ ] Prior scientific artifacts remain unchanged, and published artifacts exclude raw and per-sample data and fitted coefficients. The report distinguishes causal aligned predictions from future-access diagnostic controls and states the exposed-data and single-session limits.
+- [x] The maintainer explicitly approves this specification before implementation, and the numeric protocol is committed before real-data analysis.
+- [x] Test-first known-answer fixtures prove shift signs, original-grid pairing, no wrapping, inclusive duration tolerances, prefix and embargo boundaries, common masks, source-label independence, minimum support, paired-error arithmetic, and null unsupported aggregates.
+- [x] Synthetic tracking predictions outperform their shifted controls, while constant predictions tie every shift on the common mask. Tests also cover a deliberately better shifted prediction without assuming aligned predictions must win.
+- [x] End-to-end tests run with only nine training files and yield identical scientific output with corrupt validation and test files added. Held-out changes cannot alter that fold's fit. Later label changes that preserve target validity cannot alter predictions, prefix control, or the common mask.
+- [x] All nine folds publish support status and successive coverage counts. Every method uses identical targets. The report includes both shift directions and actual durations without selecting a favorable result.
+- [x] A separate direct index-and-error calculation agrees with a supported real-data fold. Five complete-process runs and an installed-package command reproduce scientific outputs within the existing CPU limits.
+- [x] Prior scientific artifacts remain unchanged, and published artifacts exclude raw and per-sample data and fitted coefficients. The report distinguishes causal aligned predictions from future-access diagnostic controls and states the exposed-data and single-session limits.
 - [ ] Update the reproduction guide, feature map, README, and roadmap after implementation. Existing and new tests, lint, formatting, package builds, document links, inspected plots, and Linux and Windows CI pass before delivery through a branch and PR. Keep automatic merging disabled.
