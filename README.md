@@ -43,7 +43,9 @@ The approved first pilot is complete. The validation-selected RMS ridge decoder 
 
 The [follow-on diagnostics](docs/experiments/decoder-diagnostics-v1.md) are complete using only training and validation data. Ridge improves training fit but loses its advantage on validation tasks. Independent solvers agree, while rare range violations and simple feature shifts leave much of the failure unexplained.
 
-The [fixed-prefix calibration study](docs/experiments/limited-label-calibration-v1.md) is also complete. Using only original training recordings, 10-second intercept calibration scores 17.103 degrees macro error versus 16.886 for uncalibrated ridge and 16.217 for the primary equally informed prefix-median constant. All nine folds are reported. Calibration helps some recordings but does not improve the declared aggregate comparison. No further experiment is started tonight.
+The [fixed-prefix calibration study](docs/experiments/limited-label-calibration-v1.md) is also complete. Using only original training recordings, 10-second intercept calibration scores 17.103 degrees macro error versus 16.886 for uncalibrated ridge and 16.217 for the primary equally informed prefix-median constant. All nine folds are reported. Calibration helps some recordings but does not improve the declared aggregate comparison.
+
+The proposed [temporal alignment audit](specs/004-temporal-alignment-audit.md) compares correctly timed predictions with fixed time shifts within the same held-out recording. It asks whether this decoder benefits from movement timing before changing models. The specification awaits approval. No implementation or new analysis has started.
 
 The data contain one person in one session, so this work cannot establish new-person or new-session performance. No later hardware stage is required. Offline decoding and simulated perturbations cannot establish live user control, tactile benefit, subjective perception, or clinical safety.
 

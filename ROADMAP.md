@@ -26,7 +26,9 @@ The approved diagnostic command in [spec 002](specs/002-decoder-failure-diagnost
 
 The approved [spec 003](specs/003-limited-label-calibration.md) is implemented: nine original-training folds, a fixed 10-second prefix, a 200 ms embargo, and six matched comparisons. The [calibration report](docs/experiments/limited-label-calibration-v1.md) finds no aggregate MAE improvement over uncalibrated ridge or the primary equally informed constant. All nine folds are supported and reported.
 
-The October 14, 2026 work stops after this verified delivery. Further experiments require a later scope decision and a new protocol; no additional study or recurring task is started tonight.
+The October 14, 2026 session ended after that verified delivery. All five completed PRs are merged into `main`.
+
+The October 15 follow-up is a proposed [temporal alignment audit](specs/004-temporal-alignment-audit.md). Compare aligned predictions with fixed past and future shifts using the same retained targets in each held-out training recording. This audit asks whether correct timing helps the existing decoder before changing models. Future shifts are diagnostic controls with future access. The specification awaits approval before implementation or real-data analysis.
 
 Read source metadata before downloading large recordings. The small starter subset checks software; it is not automatically sufficient for subject or session generalization. If the available subset cannot support a claim, narrow that claim. Do not expand automatically to the full archive or rent compute.
 
