@@ -26,6 +26,8 @@ The approved diagnostic command in [spec 002](specs/002-decoder-failure-diagnost
 
 The next proposed question is whether a small, fixed labeled prefix can reduce recording-specific bias on held-out training recordings. That requires a new exploratory protocol with matched label access for constant-pose controls. It has not been implemented, and no improvement is promised.
 
+The concrete proposal is [spec 003](specs/003-limited-label-calibration.md): nine original-training folds, a fixed 10-second prefix, a 200 ms embargo, and six matched comparisons. This is the final planned task for October 14, 2026. Implementation awaits spec confirmation.
+
 Read source metadata before downloading large recordings. The small starter subset checks software; it is not automatically sufficient for subject or session generalization. If the available subset cannot support a claim, narrow that claim. Do not expand automatically to the full archive or rent compute.
 
 Offline replay is a complete research method with limited claims. Predictions cannot change the actions in a fixed recording. It does not establish live user control, stationary movement, tactile benefit, embodiment, or clinical safety. A simulated feedback controller adds model assumptions rather than human evidence.
