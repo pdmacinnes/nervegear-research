@@ -3,3 +3,5 @@ include research/emg2pose/acquisition.json
 include docs/reproduce-pilot.md
 include docs/datasets/emg2pose.md
 include FEATURE_MAP.md
+include specs/002-decoder-failure-diagnostics.md
+include docs/experiments/decoder-diagnostics-v1.md

@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "complete_unprofiled_runs": 5,
+  "runs": [
+    {
+      "repeat": 1,
+      "scientific_outputs_sha256": "c1ccc6312dd14d70f0f3eea752eea018f499c3bccc9456ecb61d01bddaf02588",
+      "diagnostic_config_sha256": "048c013784c5e48162e4e8d6d295d1bbd17a6d2f3cc4b69e6232c24ca39bbd66",
+      "resources": {
+        "peak_process_memory_mib": 344.80078125,
+        "cpu_seconds": 1.375,
+        "analysis_wall_seconds": 1.419487199978903,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 1.4290608998853713
+      },
+      "subprocess_measurement": {
+        "repeat": 1,
+        "subprocess_wall_seconds": 1.756737600080669,
+        "returncode": 0
+      }
+    },
+    {
+      "repeat": 2,
+      "scientific_outputs_sha256": "c1ccc6312dd14d70f0f3eea752eea018f499c3bccc9456ecb61d01bddaf02588",
+      "diagnostic_config_sha256": "048c013784c5e48162e4e8d6d295d1bbd17a6d2f3cc4b69e6232c24ca39bbd66",
+      "resources": {
+        "peak_process_memory_mib": 344.8515625,
+        "cpu_seconds": 1.296875,
+        "analysis_wall_seconds": 1.4733975001145154,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 1.483316200086847
+      },
+      "subprocess_measurement": {
+        "repeat": 2,
+        "subprocess_wall_seconds": 1.7431722001638263,
+        "returncode": 0
+      }
+    },
+    {
+      "repeat": 3,
+      "scientific_outputs_sha256": "c1ccc6312dd14d70f0f3eea752eea018f499c3bccc9456ecb61d01bddaf02588",
+      "diagnostic_config_sha256": "048c013784c5e48162e4e8d6d295d1bbd17a6d2f3cc4b69e6232c24ca39bbd66",
+      "resources": {
+        "peak_process_memory_mib": 344.77734375,
+        "cpu_seconds": 1.34375,
+        "analysis_wall_seconds": 1.4168014000169933,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 1.4263321000616997
+      },
+      "subprocess_measurement": {
+        "repeat": 3,
+        "subprocess_wall_seconds": 1.6566820999141783,
+        "returncode": 0
+      }
+    },
+    {
+      "repeat": 4,
+      "scientific_outputs_sha256": "c1ccc6312dd14d70f0f3eea752eea018f499c3bccc9456ecb61d01bddaf02588",
+      "diagnostic_config_sha256": "048c013784c5e48162e4e8d6d295d1bbd17a6d2f3cc4b69e6232c24ca39bbd66",
+      "resources": {
+        "peak_process_memory_mib": 344.87109375,
+        "cpu_seconds": 1.359375,
+        "analysis_wall_seconds": 1.5101505001075566,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 1.51950170006603
+      },
+      "subprocess_measurement": {
+        "repeat": 4,
+        "subprocess_wall_seconds": 1.7616679999046028,
+        "returncode": 0
+      }
+    },
+    {
+      "repeat": 5,
+      "scientific_outputs_sha256": "c1ccc6312dd14d70f0f3eea752eea018f499c3bccc9456ecb61d01bddaf02588",
+      "diagnostic_config_sha256": "048c013784c5e48162e4e8d6d295d1bbd17a6d2f3cc4b69e6232c24ca39bbd66",
+      "resources": {
+        "peak_process_memory_mib": 344.8828125,
+        "cpu_seconds": 1.5,
+        "analysis_wall_seconds": 1.9491312000900507,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 1.9586628000251949
+      },
+      "subprocess_measurement": {
+        "repeat": 5,
+        "subprocess_wall_seconds": 2.2569814000744373,
+        "returncode": 0
+      }
+    }
+  ],
+  "subprocess_wall_seconds": {
+    "median": 1.756737600080669,
+    "min": 1.6566820999141783,
+    "max": 2.2569814000744373
+  },
+  "wall_measurement_definition": "Parent perf_counter spans subprocess.run, including interpreter startup, imports, analysis, artifact generation, and process exit. Internal completion timestamps exclude interpreter startup and imports.",
+  "profiling": "Separate cProfile run excluded from resource summaries; most analysis time is spent in full-recording feature construction and cumulative sums. No exclusive-host control or speed comparison."
+}

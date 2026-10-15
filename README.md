@@ -22,6 +22,7 @@ This repository contains a literature-based study and a reproducible CPU-only EM
 | [First-project spec](specs/001-stationary-virtual-hand.md) | Approved software-only benchmark of causal hand-pose decoding from public EMG recordings |
 | [Dataset audit](docs/datasets/emg2pose.md) | Verified starter data, license, labels, quality checks, and a bounded one-person pilot |
 | [Pilot results](docs/experiments/emg2pose-pilot-v1.md) | A simple decoder loses to constant pose; accuracy, sensitivity, timing, and limits |
+| [Failure diagnostics](docs/experiments/decoder-diagnostics-v1.md) | Training fit improves, validation advantage disappears, and numerical checks agree |
 | [Reproduction guide](docs/reproduce-pilot.md) | Install, acquire the bounded data, run the experiment, and verify the package |
 | [Feature map](FEATURE_MAP.md) | Executable behavior and its tests |
 
@@ -39,7 +40,9 @@ The first project asks how prediction accuracy and responsiveness change when a 
 
 The approved first pilot is complete. The validation-selected RMS ridge decoder scores 22.110 degrees of test macro angular error, compared with 13.957 degrees for a train-set median pose. All three declared histories lose to constant-pose baselines. Five CPU runs reproduce the same scientific results. Read the [report](docs/experiments/emg2pose-pilot-v1.md) before interpreting those numbers.
 
-The data contain one person in one session, so this pilot cannot establish new-person or new-session performance. The next question is why the simple decoder fails, using training and validation diagnostics before another protocol is declared. No later hardware stage is required. Offline decoding and simulated perturbations cannot establish live user control, tactile benefit, subjective perception, or clinical safety.
+The [follow-on diagnostics](docs/experiments/decoder-diagnostics-v1.md) are complete using only training and validation data. Ridge improves training fit but loses its advantage on validation tasks. Independent solvers agree, while rare range violations and simple feature shifts leave much of the failure unexplained. Recording-specific bias motivates a separate, limited-label calibration hypothesis; that experiment has not been performed.
+
+The data contain one person in one session, so this work cannot establish new-person or new-session performance. No later hardware stage is required. Offline decoding and simulated perturbations cannot establish live user control, tactile benefit, subjective perception, or clinical safety.
 
 ## Read evidence labels precisely
 

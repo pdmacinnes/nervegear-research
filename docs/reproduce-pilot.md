@@ -45,6 +45,18 @@ Read `runs/my-pilot-01/report.md` and its plots. `summary.json` contains all nin
 
 The [frozen manifest](../research/emg2pose/pilot-v1.json) is deliberately narrow. Unsupported numeric configuration changes fail rather than silently falling back. The protocol fingerprint hashes parsed JSON with sorted keys and compact separators, encoded as UTF-8. Indentation and line endings do not change that fingerprint. Source recording hashes still identify exact file bytes. A different study needs a protocol amendment and code/tests that implement it. Keep test results out of parameter selection.
 
+## Diagnose the training-to-validation failure
+
+After reproducing v1, run the approved diagnostics in a new directory:
+
+```powershell
+python -m nervegear_benchmark diagnose --data-dir data/emg2pose-audit/extracted/emg2pose_dataset_mini --output runs/my-diagnostics-01
+```
+
+This command verifies and opens only the nine training and three validation recordings. The three test files can be absent. It refits the same nine configurations, leaves v1 unchanged, and selects no replacement model. Read `report.md`, `summary.json`, and the three SVG plots in the new output directory. `diagnostic-config.json` records thresholds, file membership, and the existing primary model. Empty conditional groups have null errors, not fabricated zero error. Singular feature matrices carry an explicit flag and null unregularized condition number.
+
+The [diagnostic report](experiments/decoder-diagnostics-v1.md) explains the findings and limitations. A successful run has a completion marker. The same CPU, time, data-integrity, and no-overwrite rules apply. No additional data or dependencies are required.
+
 ## Verify the software
 
 ```powershell

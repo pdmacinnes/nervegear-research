@@ -3,7 +3,9 @@ from html import escape
 import numpy as np
 
 
-def bar_chart(path, title, rows):
+def bar_chart(
+    path, title, rows, subtitle="Macro recording MAE in degrees; one person, one session"
+):
     maximum = max(value for _, value in rows) * 1.15
     height = 110 + len(rows) * 46
     parts = [
@@ -12,8 +14,7 @@ def bar_chart(path, title, rows):
         '<rect width="100%" height="100%" fill="#fff"/>',
         '<g font-family="Arial,sans-serif" fill="#182637">',
         f'<text x="24" y="34" font-size="21">{escape(title)}</text>',
-        '<text x="24" y="60" font-size="14">Macro recording MAE in degrees; '
-        "one person, one session</text>",
+        f'<text x="24" y="60" font-size="14">{escape(subtitle)}</text>',
     ]
     for i, (name, value) in enumerate(rows):
         y = 86 + i * 46
