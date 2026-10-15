@@ -8,7 +8,7 @@ Useful partial systems are achievable research targets. An integrated system tha
 
 Motor and speech readout are ahead of rich sensory writing. Proprioception, balance, safe movement separation, and chronic interfaces are major unresolved problems. A hybrid of sensory-organ, muscle, skin, peripheral, spinal, and brain interfaces deserves function-specific evaluation.
 
-This repository starts with a literature-based study. It contains no implemented full-dive device, experimental software, or completed human experiment. The evidence baseline is **October 14, 2026**. Roadmap dates are planning horizons, not product predictions.
+This repository contains a literature-based study and a reproducible CPU-only EMG decoding pilot. It contains no implemented full-dive device or completed human experiment. The evidence baseline is **October 14, 2026**. Roadmap dates are planning horizons, not product predictions.
 
 ## Read the research
 
@@ -19,14 +19,17 @@ This repository starts with a literature-based study. It contains no implemented
 | [Systems architecture](docs/systems-architecture.md) | Components and information flows, including unresolved physical-body interactions |
 | [Reading list](docs/references.md) | 54 sources covering papers, programs, datasets, tools, and motivation |
 | [Roadmap](ROADMAP.md) | Immediate work and 0-5, 5-15, and 15+ year research horizons |
-| [First-project spec](specs/001-stationary-virtual-hand.md) | Proposed software-only benchmark of causal hand-pose decoding from public EMG recordings |
-| [Dataset audit](docs/datasets/emg2pose.md) | Verified starter data, license, labels, quality checks, and a bounded one-person pilot proposal |
+| [First-project spec](specs/001-stationary-virtual-hand.md) | Approved software-only benchmark of causal hand-pose decoding from public EMG recordings |
+| [Dataset audit](docs/datasets/emg2pose.md) | Verified starter data, license, labels, quality checks, and a bounded one-person pilot |
+| [Pilot results](docs/experiments/emg2pose-pilot-v1.md) | A simple decoder loses to constant pose; accuracy, sensitivity, timing, and limits |
+| [Reproduction guide](docs/reproduce-pilot.md) | Install, acquire the bounded data, run the experiment, and verify the package |
+| [Feature map](FEATURE_MAP.md) | Executable behavior and its tests |
 
 ## Start with public recordings and a causal decoder
 
 The project assumes no access to specialized hardware now or later. Every required milestone must be achievable on an ordinary computer using public data, analysis, or simulation. A headset, electrodes, implants, new recordings, lab access, a GPU, and paid cloud services are not prerequisites.
 
-The proposed first project asks how prediction accuracy and responsiveness change when a hand-pose decoder can use only past and current EMG samples. Test generalization on held-out people, tasks, and recording sessions where the chosen subset permits those comparisons.
+The first project asks how prediction accuracy and responsiveness change when a hand-pose decoder can use only past and current EMG samples. Test generalization on held-out people, tasks, and recording sessions only where the chosen subset permits those comparisons.
 
 1. Audit the dataset, license, labels, split definitions, and download requirements.
 2. Review the revised software-only spec before implementation.
@@ -34,7 +37,9 @@ The proposed first project asks how prediction accuracy and responsiveness chang
 4. Measure held-out pose error, causal window length, processing time, and failure under missing or noisy input.
 5. Compare a simple decoder against a matched baseline and publish the results, including null or negative findings.
 
-The software-only scope and continuation are approved. The dataset audit is complete: the official starter archive is downloaded and inspected, with file hashes and a proposed pilot split recorded. It contains one person in one session, so the first pilot cannot establish new-person or new-session performance. No model has been trained. The benchmark is a complete research deliverable, with no later hardware stage required. Offline decoding and simulated perturbations cannot establish live user control, tactile benefit, subjective perception, or clinical safety.
+The approved first pilot is complete. The validation-selected RMS ridge decoder scores 22.110 degrees of test macro angular error, compared with 13.957 degrees for a train-set median pose. All three declared histories lose to constant-pose baselines. Five CPU runs reproduce the same scientific results. Read the [report](docs/experiments/emg2pose-pilot-v1.md) before interpreting those numbers.
+
+The data contain one person in one session, so this pilot cannot establish new-person or new-session performance. The next question is why the simple decoder fails, using training and validation diagnostics before another protocol is declared. No later hardware stage is required. Offline decoding and simulated perturbations cannot establish live user control, tactile benefit, subjective perception, or clinical safety.
 
 ## Read evidence labels precisely
 

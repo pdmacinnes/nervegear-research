@@ -14,3 +14,7 @@ runs/
 recordings/
 participants/
 local/
+.ruff_cache/
+build/
+dist/
+*.egg-info/

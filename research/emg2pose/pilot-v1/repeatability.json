@@ -1,0 +1,648 @@
+{
+  "schema_version": 1,
+  "unprofiled_complete_runs": 5,
+  "runs": [
+    {
+      "repeat": 1,
+      "selection": {
+        "history": 400,
+        "alpha": 10.0
+      },
+      "fitted_model_sha256": "0d9923d1bee8b51e1c63f345ed5a9d3eac2f7dfac82d1c4718d97be1a6d0c38e",
+      "protocol_sha256": "8396e404478c7622a7e9d7e56788a9c96f3526ba608e57aa65544043f264b72d",
+      "macro_mae_rad": 0.38589436965621116,
+      "resources": {
+        "peak_process_memory_mib": 664.0390625,
+        "cpu_seconds": 5.0625,
+        "analysis_wall_seconds": 14.931202499894425,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "wall_seconds_including_outputs": 14.967567699961364,
+        "error_count": 0
+      },
+      "timing": {
+        "passes": [
+          {
+            "repeat": 0,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0098,
+              "p95_ms": 0.12,
+              "p99_ms": 0.73565
+            },
+            "prediction": {
+              "p50_ms": 0.003,
+              "p95_ms": 0.0279,
+              "p99_ms": 0.2675
+            },
+            "combined": {
+              "p50_ms": 0.0128,
+              "p95_ms": 0.19985,
+              "p99_ms": 1.08395
+            }
+          },
+          {
+            "repeat": 1,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0097,
+              "p95_ms": 0.0792,
+              "p99_ms": 0.37445
+            },
+            "prediction": {
+              "p50_ms": 0.003,
+              "p95_ms": 0.0229,
+              "p99_ms": 0.12495
+            },
+            "combined": {
+              "p50_ms": 0.0127,
+              "p95_ms": 0.1192,
+              "p99_ms": 0.48855
+            }
+          },
+          {
+            "repeat": 2,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.01,
+              "p95_ms": 0.10225,
+              "p99_ms": 0.64675
+            },
+            "prediction": {
+              "p50_ms": 0.003,
+              "p95_ms": 0.02465,
+              "p99_ms": 0.1967
+            },
+            "combined": {
+              "p50_ms": 0.0132,
+              "p95_ms": 0.17135,
+              "p99_ms": 0.81175
+            }
+          },
+          {
+            "repeat": 3,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0101,
+              "p95_ms": 0.13555,
+              "p99_ms": 0.86575
+            },
+            "prediction": {
+              "p50_ms": 0.003,
+              "p95_ms": 0.0292,
+              "p99_ms": 0.2329
+            },
+            "combined": {
+              "p50_ms": 0.0134,
+              "p95_ms": 0.21335,
+              "p99_ms": 1.1102
+            }
+          },
+          {
+            "repeat": 4,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0099,
+              "p95_ms": 0.154,
+              "p99_ms": 0.96155
+            },
+            "prediction": {
+              "p50_ms": 0.003,
+              "p95_ms": 0.02915,
+              "p99_ms": 0.27385
+            },
+            "combined": {
+              "p50_ms": 0.013,
+              "p95_ms": 0.2448,
+              "p99_ms": 1.2627
+            }
+          }
+        ],
+        "prediction_sum_checksum": 719887.4440360073,
+        "definition": "Unbatched trailing-window feature extraction plus prediction; excludes HDF5 I/O, corruption, eligibility, replay scheduling, output serialization, and simulated waiting. Five warm repeated passes.",
+        "lookahead_ms": 0,
+        "update_period_ms": 20,
+        "warmup_samples": 400,
+        "replay_scheduling": "No wall-clock stream scheduler; offline iteration only."
+      }
+    },
+    {
+      "repeat": 2,
+      "selection": {
+        "history": 400,
+        "alpha": 10.0
+      },
+      "fitted_model_sha256": "0d9923d1bee8b51e1c63f345ed5a9d3eac2f7dfac82d1c4718d97be1a6d0c38e",
+      "protocol_sha256": "8396e404478c7622a7e9d7e56788a9c96f3526ba608e57aa65544043f264b72d",
+      "macro_mae_rad": 0.38589436965621116,
+      "resources": {
+        "peak_process_memory_mib": 664.578125,
+        "cpu_seconds": 4.6875,
+        "analysis_wall_seconds": 14.159045899985358,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "wall_seconds_including_outputs": 14.206868899986148,
+        "error_count": 0
+      },
+      "timing": {
+        "passes": [
+          {
+            "repeat": 0,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0099,
+              "p95_ms": 0.15225,
+              "p99_ms": 0.91795
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.0287,
+              "p99_ms": 0.35185
+            },
+            "combined": {
+              "p50_ms": 0.0127,
+              "p95_ms": 0.24595,
+              "p99_ms": 1.2764
+            }
+          },
+          {
+            "repeat": 1,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0098,
+              "p95_ms": 0.1044,
+              "p99_ms": 0.58265
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.02265,
+              "p99_ms": 0.1638
+            },
+            "combined": {
+              "p50_ms": 0.0125,
+              "p95_ms": 0.16075,
+              "p99_ms": 0.7378
+            }
+          },
+          {
+            "repeat": 2,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0096,
+              "p95_ms": 0.0736,
+              "p99_ms": 0.4184
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.0165,
+              "p99_ms": 0.10605
+            },
+            "combined": {
+              "p50_ms": 0.0123,
+              "p95_ms": 0.1052,
+              "p99_ms": 0.5311
+            }
+          },
+          {
+            "repeat": 3,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0098,
+              "p95_ms": 0.11025,
+              "p99_ms": 0.6369
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.02245,
+              "p99_ms": 0.2396
+            },
+            "combined": {
+              "p50_ms": 0.0126,
+              "p95_ms": 0.17935,
+              "p99_ms": 0.82665
+            }
+          },
+          {
+            "repeat": 4,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.01,
+              "p95_ms": 0.22895,
+              "p99_ms": 1.88045
+            },
+            "prediction": {
+              "p50_ms": 0.0028,
+              "p95_ms": 0.036,
+              "p99_ms": 0.56365
+            },
+            "combined": {
+              "p50_ms": 0.0129,
+              "p95_ms": 0.3823,
+              "p99_ms": 2.5173
+            }
+          }
+        ],
+        "prediction_sum_checksum": 719887.4440360073,
+        "definition": "Unbatched trailing-window feature extraction plus prediction; excludes HDF5 I/O, corruption, eligibility, replay scheduling, output serialization, and simulated waiting. Five warm repeated passes.",
+        "lookahead_ms": 0,
+        "update_period_ms": 20,
+        "warmup_samples": 400,
+        "replay_scheduling": "No wall-clock stream scheduler; offline iteration only."
+      }
+    },
+    {
+      "repeat": 3,
+      "selection": {
+        "history": 400,
+        "alpha": 10.0
+      },
+      "fitted_model_sha256": "0d9923d1bee8b51e1c63f345ed5a9d3eac2f7dfac82d1c4718d97be1a6d0c38e",
+      "protocol_sha256": "8396e404478c7622a7e9d7e56788a9c96f3526ba608e57aa65544043f264b72d",
+      "macro_mae_rad": 0.38589436965621116,
+      "resources": {
+        "peak_process_memory_mib": 664.4453125,
+        "cpu_seconds": 4.78125,
+        "analysis_wall_seconds": 18.82522729993798,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "wall_seconds_including_outputs": 18.838563699973747,
+        "error_count": 0
+      },
+      "timing": {
+        "passes": [
+          {
+            "repeat": 0,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0099,
+              "p95_ms": 0.10485,
+              "p99_ms": 0.6693
+            },
+            "prediction": {
+              "p50_ms": 0.003,
+              "p95_ms": 0.025,
+              "p99_ms": 0.1972
+            },
+            "combined": {
+              "p50_ms": 0.0129,
+              "p95_ms": 0.176,
+              "p99_ms": 0.8321
+            }
+          },
+          {
+            "repeat": 1,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0099,
+              "p95_ms": 0.1481,
+              "p99_ms": 1.067
+            },
+            "prediction": {
+              "p50_ms": 0.003,
+              "p95_ms": 0.0301,
+              "p99_ms": 0.3874
+            },
+            "combined": {
+              "p50_ms": 0.0129,
+              "p95_ms": 0.25015,
+              "p99_ms": 1.55765
+            }
+          },
+          {
+            "repeat": 2,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.01,
+              "p95_ms": 0.15365,
+              "p99_ms": 1.0419
+            },
+            "prediction": {
+              "p50_ms": 0.003,
+              "p95_ms": 0.02975,
+              "p99_ms": 0.36505
+            },
+            "combined": {
+              "p50_ms": 0.013,
+              "p95_ms": 0.27815,
+              "p99_ms": 1.32345
+            }
+          },
+          {
+            "repeat": 3,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0103,
+              "p95_ms": 0.2548,
+              "p99_ms": 2.0273
+            },
+            "prediction": {
+              "p50_ms": 0.0031,
+              "p95_ms": 0.04315,
+              "p99_ms": 0.5422
+            },
+            "combined": {
+              "p50_ms": 0.0136,
+              "p95_ms": 0.42015,
+              "p99_ms": 2.68305
+            }
+          },
+          {
+            "repeat": 4,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0099,
+              "p95_ms": 0.11375,
+              "p99_ms": 0.79715
+            },
+            "prediction": {
+              "p50_ms": 0.003,
+              "p95_ms": 0.0239,
+              "p99_ms": 0.24195
+            },
+            "combined": {
+              "p50_ms": 0.0129,
+              "p95_ms": 0.18725,
+              "p99_ms": 1.05715
+            }
+          }
+        ],
+        "prediction_sum_checksum": 719887.4440360073,
+        "definition": "Unbatched trailing-window feature extraction plus prediction; excludes HDF5 I/O, corruption, eligibility, replay scheduling, output serialization, and simulated waiting. Five warm repeated passes.",
+        "lookahead_ms": 0,
+        "update_period_ms": 20,
+        "warmup_samples": 400,
+        "replay_scheduling": "No wall-clock stream scheduler; offline iteration only."
+      }
+    },
+    {
+      "repeat": 4,
+      "selection": {
+        "history": 400,
+        "alpha": 10.0
+      },
+      "fitted_model_sha256": "0d9923d1bee8b51e1c63f345ed5a9d3eac2f7dfac82d1c4718d97be1a6d0c38e",
+      "protocol_sha256": "8396e404478c7622a7e9d7e56788a9c96f3526ba608e57aa65544043f264b72d",
+      "macro_mae_rad": 0.38589436965621116,
+      "resources": {
+        "peak_process_memory_mib": 664.22265625,
+        "cpu_seconds": 5.0,
+        "analysis_wall_seconds": 17.457913500024006,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "wall_seconds_including_outputs": 17.50086100003682,
+        "error_count": 0
+      },
+      "timing": {
+        "passes": [
+          {
+            "repeat": 0,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0099,
+              "p95_ms": 0.2167,
+              "p99_ms": 1.5294
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.0291,
+              "p99_ms": 0.45205
+            },
+            "combined": {
+              "p50_ms": 0.0128,
+              "p95_ms": 0.35745,
+              "p99_ms": 2.04945
+            }
+          },
+          {
+            "repeat": 1,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0097,
+              "p95_ms": 0.12555,
+              "p99_ms": 1.2737
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.02005,
+              "p99_ms": 0.2529
+            },
+            "combined": {
+              "p50_ms": 0.0124,
+              "p95_ms": 0.2214,
+              "p99_ms": 1.6735
+            }
+          },
+          {
+            "repeat": 2,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0099,
+              "p95_ms": 0.14025,
+              "p99_ms": 0.81865
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.0226,
+              "p99_ms": 0.21205
+            },
+            "combined": {
+              "p50_ms": 0.0126,
+              "p95_ms": 0.21685,
+              "p99_ms": 1.0339
+            }
+          },
+          {
+            "repeat": 3,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0098,
+              "p95_ms": 0.13075,
+              "p99_ms": 0.8483
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.0231,
+              "p99_ms": 0.2615
+            },
+            "combined": {
+              "p50_ms": 0.0126,
+              "p95_ms": 0.21985,
+              "p99_ms": 1.0876
+            }
+          },
+          {
+            "repeat": 4,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.01,
+              "p95_ms": 0.1858,
+              "p99_ms": 1.3561
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.0281,
+              "p99_ms": 0.3303
+            },
+            "combined": {
+              "p50_ms": 0.0128,
+              "p95_ms": 0.2853,
+              "p99_ms": 1.7653
+            }
+          }
+        ],
+        "prediction_sum_checksum": 719887.4440360073,
+        "definition": "Unbatched trailing-window feature extraction plus prediction; excludes HDF5 I/O, corruption, eligibility, replay scheduling, output serialization, and simulated waiting. Five warm repeated passes.",
+        "lookahead_ms": 0,
+        "update_period_ms": 20,
+        "warmup_samples": 400,
+        "replay_scheduling": "No wall-clock stream scheduler; offline iteration only."
+      }
+    },
+    {
+      "repeat": 5,
+      "selection": {
+        "history": 400,
+        "alpha": 10.0
+      },
+      "fitted_model_sha256": "0d9923d1bee8b51e1c63f345ed5a9d3eac2f7dfac82d1c4718d97be1a6d0c38e",
+      "protocol_sha256": "8396e404478c7622a7e9d7e56788a9c96f3526ba608e57aa65544043f264b72d",
+      "macro_mae_rad": 0.38589436965621116,
+      "resources": {
+        "peak_process_memory_mib": 663.58203125,
+        "cpu_seconds": 4.71875,
+        "analysis_wall_seconds": 16.4003455999773,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "wall_seconds_including_outputs": 16.426710500149056,
+        "error_count": 0
+      },
+      "timing": {
+        "passes": [
+          {
+            "repeat": 0,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0094,
+              "p95_ms": 0.06585,
+              "p99_ms": 0.3477
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.0145,
+              "p99_ms": 0.0992
+            },
+            "combined": {
+              "p50_ms": 0.0121,
+              "p95_ms": 0.09415,
+              "p99_ms": 0.4678
+            }
+          },
+          {
+            "repeat": 1,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0096,
+              "p95_ms": 0.0996,
+              "p99_ms": 0.5874
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.0217,
+              "p99_ms": 0.1328
+            },
+            "combined": {
+              "p50_ms": 0.0123,
+              "p95_ms": 0.14905,
+              "p99_ms": 0.7868
+            }
+          },
+          {
+            "repeat": 2,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0099,
+              "p95_ms": 0.1891,
+              "p99_ms": 1.54965
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.0307,
+              "p99_ms": 0.34065
+            },
+            "combined": {
+              "p50_ms": 0.0127,
+              "p95_ms": 0.28425,
+              "p99_ms": 2.0727
+            }
+          },
+          {
+            "repeat": 3,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0098,
+              "p95_ms": 0.13685,
+              "p99_ms": 1.23785
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.023,
+              "p99_ms": 0.31765
+            },
+            "combined": {
+              "p50_ms": 0.0126,
+              "p95_ms": 0.23915,
+              "p99_ms": 1.54715
+            }
+          },
+          {
+            "repeat": 4,
+            "outputs": 13551,
+            "feature": {
+              "p50_ms": 0.0098,
+              "p95_ms": 0.17675,
+              "p99_ms": 1.693
+            },
+            "prediction": {
+              "p50_ms": 0.0027,
+              "p95_ms": 0.0236,
+              "p99_ms": 0.3547
+            },
+            "combined": {
+              "p50_ms": 0.0125,
+              "p95_ms": 0.29405,
+              "p99_ms": 2.3892
+            }
+          }
+        ],
+        "prediction_sum_checksum": 719887.4440360073,
+        "definition": "Unbatched trailing-window feature extraction plus prediction; excludes HDF5 I/O, corruption, eligibility, replay scheduling, output serialization, and simulated waiting. Five warm repeated passes.",
+        "lookahead_ms": 0,
+        "update_period_ms": 20,
+        "warmup_samples": 400,
+        "replay_scheduling": "No wall-clock stream scheduler; offline iteration only."
+      }
+    }
+  ],
+  "wall_seconds": {
+    "median": 16.426710500149056,
+    "min": 14.206868899986148,
+    "max": 18.838563699973747
+  },
+  "host_control": "Ordinary interactive desktop, no exclusive-host control. Do not infer hard real-time guarantees.",
+  "profiling": "Separate cProfile run excluded from published timing. Window-array cumulative sums and repeated unbatched feature/prediction loops dominate; ridge solving is not the primary runtime cost.",
+  "independent_verification": {
+    "ridge": "Augmented least squares agrees with regularized normal-equation coefficients at rtol 1e-8, atol 1e-10.",
+    "features": "Direct trailing-window RMS checked at every 73rd eligible output in all 15 files.",
+    "maximum_feature_absolute_difference": 3.5707758971881276e-10
+  }
+}

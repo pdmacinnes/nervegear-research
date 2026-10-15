@@ -1,0 +1,5 @@
+include research/emg2pose/pilot-v1.json
+include research/emg2pose/acquisition.json
+include docs/reproduce-pilot.md
+include docs/datasets/emg2pose.md
+include FEATURE_MAP.md

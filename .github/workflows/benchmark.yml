@@ -1,0 +1,26 @@
+name: Benchmark checks
+
+on:
+  pull_request:
+  push:
+    branches: [main, feat/cpu-emg-pilot]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install ".[dev]"
+      - run: python -m unittest discover -s tests -v
+      - run: python -m ruff check .
+      - run: python -m ruff format --check nervegear_benchmark tests
+      - run: python -m build

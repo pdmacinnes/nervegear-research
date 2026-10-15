@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_id": "emg2pose-starter-left-pilot-v1",
-  "status": "proposed protocol derived from dataset audit; no training or model evaluation performed",
+  "status": "frozen for implementation after maintainer approval on 2026-10-14; data-quality inspection preceded protocol approval",
   "source_commit": "5f6f62b1a0a08426adffe55900842e75a8adb38c",
   "task": "absolute joint-angle regression from recorded EMG",
   "scope": "One person, one session, left hand, disjoint stage recordings. Custom pilot, not the official generalization benchmark.",
@@ -188,6 +188,9 @@
   ],
   "output_stride_samples": 40,
   "first_output_sample_index": 399,
+  "timestamp_step_nominal_bounds": [0.5, 1.5],
+  "software_delay_ms": [0, 20, 40, 100],
+  "timing_repeats": 5,
   "warmup_policy": "Use the common 400-sample warm-up for all window comparisons. Do not cross file boundaries.",
   "mask_policy": "A scored target must be finite and must not have all 20 angles close to zero under NumPy isclose defaults. Report exclusions and coverage. EMG history must be finite with consecutive source timestamps.",
   "feature_proposal": "16 per-channel log1p(RMS) values from the declared trailing window, with train-only standardization",

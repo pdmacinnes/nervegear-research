@@ -8,7 +8,7 @@ The public starter archive supports a bounded software-only pilot. It does not s
 
 The archive contains 30 HDF5 files covering both hands, one anonymized person, one session, and 15 stages. The default upstream mini configuration uses only six files, split across three recordings. The archive is larger than that example configuration's selection.
 
-All 30 starter files belong to the full dataset's validation split. A custom experiment that trains on them is not an official benchmark result. Preserve that distinction in every results table. No model has been trained or scored during this audit.
+All 30 starter files belong to the full dataset's validation split. A custom experiment that trains on them is not an official benchmark result. Preserve that distinction in every results table. No model was trained or scored during this audit. The subsequent approved implementation and results are in the [v1 pilot report](../experiments/emg2pose-pilot-v1.md).
 
 ## Pin sources and permitted use
 
