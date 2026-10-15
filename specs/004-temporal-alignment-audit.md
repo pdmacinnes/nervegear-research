@@ -4,6 +4,8 @@
 
 Status: Explicitly approved by the maintainer on October 15, 2026 with "Looks good" in response to the spec-review request. Implement and run this audit against the fixed protocol.
 
+Completed: The [result report](../docs/experiments/temporal-alignment-v1.md) records all nine supported folds, independent verification, repeatability, and limits. Linux and Windows checks passed on the [implementation commit](https://github.com/pdmacinnes/nervegear-research/actions/runs/38798097638).
+
 Test whether the fixed decoder benefits from correct timing within a held-out recording. Compare its aligned predictions with predictions shifted by fixed intervals within that same recording. The [calibration study](../docs/experiments/limited-label-calibration-v1.md) found no aggregate benefit from intercept calibration. This audit asks whether the existing decoder tracks movement before proposing another model or calibration method.
 
 Use only original custom-pilot training recordings 1-9, with each recording held out once. These recordings and earlier outcomes have been inspected. This is exploratory analysis of one person and session, not a blind test, an official emg2pose benchmark, or a preregistration. Original validation and test files remain excluded from verification, loading, fitting, and scoring.
@@ -51,4 +53,4 @@ The scoring subset is narrower than spec 003 because both 5-second source direct
 - [x] All nine folds publish support status and successive coverage counts. Every method uses identical targets. The report includes both shift directions and actual durations without selecting a favorable result.
 - [x] A separate direct index-and-error calculation agrees with a supported real-data fold. Five complete-process runs and an installed-package command reproduce scientific outputs within the existing CPU limits.
 - [x] Prior scientific artifacts remain unchanged, and published artifacts exclude raw and per-sample data and fitted coefficients. The report distinguishes causal aligned predictions from future-access diagnostic controls and states the exposed-data and single-session limits.
-- [ ] Update the reproduction guide, feature map, README, and roadmap after implementation. Existing and new tests, lint, formatting, package builds, document links, inspected plots, and Linux and Windows CI pass before delivery through a branch and PR. Keep automatic merging disabled.
+- [x] Update the reproduction guide, feature map, README, and roadmap after implementation. Existing and new tests, lint, formatting, package builds, document links, inspected plots, and Linux and Windows CI pass before delivery through a branch and PR. Keep automatic merging disabled.
