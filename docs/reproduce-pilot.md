@@ -83,6 +83,20 @@ The training-median and prefix-median controls use the same retained targets. Pr
 
 Read `summary.json`, `study.json`, `report.md`, the two SVG plots, and the completion marker. The [published report](experiments/temporal-alignment-v1.md) explains the primary mean-of-errors comparison, actual shift durations, and limits. Existing CPU, integrity, timeout, and no-overwrite rules apply. No new data or dependencies are required. For an installed package launched outside the checkout, supply absolute paths with both `--manifest` and `--alignment-protocol`.
 
+## Reproduce the causal history study
+
+```powershell
+python -m nervegear_benchmark history --data-dir data/emg2pose-audit/extracted/emg2pose_dataset_mini --output runs/my-history-01
+```
+
+The default protocol is [history-v1.json](../research/emg2pose/history-v1.json). Use `--history-protocol <path>` for an explicit copy. This option is valid only for `history`. The command verifies and opens only original custom training recordings 1-9. Original validation and test files can be absent. Unsupported settings fail.
+
+All five methods share complete 1,200-sample input validity, fitting rows, and scored targets. The original grid phase begins at endpoint 1199 with stride 40. Current and wide RMS use 400 and 1,200 samples respectively. History concatenates five 400-sample features ending at offsets 0, 200, 400, 600, and 800 samples in the past. Historic reference labels are unnecessary. Effective ridge alphas are 10, 10, and 50, with the history normalization fixed before analysis.
+
+Prefix median receives eligible labels strictly before 10 seconds. Scoring requires endpoint elapsed time at least 10.6 seconds and the full input history beginning at or after 10 seconds. A supported fold needs at least 25 prefix labels and 100 common scored outputs. Empty fitting data fail even if target folds would be unsupported. An entirely unsupported study publishes null metrics and explicit reasons.
+
+Read `summary.json`, `study.json`, `report.md`, both SVG plots, and the completion marker. The [published report](experiments/causal-history-v1.md) includes all comparisons, coverage, repeatability, and limitations. Existing CPU, integrity, timeout, and no-overwrite rules apply. No new data or dependency is needed. For an installed wheel launched outside the checkout, supply absolute `--manifest` and `--history-protocol` paths.
+
 ## Verify the software
 
 ```powershell

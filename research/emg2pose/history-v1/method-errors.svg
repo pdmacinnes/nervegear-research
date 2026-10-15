@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="340" viewBox="0 0 900 340" role="img" aria-label="Fixed causal EMG history comparison">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial,sans-serif" fill="#182637">
+<text x="24" y="34" font-size="21">Fixed causal EMG history comparison</text>
+<text x="24" y="60" font-size="14">MAE in degrees; common fitting and scoring timestamps</text>
+<text x="24" y="105" font-size="15">ridge_current</text>
+<rect x="230" y="86" width="382.26" height="28" fill="#2563a6" rx="3"/>
+<text x="622.26" y="105" font-size="15">16.89</text>
+<text x="24" y="151" font-size="15">ridge_wide</text>
+<rect x="230" y="132" width="370.20" height="28" fill="#2563a6" rx="3"/>
+<text x="610.20" y="151" font-size="15">16.36</text>
+<text x="24" y="197" font-size="15">ridge_history</text>
+<rect x="230" y="178" width="350.12" height="28" fill="#2563a6" rx="3"/>
+<text x="590.12" y="197" font-size="15">15.47</text>
+<text x="24" y="243" font-size="15">train_median</text>
+<rect x="230" y="224" width="486.96" height="28" fill="#2563a6" rx="3"/>
+<text x="726.96" y="243" font-size="15">21.52</text>
+<text x="24" y="289" font-size="15">prefix_median</text>
+<rect x="230" y="270" width="367.54" height="28" fill="#2563a6" rx="3"/>
+<text x="607.54" y="289" font-size="15">16.24</text>
+</g></svg>

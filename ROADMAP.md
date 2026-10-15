@@ -30,7 +30,11 @@ The October 14, 2026 session ended after that verified delivery. All five comple
 
 The approved October 15 [temporal alignment audit](docs/experiments/temporal-alignment-v1.md) is complete. Aligned ridge scores 17.111 degrees macro MAE versus 18.529 for the mean of the past and future 5-second errors, with seven improved and two worsened folds. All nine folds are supported. Correct timing helps this decoder on aggregate, but the prefix-median constant retains slightly lower MAE at 17.059 degrees on the same targets. Future shifts are diagnostic controls with future access. This result supports temporal information in the fixed decoder without establishing neural latency or live control.
 
-The next scope decision is whether to improve the representation of movement or pursue a separate sensory-encoding simulation. Another experiment requires its own hypothesis and approved protocol. The existing pilot, diagnostic, calibration, and alignment artifacts remain separate so their different scoring subsets and label access stay explicit.
+The approved [causal history study](docs/experiments/causal-history-v1.md) is complete. Five recent 200 ms features spanning 600 ms reduce macro MAE to 15.474 degrees, compared with 16.895 for current-window ridge, 16.362 for wide-window ridge, and 16.244 for prefix median on common timestamps. All nine folds are supported. The primary comparison improves eight folds and worsens one, while prefix median still wins five folds. Duplicate-current tests verify the fixed regularization normalization. More model parameters remain part of the history comparison.
+
+The next scope decision is whether to investigate the uneven gains across recordings or pursue a separate sensory-encoding simulation. No replacement model, expanded dataset, or follow-on study is selected automatically from these results.
+
+The existing pilot, diagnostic, calibration, and alignment artifacts remain separate so their different scoring subsets and label access stay explicit. Every further experiment needs its own bounded hypothesis and approved protocol.
 
 Read source metadata before downloading large recordings. The small starter subset checks software; it is not automatically sufficient for subject or session generalization. If the available subset cannot support a claim, narrow that claim. Do not expand automatically to the full archive or rent compute.
 
