@@ -7,11 +7,14 @@ from pathlib import Path
 
 def main():
     parser = argparse.ArgumentParser(description="Run the software-only EMG research commands")
-    parser.add_argument("command", choices=["run", "diagnose"])
+    parser.add_argument("command", choices=["run", "diagnose", "calibrate"])
     parser.add_argument("--manifest", type=Path, default=Path("research/emg2pose/pilot-v1.json"))
     parser.add_argument("--data-dir", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--calibration-protocol", type=Path)
     args = parser.parse_args()
+    if args.calibration_protocol is not None and args.command != "calibrate":
+        parser.error("--calibration-protocol is only valid for calibrate")
     for key in [
         "OPENBLAS_NUM_THREADS",
         "MKL_NUM_THREADS",
@@ -29,12 +32,23 @@ def main():
     watchdog.daemon = True
     watchdog.start()
     try:
-        if args.command == "diagnose":
+        if args.command == "calibrate":
+            from .calibration import run
+
+            run(
+                args.manifest,
+                args.data_dir,
+                args.output,
+                args.calibration_protocol or Path("research/emg2pose/calibration-v1.json"),
+            )
+        elif args.command == "diagnose":
             from .diagnostics import run
+
+            run(args.manifest, args.data_dir, args.output)
         else:
             from .pipeline import run
 
-        run(args.manifest, args.data_dir, args.output)
+            run(args.manifest, args.data_dir, args.output)
     except (OSError, ValueError, KeyError) as error:
         print(f"Benchmark failed: {error}", file=sys.stderr)
         return 1

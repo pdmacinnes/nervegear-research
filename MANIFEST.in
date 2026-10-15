@@ -5,3 +5,6 @@ include docs/datasets/emg2pose.md
 include FEATURE_MAP.md
 include specs/002-decoder-failure-diagnostics.md
 include docs/experiments/decoder-diagnostics-v1.md
+include research/emg2pose/calibration-v1.json
+include specs/003-limited-label-calibration.md
+include docs/experiments/limited-label-calibration-v1.md

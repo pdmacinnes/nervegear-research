@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "complete_unprofiled_runs": 5,
+  "runs": [
+    {
+      "repeat": 1,
+      "scientific_outputs_sha256": "53bad129ac42fe621ee17750786727ab30e2d24c42361f8f4dd106e7aabc13d9",
+      "resources": {
+        "analysis_wall_seconds": 0.6580763000529259,
+        "cpu_seconds": 0.484375,
+        "peak_process_memory_mib": 272.3671875,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 0.664830100024119
+      },
+      "subprocess_measurement": {
+        "repeat": 1,
+        "subprocess_wall_seconds": 1.1862790000159293,
+        "returncode": 0
+      }
+    },
+    {
+      "repeat": 2,
+      "scientific_outputs_sha256": "53bad129ac42fe621ee17750786727ab30e2d24c42361f8f4dd106e7aabc13d9",
+      "resources": {
+        "analysis_wall_seconds": 0.7072413999121636,
+        "cpu_seconds": 0.46875,
+        "peak_process_memory_mib": 272.1484375,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 0.715747700072825
+      },
+      "subprocess_measurement": {
+        "repeat": 2,
+        "subprocess_wall_seconds": 1.082005700096488,
+        "returncode": 0
+      }
+    },
+    {
+      "repeat": 3,
+      "scientific_outputs_sha256": "53bad129ac42fe621ee17750786727ab30e2d24c42361f8f4dd106e7aabc13d9",
+      "resources": {
+        "analysis_wall_seconds": 0.7299674001988024,
+        "cpu_seconds": 0.5,
+        "peak_process_memory_mib": 272.32421875,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 0.739130700007081
+      },
+      "subprocess_measurement": {
+        "repeat": 3,
+        "subprocess_wall_seconds": 1.0766761999111623,
+        "returncode": 0
+      }
+    },
+    {
+      "repeat": 4,
+      "scientific_outputs_sha256": "53bad129ac42fe621ee17750786727ab30e2d24c42361f8f4dd106e7aabc13d9",
+      "resources": {
+        "analysis_wall_seconds": 0.6423555000219494,
+        "cpu_seconds": 0.453125,
+        "peak_process_memory_mib": 272.1875,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 0.6505116999614984
+      },
+      "subprocess_measurement": {
+        "repeat": 4,
+        "subprocess_wall_seconds": 1.0148905001115054,
+        "returncode": 0
+      }
+    },
+    {
+      "repeat": 5,
+      "scientific_outputs_sha256": "53bad129ac42fe621ee17750786727ab30e2d24c42361f8f4dd106e7aabc13d9",
+      "resources": {
+        "analysis_wall_seconds": 0.6581290999893099,
+        "cpu_seconds": 0.453125,
+        "peak_process_memory_mib": 272.4609375,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 0.666343400022015
+      },
+      "subprocess_measurement": {
+        "repeat": 5,
+        "subprocess_wall_seconds": 1.0455657001584768,
+        "returncode": 0
+      }
+    }
+  ],
+  "subprocess_wall_seconds": {
+    "median": 1.0766761999111623,
+    "min": 1.0148905001115054,
+    "max": 1.1862790000159293
+  },
+  "wall_definition": "Parent perf_counter spans process startup, imports, analysis, output generation, and exit. Internal runner times exclude startup and imports.",
+  "profile": "Separate cProfile run excluded from timing summaries; feature construction and repeated fold fitting are the main analysis work; interpreter/module startup also contributes to full-process time. No exclusive-host control or speedup claim.",
+  "independent_check": {
+    "method": "Augmented least squares and direct prefix-offset/constant calculations for all six methods across all nine folds.",
+    "maximum_per_joint_mae_difference_rad": 3.552713678800501e-15
+  }
+}

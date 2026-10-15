@@ -23,6 +23,7 @@ This repository contains a literature-based study and a reproducible CPU-only EM
 | [Dataset audit](docs/datasets/emg2pose.md) | Verified starter data, license, labels, quality checks, and a bounded one-person pilot |
 | [Pilot results](docs/experiments/emg2pose-pilot-v1.md) | A simple decoder loses to constant pose; accuracy, sensitivity, timing, and limits |
 | [Failure diagnostics](docs/experiments/decoder-diagnostics-v1.md) | Training fit improves, validation advantage disappears, and numerical checks agree |
+| [Calibration study](docs/experiments/limited-label-calibration-v1.md) | A fixed labeled prefix does not improve aggregate MAE over uncalibrated ridge or the primary matched-label constant |
 | [Reproduction guide](docs/reproduce-pilot.md) | Install, acquire the bounded data, run the experiment, and verify the package |
 | [Feature map](FEATURE_MAP.md) | Executable behavior and its tests |
 
@@ -40,7 +41,9 @@ The first project asks how prediction accuracy and responsiveness change when a 
 
 The approved first pilot is complete. The validation-selected RMS ridge decoder scores 22.110 degrees of test macro angular error, compared with 13.957 degrees for a train-set median pose. All three declared histories lose to constant-pose baselines. Five CPU runs reproduce the same scientific results. Read the [report](docs/experiments/emg2pose-pilot-v1.md) before interpreting those numbers.
 
-The [follow-on diagnostics](docs/experiments/decoder-diagnostics-v1.md) are complete using only training and validation data. Ridge improves training fit but loses its advantage on validation tasks. Independent solvers agree, while rare range violations and simple feature shifts leave much of the failure unexplained. Recording-specific bias motivates a separate, limited-label calibration hypothesis; that experiment has not been performed.
+The [follow-on diagnostics](docs/experiments/decoder-diagnostics-v1.md) are complete using only training and validation data. Ridge improves training fit but loses its advantage on validation tasks. Independent solvers agree, while rare range violations and simple feature shifts leave much of the failure unexplained.
+
+The [fixed-prefix calibration study](docs/experiments/limited-label-calibration-v1.md) is also complete. Using only original training recordings, 10-second intercept calibration scores 17.103 degrees macro error versus 16.886 for uncalibrated ridge and 16.217 for the primary equally informed prefix-median constant. All nine folds are reported. Calibration helps some recordings but does not improve the declared aggregate comparison. No further experiment is started tonight.
 
 The data contain one person in one session, so this work cannot establish new-person or new-session performance. No later hardware stage is required. Offline decoding and simulated perturbations cannot establish live user control, tactile benefit, subjective perception, or clinical safety.
 
