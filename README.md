@@ -19,20 +19,21 @@ This repository starts with a literature-based study. It contains no implemented
 | [Systems architecture](docs/systems-architecture.md) | Components and information flows, including unresolved physical-body interactions |
 | [Reading list](docs/references.md) | 54 sources covering papers, programs, datasets, tools, and motivation |
 | [Roadmap](ROADMAP.md) | Immediate work and 0-5, 5-15, and 15+ year research horizons |
-| [First-project spec](specs/001-stationary-virtual-hand.md) | Proposed stationary virtual-hand experiment using low-force EMG and tactile feedback |
+| [First-project spec](specs/001-stationary-virtual-hand.md) | Proposed software-only benchmark of causal hand-pose decoding from public EMG recordings |
 
-## Start with one measured closed loop
+## Start with public recordings and a causal decoder
 
-The proposed first project asks whether sparse tactile feedback improves low-force EMG control of a virtual grasp after sensors are removed and replaced across days.
+The project assumes no access to specialized hardware now or later. Every required milestone must be achievable on an ordinary computer using public data, analysis, or simulation. A headset, electrodes, implants, new recordings, lab access, a GPU, and paid cloud services are not prerequisites.
 
-1. Audit the papers behind the experiment and approve its spec.
-2. Build the virtual grasp task with conventional input and synthetic signals.
-3. Choose and bench-test recording hardware against the measured requirements.
-4. Add EMG, idle detection, mechanical feedback, and physical movement measurement.
-5. Compare informative feedback with visual-only and control conditions across at least five separate days.
-6. Publish a reproducible feasibility report, including null or negative results.
+The proposed first project asks how prediction accuracy and responsiveness change when a hand-pose decoder can use only past and current EMG samples. Test generalization on held-out people, tasks, and recording sessions where the chosen subset permits those comparisons.
 
-The spec is **proposed and awaiting approval**. Hardware purchases, implementation, recruitment, and data collection have not started. A headset is optional. The planning hardware budget is USD 300-1,000 excluding a computer and optional headset, subject to parts review.
+1. Audit the dataset, license, labels, split definitions, and download requirements.
+2. Review the revised software-only spec before implementation.
+3. Build a small CPU baseline with synthetic fixtures and a bounded public-data subset.
+4. Measure held-out pose error, causal window length, processing time, and failure under missing or noisy input.
+5. Compare a simple decoder against a matched baseline and publish the results, including null or negative findings.
+
+The revised spec is **proposed and awaiting approval**. No executable prototype or dataset download has started. The benchmark is a complete research deliverable, with no later hardware stage required. Offline decoding and simulated perturbations cannot establish live user control, tactile benefit, subjective perception, or clinical safety.
 
 ## Read evidence labels precisely
 

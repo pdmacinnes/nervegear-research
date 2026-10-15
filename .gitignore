@@ -8,8 +8,9 @@ __pycache__/
 node_modules/
 .DS_Store
 Thumbs.db
-data/raw/
-data/private/
+data/
+results/
+runs/
 recordings/
 participants/
 local/

@@ -81,6 +81,8 @@ These sources document the organizations' reports and objectives. They are not s
 
 ## Public datasets and models
 
+The project assumes no specialized hardware access at any stage. These resources support complete software-only research deliverables. For the first project, audit the emg2pose metadata and small starter subset before choosing a scientific evaluation subset. The authors list a roughly 600 MiB starter archive and a 431 GiB full archive. The full archive is not a prerequisite. The starter set is for software checks, so inspect its split coverage before making generalization claims. [Author documentation](https://github.com/facebookresearch/emg2pose)
+
 | Source | Content | Important limit |
 | --- | --- | --- |
 | <a id="r42"></a>[R42. emg2pose](https://github.com/facebookresearch/emg2pose) | Wrist EMG paired with hand pose | Noncommercial license; check terms and session splits |

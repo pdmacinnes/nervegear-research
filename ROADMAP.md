@@ -2,63 +2,58 @@
 
 Evidence baseline: October 14, 2026. Time windows are research planning horizons, not predictions of full-dive availability.
 
-## Start with one closed sensorimotor loop
+## Complete the independent work in software
 
-The first question is whether low-force EMG and a small tactile channel support useful stationary virtual-hand control across days. See [spec 001](specs/001-stationary-virtual-hand.md). Its status is proposed, awaiting approval. No prototype has been implemented.
+The maintainer has no specialized hardware and expects no future access. Every required milestone must finish on an ordinary computer using public data, analysis, or simulation. Do not make hardware purchases, laboratory access, new recordings, participant recruitment, GPUs, or paid cloud services prerequisites.
+
+The first project asks how hand-pose prediction accuracy and responsiveness change under causal processing, limited calibration, and held-out evaluation. Use public EMG recordings and their reference labels. See [spec 001](specs/001-stationary-virtual-hand.md), revised for software-only work and awaiting approval. No executable prototype or dataset download has started.
 
 | Step | Work | Evidence required to finish |
 | --- | --- | --- |
-| 1. Audit the evidence | Read the key papers, verify metrics against results and methods, record important limitations | A traceable evidence record for each claim used to choose the experiment |
-| 2. Approve the experiment | Fix the task, primary outcome, comparisons, data policy, budget, and first implementation scope | Maintainer approval recorded in spec 001 |
-| 3. Establish a software baseline | Build a one-degree-of-freedom virtual grasp task using a conventional controller and synthetic signals | Repeatable task behavior, known ground truth, visible error conditions, and passing behavior tests |
-| 4. Select recording hardware | Check available equipment and bench-test acquisition, raw signal access, synchronization, and electrical isolation | A reviewed parts list within the approved budget and measured acquisition performance |
-| 5. Close the loop | Add EMG control, idle detection, mechanical feedback, and physical movement measurement | Measured end-to-end delay, false activations, movement, and task success |
-| 6. Run a feasibility pilot | Compare visual-only, informative feedback, and control feedback across separate days | A complete report, including null or negative results and artifact checks |
-| 7. Choose the research direction | Identify whether drift, feedback encoding, latency, or user learning limits performance | One follow-on hypothesis supported by the pilot |
+| 1. Audit the evidence and data | Check licenses, target labels, official splits, session coverage, and bounded downloads | A dataset card and an evaluation manifest that support the intended claims |
+| 2. Review the revised spec | Fix the target, primary metric, comparisons, causality rules, and compute limits | Maintainer approval of the revised scope before implementation |
+| 3. Establish a CPU baseline | Use synthetic fixtures and a small public subset to reproduce loading, alignment, and a simple decoder | Passing behavior tests, a repeatable command, and measured resource use |
+| 4. Run held-out evaluations | Compare accuracy and timing under declared past-only windows and calibration allowances | Paired results against simple baselines on a frozen test manifest |
+| 5. Test robustness | Apply reproducible channel dropout, noise, gain changes, and added software delay | Sensitivity curves explicitly labeled as simulated perturbations |
+| 6. Publish the benchmark | Release code, manifests, environment details, and results without restricted recordings | A reproducible report that states limitations and includes negative findings |
+| 7. Choose the next question | Follow the strongest observed failure or compare a sensory-encoding model | One bounded follow-on hypothesis supported by the benchmark |
 
-The software baseline is a rehearsal of the task. Results from synthetic input do not establish that EMG control or tactile feedback works in a person. Select hardware after the task and measurement requirements are settled.
+Read source metadata before downloading large recordings. The small starter subset checks software; it is not automatically sufficient for subject or session generalization. If the available subset cannot support a claim, narrow that claim. Do not expand automatically to the full archive or rent compute.
+
+Offline replay is a complete research method with limited claims. Predictions cannot change the actions in a fixed recording. It does not establish live user control, stationary movement, tactile benefit, embodiment, or clinical safety. A simulated feedback controller adds model assumptions rather than human evidence.
 
 ## Near term: 0-5 years
 
 Approximately 2026-2031.
 
-Work on reliable low-force motor readout, idle detection, sparse tactile feedback, and calibration after sensor replacement. Clinical research can extend bidirectional interfaces for a hand or limb and improve independent home use.
+Independent contributions can include causal decoding benchmarks, reliable evaluation splits, uncertainty estimation, calibration studies, signal compression, and sensitivity to synthetic corruption. Use public datasets and report the original acquisition conditions. Software can also compare tactile encoders or prosthetic-vision models under stated assumptions.
 
-Demonstrate closed-loop performance across days and users, measure physical movement, control feedback artifacts, and compare with simpler interfaces. Add another control dimension only after the first is reliable.
-
-This horizon has strong foundations in existing human demonstrations. It does not imply that arbitrary whole-body control or sensory replacement is available.
+The wider field may improve low-force readout, sensory feedback, and clinical home use. Those external developments inform this project but are not its deliverables. Do not wait for access to implants or recording equipment.
 
 ## Medium term: 5-15 years
 
 Approximately 2031-2041.
 
-Possible research targets include richer chronic sensory prostheses, simultaneous control of more body parts, distributed brain and peripheral interfaces, and better movement and load perception.
+Possible independent work includes testing methods across new public cohorts, improving model-based sensory encoding, and contributing evaluation tools to established open projects. Cross-dataset work requires compatible labels and permissions. A shared task name alone does not establish comparability.
 
-Before treating these as steps toward strict full-dive, demonstrate that added hardware creates independent perceptual dimensions. Show functional benefit without depending on constant visual compensation. Measure chronic usability, calibration burden, adverse events, and removal or recovery behavior.
-
-Progress depends on uncertain advances in selectivity, materials, encoding, and sensory integration. The dates do not guarantee those advances.
+The wider field needs richer chronic sensory prostheses, selective access, and evidence of useful simultaneous perception. Public evidence from other researchers can update the feasibility study. This repository does not promise to perform those physical experiments.
 
 ## Long term: 15+ years
 
 Beyond approximately 2041.
 
-Strict full-dive would require coordinated sensory experience across the body while managing physical movement and contradictory natural sensation. It would also require acceptable chronic risk for the intended user population.
+Strict full-dive needs coordinated sensory experience, safe motor separation, management of contradictory natural sensation, and acceptable chronic risk. There is no defensible completion date. These remain research questions even if software models become much better.
 
-There is no defensible completion date. Some architectures may prove impractical. Better rendering alone cannot establish safe motor separation, natural proprioception, or vestibular replacement.
+The independent path remains complete without hardware access. Reproducible methods, well-controlled negative results, and better comparisons can contribute to the field while leaving physiological validation to appropriately equipped researchers.
 
-## Advance by demonstrated capability
+## Separate project milestones from field milestones
 
-1. Control one virtual action reliably.
-2. Provide feedback that improves that action.
-3. Establish useful embodiment of one virtual limb.
-4. Support simultaneous actions and sensory inputs.
-5. Produce convincing virtual movement while the physical body stays largely stationary.
-6. Establish safe repeated operation across the intended functions.
+For this repository, finish a dataset audit, a baseline, a frozen comparison, and a report. Add optional desktop visualizations only when they help inspect the results. Do not build a VR scene merely to make an offline decoder look like a full-dive demonstration.
 
-Do not treat more electrodes, a larger model, an implantation announcement, or a regulatory designation as completion of a functional milestone.
+For the wider field, the sequence remains reliable action control, useful sensory feedback, limb embodiment, simultaneous sensory and motor function, convincing stationary movement, and safe repeated operation. Completing a software benchmark does not complete those physiological milestones.
 
-## Keep the independent work bounded
+## Keep costs and publication bounded
 
-The proposed first experiment has an estimated planning budget of USD 300-1,000 excluding a computer and optional headset. This is not a current vendor quote or authorization to buy hardware. Its first useful outcome is a reproducible measurement, not a full-dive claim.
+The required specialized-hardware budget is USD 0. No paid service is required. Record the ordinary computer's capabilities before setting a data and runtime budget. Prefer a small CPU experiment over a large model that requires an assumed GPU.
 
-Choose a project license before inviting substantial external contributions. Keep raw personal recordings private until a separate consent and release decision permits publication.
+Choose a project license before inviting substantial external contributions. Respect dataset licenses separately. Keep downloaded data and generated run files out of Git. Publish acquisition instructions and manifests rather than bundling another project's recordings.

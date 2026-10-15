@@ -47,8 +47,12 @@ Readout estimates voluntary action. Feedback generates sensations that help the 
 
 The physical body continues to supply sensory input. Writing a virtual limb-position signal does not necessarily remove the real limb-position signal. Preventing physical displacement does not remove muscle activation, effort, or afferent feedback.
 
-## Start with the accessible path
+## Study the accessible path in software
 
-The first project uses surface EMG, a virtual hand, and mechanical vibration. Ordinary vision and hearing remain available. The hand is supported and physical movement is measured. The project calls vibration-based force cues sensory substitution rather than natural touch restoration.
+The first project studies the readout and intent-decoder portion using public EMG recordings paired with hand-pose labels. A desktop pose replay may help inspect errors, but it is optional. No specialized hardware or new participant recording is required at any stage.
+
+Recorded labels provide reference movements from the original experiment. Predictions cannot change those recorded actions. Offline replay therefore does not close a physiological feedback loop. It cannot establish useful tactile feedback, embodiment, stationary control, or the subjective quality of stimulation.
+
+The complete diagram remains a map of the field. It is not the implementation scope of this repository. Sensory-writing questions can be studied later through documented models, with their assumptions stated and human perception left unproven.
 
 See the [feasibility study](feasibility-study.md) for evidence and the [first-project spec](../specs/001-stationary-virtual-hand.md) for proposed implementation requirements.

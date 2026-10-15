@@ -1,98 +1,95 @@
-# Spec: Stationary virtual-hand feasibility experiment
+# Spec: Software-only causal EMG hand-pose benchmark
 
-Status: Proposed, awaiting maintainer approval.
+Status: Software-only scope confirmed by the maintainer. Revised evaluation details are proposed for review before implementation.
 
-Created: October 14, 2026.
+Created: October 14, 2026. Revised after the maintainer clarified that specialized hardware will not be available.
 
-This document specifies a possible first experiment. Publishing it does not approve implementation, hardware purchases, recruitment, or human data collection.
+The filename is retained to preserve existing links. This proposal replaces the earlier recording-and-tactile-feedback experiment. No executable prototype, dataset download, hardware purchase, or human experiment has started.
 
 ## Requirements & Goals
 
-Investigate whether low-force surface electromyography can control one continuous virtual grasp command while the physical hand remains comfortably supported. Test whether sparse mechanical tactile feedback improves control after sensors are removed and replaced across days.
+Build a reproducible offline benchmark of hand-pose decoding from public surface EMG recordings. The question is whether a simple causal decoder maintains useful accuracy under limited calibration and held-out evaluation, and how prediction quality changes with processing window and simulated signal corruption.
 
-The experiment addresses motor readout, feedback encoding, calibration drift, latency, and the distinction between physical stillness and physiological inactivity. It does not claim natural tactile restoration, complete movement suppression, or full-dive VR.
+The maintainer has no specialized hardware now and expects no future access. Every acceptance criterion must be achievable on an ordinary computer. Do not require electrodes, a headset, implants, new recordings, participant recruitment, lab access, GPUs, or paid cloud services. The specialized-hardware budget is USD 0.
 
-The primary scientific question is whether informative feedback reduces absolute virtual grasp-force error during a standardized hold task when visual force information is partially obscured. Task success, force overshoot, completion time, workload, and embodiment are secondary outcomes.
+Start with emg2pose and its author-maintained [dataset documentation](https://github.com/facebookresearch/emg2pose). Audit metadata, licenses, labels, and split definitions before downloading recordings. Use the starter subset for software checks only unless its actual coverage supports a declared scientific comparison. Do not require the full archive. A different dataset requires a documented amendment that identifies compatible labels and changes to the hypothesis.
 
-Start with a conventional controller and synthetic biosignals to establish task behavior. Add recording hardware only after the task and measurement path work. Begin with two EMG channels and one command dimension. Compare a simple amplitude-based controller with a learned controller only if the simpler controller exposes a concrete limitation.
+The first target is hand joint angles using the author's label definitions. Audit coordinate conventions, units, valid masks, and timestamps before fixing the selected joints. Do not invent grasp force or intention labels from kinematics. This dataset records natural movement and cannot establish stationary low-force control.
 
-The physical interface uses recording electrodes and benign mechanical vibration. It excludes implants, electrical nerve stimulation, pain generation, thermal stimulation, and active movement suppression. Maintain an independent user stop control.
+Use a CPU-compatible baseline, such as regularized regression on past-only EMG features. Include a train-set mean-pose baseline. If a tracking method uses an initial reference pose, declare the initial-pose input and compare against a hold-initial-pose baseline with the same information. Do not let one model use extra reference measurements silently.
 
-The estimated hardware planning allowance is USD 300-1,000 excluding an existing computer and optional headset. Confirm equipment already available and review a current parts list before purchase. A headset is optional for the first task.
+The primary metric is mean absolute joint-angle error on a frozen held-out manifest, in declared angular units. Report per-joint and per-subject or per-session results so long recordings do not silently dominate the aggregate. A lower error is a scientific outcome, not a completion condition. A negative result is acceptable.
 
 ## Inputs, Outputs & Behavior
 
-Inputs are two timestamped EMG streams, calibration references, physical movement measurements, a selected task condition, and an independent stop signal. The software baseline accepts conventional input and synthetic streams with known values.
+Inputs are licensed public EMG recordings, aligned reference joint angles, available source metadata, and a versioned experiment configuration. Use generated synthetic fixtures for tests of alignment, causal processing, splits, and known failure conditions.
 
-Outputs are one normalized virtual grasp command, virtual object state and force, mechanical feedback commands, and a local session record. The record includes timing, controller configuration, condition order, calibration events, task outcomes, and data-quality events.
+Outputs are a dataset card, acquisition manifest, frozen evaluation manifest, preprocessing description, simple baseline results, error and timing tables, robustness plots, and a report. An optional desktop hand-pose replay may aid inspection. It is not required and does not demonstrate embodiment.
 
 The normal flow is:
 
-1. Verify the bench-tested acquisition and feedback paths before body-connected use. Body-connected recording electronics operate on battery power and communicate wirelessly. Do not charge or attach mains-connected acquisition equipment while electrodes are worn.
-2. Check skin contact and comfort. Support the hand without restraint that prevents voluntary withdrawal.
-3. Record baseline rest, low-force calibration activity, and a physical movement reference. State the movement measurement's accuracy and detection limit.
-4. Run a practice block. Freeze task thresholds and analysis choices before collecting the comparative evaluation data.
-5. Run randomized blocks under visual-only feedback, informative tactile feedback, and control vibration with similar exposure but no useful relation to the current task.
-6. Ask the user to grasp and hold virtual objects without dropping or crushing them. Object stiffness and target force come from a reproducible schedule.
-7. Partially obscure visual force information in the evaluation task. Keep the amount of occlusion consistent across conditions.
-8. Record rest periods and incidental movement to measure false activations.
-9. Include feedback-only relaxed trials to test whether vibration mechanically contaminates the EMG or movement measurements.
-10. Repeat across at least five separate days with sensor removal and replacement. Record calibration time and controller changes each day.
-11. Analyze the primary outcome by session and condition. Report uncertainty, missing data, and null or negative results.
+1. Inventory the ordinary computer's memory, processor, disk, and available software. Do not assume a GPU or install a paid service.
+2. Audit metadata and the license. Record the source version or commit, source URLs, file identifiers, available people and sessions, target labels, and official evaluation definitions.
+3. Propose a bounded subset. Default download limits are at most 1 GiB of archives and 5 GiB of project data on disk. These are provisional project caps, not claims about actual extraction sizes. Stop and narrow scope if the selected data exceed them.
+4. Download only the declared files after the audit. Record checksums and actual sizes. Follow author download methods rather than inventing unsupported per-file endpoints.
+5. Validate timestamps, masks, finite values, coordinate conventions, and alignment with synthetic fixtures and data inspection.
+6. Freeze train, validation, and test membership by source grouping before windowing. Preserve official held-out identities for any claim of official-benchmark comparability. Treat an original smaller experiment as a separate evaluation.
+7. Fit preprocessing and the simple decoder using training data only. Select parameters on validation data. Do not use test outcomes to select the model, window, joints, or calibration policy.
+8. Evaluate prediction at time t using samples at or before t. Label window duration, update period, prediction horizon, signal conditioning, and any initial reference pose.
+9. Compare declared past-only windows, for example 50, 100, and 200 ms, when the selected data permit them. A causal history window is not automatically an equivalent buffering delay. Report actual buffering or lookahead separately.
+10. Measure processing time distributions after warm-up under a declared CPU configuration. Report model execution, feature processing, replay scheduling, and whole-pipeline timing separately where applicable. Do not call offline execution time sensor-to-percept latency.
+11. Apply seeded channel dropout, noise, gain changes, and software delay. State their exact definitions. Artificial corruption is not evidence of real electrode replacement or physiological drift.
+12. Report paired outcomes on the same test examples and resource use. Publish code, manifests, and acquisition instructions. Do not redistribute recordings or derived data unless their license permits it.
 
-Use a counterbalanced order across days. Decide the number and length of blocks, trial count, rest intervals, matching of control vibration, and the primary statistical contrast before human evaluation. A one-person pilot is exploratory and cannot establish population-level efficacy.
+Evaluate held-out people, tasks, and sessions only where metadata and subset membership support them. Separate recording sessions are not necessarily separate calendar days or documented sensor replacements. If a comparison is unsupported, report it as unavailable.
 
-The data record must distinguish user-generated commands from any assistance the virtual controller provides. Synchronize independent devices and measure residual clock error. Use physical measurements of actuator onset when reporting end-to-end output delay.
+Any calibration experiment must declare its labeled-data allowance, separate calibration examples from scored examples, and give matched methods the same allowance. A model adapted with test labels is a supervised-calibration condition rather than zero-calibration generalization.
 
-For raw EMG, target acquisition near 1-2 kHz per channel when supported by the chosen hardware and antialiasing design. Process signals causally. Record the filter response, window length, update period, and measured controller delay. An envelope-only sensor is sufficient for a basic amplitude controller but does not establish motor-unit decoding.
+No simulated human feedback policy is needed for the first benchmark. A later controller simulation would require a separate spec that states the plant, user-policy assumptions, and what empirical data constrain them. Fixed recording replay is never a live physiological closed loop.
 
-The provisional engineering target is a 95th-percentile command-to-feedback onset delay of at most 100 ms after the controller emits a command. Report acquisition and estimation delay separately and also report the total signal-to-feedback delay. This is a project target, not a biological full-dive requirement.
-
-The implementation deliverables are a reproducible task, calibration procedure, measurement report, analysis, and a hardware description. Publish synthetic or deliberately approved de-identified data only. Store raw personal recordings outside version control.
+The dataset audit will set a provisional run-time cap for the chosen computer before training. Keep one fully specified CPU run as the reproducibility target. Optional larger models or accelerators must not determine project completion.
 
 ## Edge Cases & Error Handling
 
-- If acquisition becomes stale, disconnects, or loses timestamp ordering, enter idle and disable feedback until the operator restarts the session.
-- If electrodes detach, the signal clips, or data quality leaves the validated range, pause the trial and label its data. Do not silently interpret the fault as intention.
-- If feedback contaminates EMG, identify the path and fix or redesign the setup before interpreting comparative results.
-- If a person experiences discomfort, fatigue, skin irritation, or motion sickness, stop the session. A discomfort event is data, not a reason to push through the task.
-- If the stop control, application, or feedback device fails, the feedback output must stop independently of the learned controller.
-- If the physical movement sensor cannot detect small displacements, report that limit. Do not report that no movement occurred.
-- If performance changes after sensor replacement, report both fixed-controller and recalibrated results. Do not combine them into one generalization score.
-- If the controller activates during rest, report events per minute and their magnitude. Accuracy during prompted movement cannot replace this measure.
-- If data are missing, exclude or retain them under a declared rule and report the affected trials. Do not hide failed sessions.
-- If a model uses overlapping windows, split by session before windowing. Fit normalization and other learned preprocessing on training data only.
-- If a model uses future samples or another noncausal step, label the analysis offline. Do not report its execution time as live controller latency.
-- If synthetic or conventional input succeeds but EMG does not, treat the result as a working task with an unproven physiological interface.
-
-Before recruiting anyone, establish the applicable consent, privacy, and research review requirements. Keep participant identities, consent records, and biosignals out of the public repository. A future publication or dataset release needs a separate release review.
+- If the license is incompatible with intended use, stop acquisition and revise the data choice. Public download access is not a license.
+- If a file is unavailable, corrupt, or has a checksum mismatch, record the failure and revise the manifest explicitly. Do not silently substitute data.
+- If archive or extracted size exceeds the caps, stop and narrow the subset. Do not fetch the full dataset automatically.
+- If the starter subset lacks independent groups, limit it to software checks and identify a bounded supported evaluation. Do not claim generalization from overlapping windows.
+- If reference units or timestamps are ambiguous, resolve them before scoring. Do not choose a time shift by minimizing test error.
+- If channels or reference joints are invalid, apply a predetermined mask and report exclusions. Do not remove difficult test examples after seeing their errors.
+- If preprocessing uses future samples, label it noncausal and keep it out of the causal comparison. Include filter initialization and boundary behavior in the audit.
+- If initial pose is unavailable, use a method that does not need it or declare the condition unsupported. Do not infer unseen test reference inputs without disclosure.
+- If a channel fails or a stream segment is missing, produce an explicit invalid or degraded output with timestamps. Do not score fabricated predictions as ordinary valid samples.
+- If a model fails to outperform mean pose, report the result. Investigate alignment and data leakage without changing frozen expectations to make a model win.
+- If a timing target fails, report the bottleneck and measured configuration. Do not remove slow runs from the distribution without a declared rule.
+- If rest or intended-action labels are absent, do not report physiological idle detection or false intent activations. Synthetic stale-input handling is a software property only.
+- If session dates or electrode-replacement records are absent, do not report cross-day or sensor-replacement validation.
+- If a run exceeds the declared compute limit, stop it and document the revised design. Do not add paid compute as an implicit dependency.
 
 ## Acceptance Criteria
 
-Approval and readiness:
+Scope and readiness:
 
-- [ ] The maintainer approves this spec and records the decision before implementation.
-- [ ] The task, primary contrast, trial schedule, rest schedule, movement threshold, and analysis rules are fixed before comparative human data collection.
-- [ ] The parts list fits the approved budget, and the acquisition and feedback paths pass bench checks before body-connected use.
-- [ ] Applicable human research, consent, and data-handling requirements are established before recruitment or collection.
+- [ ] The maintainer approves the revised software-only experimental details before implementation.
+- [ ] Every required milestone works without specialized hardware, new recordings, lab access, a GPU, or paid cloud services.
+- [ ] A dataset card states source version, license, targets, units, masks, acquisition conditions, supported comparisons, and unsupported claims.
+- [ ] A bounded acquisition manifest records checksums and sizes within the declared limits. No full-archive dependency exists.
+- [ ] A frozen evaluation manifest defines grouping, train and validation separation, test membership, joint selection, primary metric, and calibration allowances.
 
-Software and measurement:
+Implementation and measurement:
 
-- [ ] The conventional-input and synthetic-input baseline runs repeatable grasp, hold, drop, and crush scenarios with known ground truth.
-- [ ] Behavior tests fail for expected faults before their implementation fixes and pass afterward. Required unit, lint, build, and journey checks pass before a prototype PR.
-- [ ] Acquisition failure, stale input, invalid timestamps, and operator stop each produce a verified idle state and disabled feedback.
-- [ ] A screenshot of the implemented task is inspected before the UI is considered complete.
-- [ ] `FEATURE_MAP.md` describes implemented capabilities and their verification when the prototype exists.
-- [ ] The report includes raw acquisition rate, processing windows, controller update rate, clock error, and measured delay distributions.
-- [ ] The provisional 100 ms command-to-feedback 95th-percentile target is measured. A miss blocks comparative evaluation until its cause is understood and the design is fixed or the target is explicitly revised.
+- [ ] Behavior tests fail for expected faults before fixes and pass afterward. Appropriate unit, lint, and execution checks pass before the implementation PR. A user-facing replay, if added, has a journey check and inspected screenshot.
+- [ ] Tests prove alignment and that changing future samples cannot change earlier causal predictions or features. They also check train-only normalization and split isolation.
+- [ ] The baseline and decoder use matched reference inputs and report initial-pose access explicitly.
+- [ ] Missing, invalid, and stale segments produce documented outputs and scoring exclusions, with coverage reported.
+- [ ] A repeatable CPU command reproduces the baseline and a small evaluation on public data within the machine-specific run budget.
+- [ ] `FEATURE_MAP.md` describes the implemented commands and checks once executable features exist.
 
-Experiment and reporting:
+Results and interpretation:
 
-- [ ] The system exposes one continuous command and explicit idle detection, with task performance and rest false activations reported.
-- [ ] Physical movement, effort, calibration time, and the limits of their measurements are reported.
-- [ ] Informative tactile feedback is compared with visual-only feedback and matched control vibration under randomized, counterbalanced conditions.
-- [ ] Feedback-only relaxed trials establish whether mechanical artifacts can explain the decoded signal.
-- [ ] At least five separate recording days include sensor removal and replacement, with fixed-controller and recalibrated results identified separately.
-- [ ] The report includes all completed and failed sessions, primary and secondary outcomes, uncertainty, and any departure from the approved protocol.
-- [ ] Reproduction materials contain no credentials, identities, consent documents, or unapproved personal recordings.
-- [ ] The report accepts a null result and makes no claim of full-dive capability or population-level efficacy from a one-person feasibility pilot.
+- [ ] The report gives held-out angular error, per-group aggregation, scored coverage, window length, prediction horizon, buffering, processing-time distribution, and resource use.
+- [ ] Corruption tests use declared seeded parameters and the same test examples as the clean condition.
+- [ ] Supported generalization comparisons are reported. Unsupported people, task, session, day, rest, or replacement comparisons are named as unavailable.
+- [ ] Results include null or negative findings and do not require beating the baseline to count as complete.
+- [ ] Published materials include reproducible configuration and manifests without credentials or restricted recordings.
+- [ ] The report explicitly limits conclusions to offline prediction and simulated perturbations. It makes no claim of live physiological control, tactile benefit, subjective perception, full-dive capability, or clinical safety.
