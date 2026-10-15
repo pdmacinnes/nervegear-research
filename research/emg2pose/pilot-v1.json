@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "protocol_id": "emg2pose-starter-left-pilot-v1",
+  "status": "proposed protocol derived from dataset audit; no training or model evaluation performed",
+  "source_commit": "5f6f62b1a0a08426adffe55900842e75a8adb38c",
+  "task": "absolute joint-angle regression from recorded EMG",
+  "scope": "One person, one session, left hand, disjoint stage recordings. Custom pilot, not the official generalization benchmark.",
+  "file_split_rule": "recordings 1-9 train, 10-12 validation, 13-15 test; right-hand files unused",
+  "files": [
+    {
+      "recording": 1,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-1_left.hdf5",
+      "split": "train",
+      "stage": "ThumbsUpDownThumbRotationsCWCCWP",
+      "source_split": "val",
+      "sha256": "4f873e440f957863a8a11e570410ef36f9583a70a2c38331dcadb48ad54fede3"
+    },
+    {
+      "recording": 2,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-2_left.hdf5",
+      "split": "train",
+      "stage": "CountingUpDownFaceSideAway",
+      "source_split": "val",
+      "sha256": "bbea87c722f88015724f49e46d2d1e363f549b76514cac6878d15a1c27bed608"
+    },
+    {
+      "recording": 3,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-3_left.hdf5",
+      "split": "train",
+      "stage": "ThumbsSwipesWholeHand",
+      "source_split": "val",
+      "sha256": "2750b8ac0d9c8efc5de8c7a55f27924a57ee6f5fc26ccfe50ff96f2dede2f3c2"
+    },
+    {
+      "recording": 4,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-4_left.hdf5",
+      "split": "train",
+      "stage": "FingerWigglingSpreading",
+      "source_split": "val",
+      "sha256": "c0c8c35594e5e0c10fcea3ed80ff8246229e1011ad0f2c7dc8229dc449848c55"
+    },
+    {
+      "recording": 5,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-5_left.hdf5",
+      "split": "train",
+      "stage": "FingerAbductionSeries",
+      "source_split": "val",
+      "sha256": "e9b32e2974b9f8d0abcde6f67926575f301526d24ee2f676374a07411ab47eb2"
+    },
+    {
+      "recording": 6,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-6_left.hdf5",
+      "split": "train",
+      "stage": "WristFlexionAbduction",
+      "source_split": "val",
+      "sha256": "0f9082b2a12d140a46bcb209d81e894a13f1df874016adcff67ab96833fa1e89"
+    },
+    {
+      "recording": 7,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-7_left.hdf5",
+      "split": "train",
+      "stage": "FingerPinchesSingleFingerPinchesMultiple",
+      "source_split": "val",
+      "sha256": "2fbda7db30f1e0f9d38008f653daaccb8b7a6ae7c7905541cdd30c78bd84fae8"
+    },
+    {
+      "recording": 8,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-8_left.hdf5",
+      "split": "train",
+      "stage": "FingerFreeform",
+      "source_split": "val",
+      "sha256": "af23a6b3e69895a6dcdd76cdd484510d4467021750e98758aaf2dfec361d4c31"
+    },
+    {
+      "recording": 9,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-9_left.hdf5",
+      "split": "train",
+      "stage": "IndividualFingerPointingSnap",
+      "source_split": "val",
+      "sha256": "6caaaa21b48086d2a5b386d4e1487471556c5afa83871c1491fcf01d87526fa1"
+    },
+    {
+      "recording": 10,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-10_left.hdf5",
+      "split": "validation",
+      "stage": "HandClawGraspFlicks",
+      "source_split": "val",
+      "sha256": "1adf6ccac20f6faea466afb47ac0bd7adb8340693bba5f3da20cb9b8fd76ed68"
+    },
+    {
+      "recording": 11,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-11_left.hdf5",
+      "split": "validation",
+      "stage": "ShakaVulcanPeace",
+      "source_split": "val",
+      "sha256": "6f28d67996b537e6a334d3733e72a60869988bb20e6cb75ea77474998ad16a27"
+    },
+    {
+      "recording": 12,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-12_left.hdf5",
+      "split": "validation",
+      "stage": "HookEmHornsOKScissors",
+      "source_split": "val",
+      "sha256": "fe91197e1ebbd99d8159170f19072df330aa906d07fb50b003c4274dfec041f3"
+    },
+    {
+      "recording": 13,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-13_left.hdf5",
+      "split": "test",
+      "stage": "TwoHandedFreeStyle",
+      "source_split": "val",
+      "sha256": "b8bca0df2361cda8952c2c53a628c5fd1b0e5d3a82ced4a0704008d856df5108"
+    },
+    {
+      "recording": 14,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-14_left.hdf5",
+      "split": "test",
+      "stage": "OneHandedFreeStyle",
+      "source_split": "val",
+      "sha256": "9f7abae140743ad5c6d6090521fd25f0b6cf2e8d13d8b77d7591d4975173cf8f"
+    },
+    {
+      "recording": 15,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-15_left.hdf5",
+      "split": "test",
+      "stage": "unconstrained",
+      "source_split": "val",
+      "sha256": "1ce9dac3da9106f3efceea4e763e54921e6baf4764a7017fe87ac060466f478b"
+    }
+  ],
+  "reference_pose_input": false,
+  "joint_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "target_units": "radians",
+  "reported_units": [
+    "radians",
+    "degrees"
+  ],
+  "input_channels": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "nominal_sample_rate_hz": 2000,
+  "prediction_horizon_ms": 0,
+  "history_ms": [
+    50,
+    100,
+    200
+  ],
+  "history_samples": [
+    100,
+    200,
+    400
+  ],
+  "output_stride_samples": 40,
+  "first_output_sample_index": 399,
+  "warmup_policy": "Use the common 400-sample warm-up for all window comparisons. Do not cross file boundaries.",
+  "mask_policy": "A scored target must be finite and must not have all 20 angles close to zero under NumPy isclose defaults. Report exclusions and coverage. EMG history must be finite with consecutive source timestamps.",
+  "feature_proposal": "16 per-channel log1p(RMS) values from the declared trailing window, with train-only standardization",
+  "models": [
+    "train-set mean pose",
+    "train-set median pose",
+    "ridge regression with intercept"
+  ],
+  "ridge_alpha_candidates": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "selection": "Choose history and alpha on macro per-recording validation MAE only. Preserve the test manifest. No test-label calibration or future-sample use.",
+  "primary_metric": "Mean of per-recording mean absolute error across valid scored timestamps and all 20 joints",
+  "secondary_metrics": [
+    "per-joint MAE",
+    "per-recording MAE",
+    "sample-weighted MAE",
+    "scored coverage",
+    "processing time percentiles after warm-up"
+  ],
+  "robustness_proposal": {
+    "seed": 0,
+    "channel_dropout": [
+      0
+    ],
+    "global_gain": [
+      0.5,
+      1.5
+    ],
+    "additive_gaussian_noise_std_fraction_of_train_channel_rms": [
+      0.1
+    ],
+    "apply_to": "Raw recorded EMG before feature extraction; use the same target timestamps as the paired clean condition"
+  },
+  "resource_limits": {
+    "gpu_required": false,
+    "paid_services_required": false,
+    "maximum_threads": 2,
+    "single_reproduction_run_minutes": 15,
+    "runtime_limit_status": "Provisional; measure the baseline first, and revise explicitly if needed."
+  },
+  "unsupported_claims": [
+    "new-person generalization",
+    "new-session generalization",
+    "cross-day robustness",
+    "actual electrode replacement",
+    "physiological idle detection",
+    "live user control",
+    "stationary low-force control",
+    "tactile benefit",
+    "subjective perception",
+    "clinical safety",
+    "official benchmark leaderboard comparison"
+  ],
+  "test_handling": "Data-quality inspection has occurred. No model scores were computed. This is a frozen evaluation proposal, not a preregistration claim."
+}

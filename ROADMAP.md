@@ -6,7 +6,9 @@ Evidence baseline: October 14, 2026. Time windows are research planning horizons
 
 The maintainer has no specialized hardware and expects no future access. Every required milestone must finish on an ordinary computer using public data, analysis, or simulation. Do not make hardware purchases, laboratory access, new recordings, participant recruitment, GPUs, or paid cloud services prerequisites.
 
-The first project asks how hand-pose prediction accuracy and responsiveness change under causal processing, limited calibration, and held-out evaluation. Use public EMG recordings and their reference labels. See [spec 001](specs/001-stationary-virtual-hand.md), revised for software-only work and awaiting approval. No executable prototype or dataset download has started.
+The first project asks how hand-pose prediction accuracy and responsiveness change under causal processing and held-out evaluation. The maintainer approved the software-only scope and continuation. The [dataset audit](docs/datasets/emg2pose.md) is complete. The starter archive is downloaded and inspected, with no model training yet. See [spec 001](specs/001-stationary-virtual-hand.md) and the [pilot proposal](research/emg2pose/pilot-v1.json).
+
+The available starter data cover one person in one session. The first pilot therefore uses disjoint stage recordings within that session. It cannot establish new-person, new-session, or actual sensor-replacement performance. Broader data access is not a dependency for completing the pilot.
 
 | Step | Work | Evidence required to finish |
 | --- | --- | --- |

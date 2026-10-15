@@ -1,10 +1,12 @@
 # Spec: Software-only causal EMG hand-pose benchmark
 
-Status: Software-only scope confirmed by the maintainer. Revised evaluation details are proposed for review before implementation.
+Status: Software-only scope and continuation approved by the maintainer on October 14, 2026. Dataset audit complete. The audit-derived pilot protocol is documented for implementation review.
 
 Created: October 14, 2026. Revised after the maintainer clarified that specialized hardware will not be available.
 
-The filename is retained to preserve existing links. This proposal replaces the earlier recording-and-tactile-feedback experiment. No executable prototype, dataset download, hardware purchase, or human experiment has started.
+The filename is retained to preserve existing links. This proposal replaces the earlier recording-and-tactile-feedback experiment. The starter dataset is downloaded and inspected. No decoder, model training, hardware purchase, or human experiment has started.
+
+The [dataset audit](../docs/datasets/emg2pose.md) found one person, one session, and 15 stages in the starter archive. The [pilot manifest](../research/emg2pose/pilot-v1.json) therefore specifies a custom left-hand regression pilot with recordings 1-9 for training, 10-12 for validation, and 13-15 for testing. This narrows the initial evaluation to held-out stage recordings within a session. It is not the official population-generalization benchmark. No initial reference pose is supplied. Default outputs use all 20 joint angles, with macro per-recording MAE as the primary score.
 
 ## Requirements & Goals
 
@@ -70,7 +72,7 @@ The dataset audit will set a provisional run-time cap for the chosen computer be
 
 Scope and readiness:
 
-- [ ] The maintainer approves the revised software-only experimental details before implementation.
+- [x] The maintainer approves the software-only scope and continuation before implementation. Audit-derived protocol details are recorded in the linked pilot manifest.
 - [ ] Every required milestone works without specialized hardware, new recordings, lab access, a GPU, or paid cloud services.
 - [ ] A dataset card states source version, license, targets, units, masks, acquisition conditions, supported comparisons, and unsupported claims.
 - [ ] A bounded acquisition manifest records checksums and sizes within the declared limits. No full-archive dependency exists.

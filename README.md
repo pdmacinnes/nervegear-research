@@ -20,6 +20,7 @@ This repository starts with a literature-based study. It contains no implemented
 | [Reading list](docs/references.md) | 54 sources covering papers, programs, datasets, tools, and motivation |
 | [Roadmap](ROADMAP.md) | Immediate work and 0-5, 5-15, and 15+ year research horizons |
 | [First-project spec](specs/001-stationary-virtual-hand.md) | Proposed software-only benchmark of causal hand-pose decoding from public EMG recordings |
+| [Dataset audit](docs/datasets/emg2pose.md) | Verified starter data, license, labels, quality checks, and a bounded one-person pilot proposal |
 
 ## Start with public recordings and a causal decoder
 
@@ -33,7 +34,7 @@ The proposed first project asks how prediction accuracy and responsiveness chang
 4. Measure held-out pose error, causal window length, processing time, and failure under missing or noisy input.
 5. Compare a simple decoder against a matched baseline and publish the results, including null or negative findings.
 
-The revised spec is **proposed and awaiting approval**. No executable prototype or dataset download has started. The benchmark is a complete research deliverable, with no later hardware stage required. Offline decoding and simulated perturbations cannot establish live user control, tactile benefit, subjective perception, or clinical safety.
+The software-only scope and continuation are approved. The dataset audit is complete: the official starter archive is downloaded and inspected, with file hashes and a proposed pilot split recorded. It contains one person in one session, so the first pilot cannot establish new-person or new-session performance. No model has been trained. The benchmark is a complete research deliverable, with no later hardware stage required. Offline decoding and simulated perturbations cannot establish live user control, tactile benefit, subjective perception, or clinical safety.
 
 ## Read evidence labels precisely
 
