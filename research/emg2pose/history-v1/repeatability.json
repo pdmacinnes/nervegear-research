@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "error_count": 0,
+  "claim": "The fixed five-method history study completes within CPU limits and repeats scientific outputs exactly. No speedup or physiological latency claim.",
+  "timing_scope": "Subprocess creation through exit, including interpreter startup, data verification, fitting, all seven scores, JSON and plots. Internal runner timing is separately recorded.",
+  "scientific_sha256": "a16c5e3853e9c0aef24f617d074ea663450c42720d3ccae21a23c8fdb46992d3",
+  "scientific_hash_definition": "Canonical summary JSON excluding resources, software and thread_environment.",
+  "full_process_wall_seconds": {
+    "median": 0.9204436000436544,
+    "minimum": 0.9117664999794215,
+    "maximum": 0.946892699925229
+  },
+  "software": {
+    "benchmark": "0.1.0",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "h5py": "3.14.0",
+    "platform": "Windows",
+    "logical_cpu_count": 8
+  },
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "2"
+  },
+  "repeats": [
+    {
+      "repeat": 1,
+      "exit_code": 0,
+      "full_process_wall_seconds": 0.9204436000436544,
+      "scientific_sha256": "a16c5e3853e9c0aef24f617d074ea663450c42720d3ccae21a23c8fdb46992d3",
+      "resources": {
+        "analysis_wall_seconds": 0.6955815001856536,
+        "cpu_seconds": 0.703125,
+        "peak_process_memory_mib": 288.00390625,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 0.7012289001140743
+      }
+    },
+    {
+      "repeat": 2,
+      "exit_code": 0,
+      "full_process_wall_seconds": 0.9117664999794215,
+      "scientific_sha256": "a16c5e3853e9c0aef24f617d074ea663450c42720d3ccae21a23c8fdb46992d3",
+      "resources": {
+        "analysis_wall_seconds": 0.6874608001671731,
+        "cpu_seconds": 0.6875,
+        "peak_process_memory_mib": 287.95703125,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 0.6930031001102179
+      }
+    },
+    {
+      "repeat": 3,
+      "exit_code": 0,
+      "full_process_wall_seconds": 0.9328946999739856,
+      "scientific_sha256": "a16c5e3853e9c0aef24f617d074ea663450c42720d3ccae21a23c8fdb46992d3",
+      "resources": {
+        "analysis_wall_seconds": 0.697093800175935,
+        "cpu_seconds": 0.71875,
+        "peak_process_memory_mib": 287.421875,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 0.7029191001784056
+      }
+    },
+    {
+      "repeat": 4,
+      "exit_code": 0,
+      "full_process_wall_seconds": 0.946892699925229,
+      "scientific_sha256": "a16c5e3853e9c0aef24f617d074ea663450c42720d3ccae21a23c8fdb46992d3",
+      "resources": {
+        "analysis_wall_seconds": 0.7121351000387222,
+        "cpu_seconds": 0.734375,
+        "peak_process_memory_mib": 288.3828125,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 0.7179484001826495
+      }
+    },
+    {
+      "repeat": 5,
+      "exit_code": 0,
+      "full_process_wall_seconds": 0.9148346001747996,
+      "scientific_sha256": "a16c5e3853e9c0aef24f617d074ea663450c42720d3ccae21a23c8fdb46992d3",
+      "resources": {
+        "analysis_wall_seconds": 0.6906814000103623,
+        "cpu_seconds": 0.703125,
+        "peak_process_memory_mib": 288.30078125,
+        "limit_seconds": 900
+      },
+      "completion": {
+        "complete": true,
+        "error_count": 0,
+        "wall_seconds_including_outputs": 0.6960992000531405
+      }
+    }
+  ],
+  "profiler": {
+    "excluded_from_timing_summary": true,
+    "cumulative_hotspots": [
+      {
+        "function": "~:0:<built-in method builtins.exec>",
+        "calls": 151,
+        "self_seconds": 0.0011278,
+        "cumulative_seconds": 0.8966855
+      },
+      {
+        "function": "<frozen runpy>:201:run_module",
+        "calls": 2,
+        "self_seconds": 7.100000000000001e-06,
+        "cumulative_seconds": 0.8908086000000001
+      },
+      {
+        "function": "<frozen runpy>:65:_run_code",
+        "calls": 2,
+        "self_seconds": 7.9e-06,
+        "cumulative_seconds": 0.8908052000000001
+      },
+      {
+        "function": "__main__.py:1:<module>",
+        "calls": 2,
+        "self_seconds": 1.86e-05,
+        "cumulative_seconds": 0.8905326
+      },
+      {
+        "function": "__main__.py:8:main",
+        "calls": 1,
+        "self_seconds": 0.005996100000000001,
+        "cumulative_seconds": 0.8905249000000001
+      },
+      {
+        "function": "history.py:304:run",
+        "calls": 1,
+        "self_seconds": 0.0043382,
+        "cumulative_seconds": 0.7170139000000001
+      },
+      {
+        "function": "history.py:22:make_table",
+        "calls": 9,
+        "self_seconds": 0.0258728,
+        "cumulative_seconds": 0.3129139
+      },
+      {
+        "function": "core.py:6:features",
+        "calls": 18,
+        "self_seconds": 0.0840805,
+        "cumulative_seconds": 0.2841747
+      },
+      {
+        "function": "history.py:157:evaluate_fold",
+        "calls": 9,
+        "self_seconds": 0.0033962000000000003,
+        "cumulative_seconds": 0.2362266
+      },
+      {
+        "function": "history.py:69:fit_fold",
+        "calls": 9,
+        "self_seconds": 0.0478089,
+        "cumulative_seconds": 0.2024583
+      },
+      {
+        "function": "<frozen importlib._bootstrap>:1349:_find_and_load",
+        "calls": 193,
+        "self_seconds": 0.0007671,
+        "cumulative_seconds": 0.1878573
+      },
+      {
+        "function": "<frozen importlib._bootstrap>:1304:_find_and_load_unlocked",
+        "calls": 193,
+        "self_seconds": 0.00047670000000000004,
+        "cumulative_seconds": 0.1876133
+      }
+    ],
+    "analysis_hotspots": [
+      {
+        "function": "history.py:22:make_table",
+        "calls": 9,
+        "self_seconds": 0.0258728,
+        "cumulative_seconds": 0.3129139
+      },
+      {
+        "function": "core.py:6:features",
+        "calls": 18,
+        "self_seconds": 0.0840805,
+        "cumulative_seconds": 0.2841747
+      },
+      {
+        "function": "history.py:69:fit_fold",
+        "calls": 9,
+        "self_seconds": 0.0478089,
+        "cumulative_seconds": 0.2024583
+      },
+      {
+        "function": "pipeline.py:94:load_record",
+        "calls": 9,
+        "self_seconds": 0.0005955,
+        "cumulative_seconds": 0.1468073
+      },
+      {
+        "function": "pipeline.py:86:sha256",
+        "calls": 9,
+        "self_seconds": 0.0036436000000000003,
+        "cumulative_seconds": 0.0945014
+      },
+      {
+        "function": "history.py:102:score_predictions",
+        "calls": 9,
+        "self_seconds": 0.0001394,
+        "cumulative_seconds": 0.011658
+      }
+    ]
+  },
+  "limits": "Two numerical-library threads, 900 seconds per command, existing nine recordings, no download or paid compute. Desktop is shared and not reserved for timing.",
+  "machine_observation": {
+    "visible_logical_processors": 8,
+    "pre_run_processor_load_percent": 19,
+    "desktop_reserved": false
+  }
+}

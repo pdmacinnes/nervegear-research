@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "exit_code": 0,
+  "imported_from_installed_wheel": true,
+  "working_directory_outside_checkout": true,
+  "explicit_source_and_history_protocols": true,
+  "scientific_sha256": "a16c5e3853e9c0aef24f617d074ea663450c42720d3ccae21a23c8fdb46992d3",
+  "supported_folds": 9
+}

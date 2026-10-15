@@ -25,6 +25,7 @@ This repository contains a literature-based study and a reproducible CPU-only EM
 | [Failure diagnostics](docs/experiments/decoder-diagnostics-v1.md) | Training fit improves, validation advantage disappears, and numerical checks agree |
 | [Calibration study](docs/experiments/limited-label-calibration-v1.md) | A fixed labeled prefix does not improve aggregate MAE over uncalibrated ridge or the primary matched-label constant |
 | [Temporal alignment audit](docs/experiments/temporal-alignment-v1.md) | Correct timing beats fixed shifts on aggregate, while the prefix-median constant retains slightly lower MAE |
+| [Causal history study](docs/experiments/causal-history-v1.md) | Five recent feature windows reduce aggregate error against current-window ridge, wide-window ridge, and prefix median; gains vary across recordings |
 | [Reproduction guide](docs/reproduce-pilot.md) | Install, acquire the bounded data, run the experiment, and verify the package |
 | [Feature map](FEATURE_MAP.md) | Executable behavior and its tests |
 
@@ -48,7 +49,7 @@ The [fixed-prefix calibration study](docs/experiments/limited-label-calibration-
 
 The approved [temporal alignment audit](docs/experiments/temporal-alignment-v1.md) is complete. Correctly timed ridge predictions score 17.111 degrees macro MAE versus 18.529 for the mean past/future 5-second shift errors. Timing helps on aggregate and in seven of nine folds. The prefix-median constant still scores slightly lower MAE at 17.059 degrees. All methods use the same narrower scoring subset. Future shifts are diagnostic controls with future access.
 
-The proposed [causal history study](specs/005-causal-history-decoder.md) tests five recent feature windows against the current decoder, a single longer RMS window, and both constant-pose controls. All methods share fitting and scoring timestamps. The spec awaits approval before implementation or new real-data analysis.
+The approved [causal history study](docs/experiments/causal-history-v1.md) is complete. Five recent feature windows score 15.474 degrees macro MAE, compared with 16.895 for current-window ridge, 16.362 for a single longer window, and 16.244 for prefix median. All nine folds are supported. History improves over current-window ridge in eight recordings, while prefix median still wins in five. These are exploratory results on shared fitting and scoring timestamps, not new-person or live-control evidence.
 
 The data contain one person in one session, so this work cannot establish new-person or new-session performance. No later hardware stage is required. Offline decoding and simulated perturbations cannot establish live user control, tactile benefit, subjective perception, or clinical safety.
 

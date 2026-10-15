@@ -1,0 +1,145 @@
+{
+  "status": "pass",
+  "supported_folds_checked": 9,
+  "absolute_numerical_equivalence_tolerance": 1e-10,
+  "tolerance_note": "Initial 1e-12 probe found one borderline MSE discrepancy; a solver-only cross-check showed direct versus cumulative raw-window summation rounding dominates. Exact discrepancies and the 1e-12 probe count remain reported.",
+  "per_joint_metric_comparisons": 1800,
+  "metric_mismatches_above_1e-12": 1,
+  "maximum_per_joint_mae_discrepancy_rad": 9.478529072737274e-13,
+  "maximum_per_joint_mse_discrepancy_rad2": 1.0021428131778976e-12,
+  "maximum_primary_difference_discrepancy_rad": 1.212363542890671e-13,
+  "diagnostic_maximum_prediction_delta_between_solvers_rad": 1.3594680936535042e-13,
+  "diagnostic_maximum_metric_delta_with_direct_features_and_normal_equations": 1.004196725773454e-12,
+  "diagnostic_maximum_absolute_feature_difference_by_representation": {
+    "ridge_current": 1.206952315868648e-10,
+    "ridge_wide": 3.6203928743816505e-11,
+    "ridge_history": 1.206952315868648e-10
+  },
+  "diagnostic_production_features_maximum_augmented_vs_normal_prediction_delta_rad": 1.3572476476042539e-13,
+  "diagnostic_production_features_maximum_augmented_vs_published_metric_delta": 2.5757174171303632e-14,
+  "diagnostic_same_augmented_solver_maximum_direct_vs_production_feature_prediction_delta_rad": 7.193268203309344e-11,
+  "diagnostic_same_augmented_solver_maximum_direct_vs_production_feature_metric_delta": 1.0050849041931542e-12,
+  "diagnostic_production_normal_prediction_hash_mismatches": 0,
+  "diagnostic_scope": "Production make_table is used only in separate component checks to isolate cumulative feature summation from solver roundoff; primary independent metrics use directly summed raw windows throughout.",
+  "partition_count_and_mask_or_median_hash_mismatches": 0,
+  "method": "Independent inclusive raw-sample RMS windows and newest-first taps; direct full-span validity and elapsed-time partitioning; augmented least squares with alphas 10/10/50 and unpenalized intercept. Only checksum/schema loading is shared.",
+  "fold_hashes": [
+    {
+      "recording": 1,
+      "common_scored_mask_sha256": "cdd7a1320f5816d55b4c6aada4ecbac480318437c550ebcc061ebd0e20110209",
+      "prefix_control_sha256": "060a233ca03d3e046c82a50a22757e5a31341764f2661f9f592ff9b9803c6cb3",
+      "training_median_sha256": "3a477936a9d88e125d7735bb0bff9c36f8a1bb9d0354a55cba3fd4879415c65a",
+      "independent_prediction_sha256": {
+        "ridge_current": "fce2a003852dab2597d9207ce1f3b86069f675ba6336f6c7ec56953abbf21788",
+        "ridge_wide": "5f9ac54a131f6bc7a6cbe17b49a8fe3dad9902b1bf8f205444a2dba7808b1224",
+        "ridge_history": "f1b1975f948d11c71174656744492b41a5b8bcf26c0db22f523736adf19e2a28",
+        "train_median": "e6d68c0649fa802e0fbb172ba9675fe3fb48c9e385ff1e485511da43510fcd34",
+        "prefix_median": "3831a00c401c53d6f75887d185deaf76b38c2b46904905fa82d7cba846d5d1fd"
+      }
+    },
+    {
+      "recording": 2,
+      "common_scored_mask_sha256": "fcbee595ccf3e4e3e0fc4d8ca4f3c4e57dbee922c11f7dff44d711612e66fced",
+      "prefix_control_sha256": "4f1c4f5ca0f3dd06b06cd2bd890f0e868ccf94313dd72a24578df9cea6cb693e",
+      "training_median_sha256": "a00be33e9031e28775e55e0daa54469d0e8d7ca4676655e214bcd9e0b380612b",
+      "independent_prediction_sha256": {
+        "ridge_current": "3aaf486cd24dc5a1afd595c64cd81fea0cc51b4e14eb4452cfb35783624b1da0",
+        "ridge_wide": "0fcf3341205403f87f41fee2bb63dbbf806197032f3bd71cb80882fcde5a11d3",
+        "ridge_history": "8a5e91fdd4cb9650a9258b6c461a98a079432c6a28c209cdf1a2130e195bcde9",
+        "train_median": "ddfe342879c9080892094828b515d1dfa422bb51089b61c30fbcb0a4101da26c",
+        "prefix_median": "924cf387ab9c8eb6345f40a3b94bef4bf8559613fdcd11dd11504da1b3affb31"
+      }
+    },
+    {
+      "recording": 3,
+      "common_scored_mask_sha256": "25ce1600abe2314ece9b77c91be682a5681579349fafa90c0c32fa2fe9fcce2f",
+      "prefix_control_sha256": "997f768d4c0ae877d55369acbbe0966d234de160eeee847dd03682a309d4730d",
+      "training_median_sha256": "4b51b92065b552eb18c73c6d085eca7a701cc854cafea606d517ee4f6fa33ce3",
+      "independent_prediction_sha256": {
+        "ridge_current": "331fe3efbbceab1bbcd9c3d50407a37e11a238c7b07333385e09560edfd07c3b",
+        "ridge_wide": "861def7eb9d6b4b9098149face8d9fd1e06014440c3a0743c92f777882fd94c9",
+        "ridge_history": "f694601191cf144ce954c86b9c1ddad32d130e75fa7118089df664593f997ab4",
+        "train_median": "6263cf26b142d33c67bd6dab1a955a15f694f12936a35758c226814c69c83bf8",
+        "prefix_median": "0d6c75d8219e00bf44392aa37831297073c61f50a95d49ce3489ae4b20dbb80e"
+      }
+    },
+    {
+      "recording": 4,
+      "common_scored_mask_sha256": "97b909d395f96b0caea532432921ac19725c0cdbfae69bf10a02ae64112f86f8",
+      "prefix_control_sha256": "ca686f30855c57000dc59781ccda32edd2e13dc6bbd76401ba5b3919f0697d95",
+      "training_median_sha256": "c0b511e4b65ac50b921fc710cf7e6e1e9b5a856c9cf274a534c9e141c6d21dfa",
+      "independent_prediction_sha256": {
+        "ridge_current": "50b0d35e0a242da37371b40e4d48e296b2a980bbcdd783e2e8c324c3db12222a",
+        "ridge_wide": "fbb113c19ed3104f302aa00963325540dbbfe12366d02b1e4987691f65d58e6c",
+        "ridge_history": "4079e64864a6a91d4b89e17c01b64a744d4c935e4f327daf03bef2a4faa98eca",
+        "train_median": "7f6ec5ced811f7fc242a6bd6f559cb6d555afc2b4ac6c3064045edd62244ac63",
+        "prefix_median": "4d53c0c11da787ffa24c3e772e335258f78e0b4717575c589081f026c12f3821"
+      }
+    },
+    {
+      "recording": 5,
+      "common_scored_mask_sha256": "f7bcc86b8bfc579dbfeefbd97a39a1c8ea9758576df668421af6ed06004c2a80",
+      "prefix_control_sha256": "299f8de9a3afa0c8ba73e2167ef936a4d564db7b499c34c64b440616c71cae31",
+      "training_median_sha256": "320c623a742a941096b216c7412b4085170f5db1f6cdc993c09c83f2eace6f8c",
+      "independent_prediction_sha256": {
+        "ridge_current": "cce98c6c2380cc0a7fc72e3a996c688c1dbedeafe3223bd441aa8a6d6a26b533",
+        "ridge_wide": "1fdc37fc60df3d3ab4b71e71470c29c35cf98af1a1e24ec57e79d5fed4afcab1",
+        "ridge_history": "c91ac0af4a201cc8f59902132722296c4bddb57e8fe5ee679e3154fe90289efe",
+        "train_median": "88db101ba3a252c9d8d586d7bbf081855ef9276962a40dbd1eb1e9bc60cc6b08",
+        "prefix_median": "ce58ef19fb98490365798291b7fa0bb5fe9099e714e2a906d7695e835133499d"
+      }
+    },
+    {
+      "recording": 6,
+      "common_scored_mask_sha256": "6fc38447d80048d68ff80229355293197a4f2ecf5c72dc48bc797c461e43db7b",
+      "prefix_control_sha256": "48d5670b0f71b15412183e3b239e22bbba1ad55bf47cefee66c9c2eb35fdb185",
+      "training_median_sha256": "e7a593ecacc7c094b303b39e4e15995c78d4e671c68cc38c40ef94f3b184dfed",
+      "independent_prediction_sha256": {
+        "ridge_current": "1039c8eec39df3d83e3eaa665b766402929a73a44c6719b35d39478f8a919cff",
+        "ridge_wide": "cca2427d7e6b1cd28262f2ac193b237dd500fc6123d868684612e9a0c0e41701",
+        "ridge_history": "802d0dabed7320a8a5f975cf1f64079f8bcad246222ae4ace59a78baeed3bfd4",
+        "train_median": "e301c8eaf1ebfa0543cc49559a9923d27103214041badcf13ea9d207ed3e7a82",
+        "prefix_median": "53e04265db85a396833f86df67715576a9a527ca51305ea1d72bf133cb6857a4"
+      }
+    },
+    {
+      "recording": 7,
+      "common_scored_mask_sha256": "57e74274b475e5abf61a2fff78d7b89b3d57d0bd9155d1c51b691201a8dda0e0",
+      "prefix_control_sha256": "4bc6417f09e51a5d38e2e15fd554e9fdea9e1b6a7dbb7c9cea92a496fb17bf23",
+      "training_median_sha256": "c331dd09c5fa1b3aa54b1b77a3564501fd8fcd1ef79269b474b2231294760b0b",
+      "independent_prediction_sha256": {
+        "ridge_current": "eea80f0984fa8a6bc86b54550e49f24749d32d57938e2f8280ce9e3719a92326",
+        "ridge_wide": "0239efda8498cf7f2e530522a6b0652187b6d6b1dd7df2943800c937358208b7",
+        "ridge_history": "7ebd340119b088c2f7298469611c2595662eab80d57630bc248096e893b11933",
+        "train_median": "6d18b087f56e04135846135032f3906d46356793c73228028c5d0e7968beda7f",
+        "prefix_median": "4f7eb0289c204a450ff8556645dacdc49098d72be34ca296c2712447e3c96216"
+      }
+    },
+    {
+      "recording": 8,
+      "common_scored_mask_sha256": "8ffad67b84ca476237b6ced9fe0fe6178a3bbc15e641121bdb52f72be32610d7",
+      "prefix_control_sha256": "46c665d4732bca92331a93776886122113c33391fcabaff5172d796008f1e2c6",
+      "training_median_sha256": "296c4756e870c4191f57c24f62ff33fa41535edb6f7f5d9221f583077606abe8",
+      "independent_prediction_sha256": {
+        "ridge_current": "788617da1d893c550f87a53e763bfe129922dadbc331b4366f064a0c2eb97771",
+        "ridge_wide": "4c0a62ae9dfc962d279953e7227929ef4db5da550f960d5a96ff32008563bf77",
+        "ridge_history": "a429e1a66458aa307e330ae8315879117d721eeb22eb474758c5ac461cc7509e",
+        "train_median": "125c2cac33ab9e7a813c8eb0137dc5d5f1b03afdfe7bde87c49bc09f35b4e897",
+        "prefix_median": "498e8f1e645f60e0e53c9cf7a2b0c78fb47cb4fc1c507ff082fd5385ebd0cabd"
+      }
+    },
+    {
+      "recording": 9,
+      "common_scored_mask_sha256": "03f8ee5d0053a21274ca6c0743826f9164f8d8a2e46207b0837439006deb2b87",
+      "prefix_control_sha256": "b0c8bf4723562419433ef907c1e6da017cb08553396885170166797db49470ca",
+      "training_median_sha256": "c2bc8f5f069311493a61e2c62a34becd88a02f47843a2b85f80a3ef46f08139b",
+      "independent_prediction_sha256": {
+        "ridge_current": "6b61c8959befc57382ca942e1d3ca9a055b33d20e5b14208f83802c788ff169f",
+        "ridge_wide": "fb2a62aca71890ef96f208436e115ecb3358f206b0e83abfe4fceb10e2da4112",
+        "ridge_history": "37ca27b11fe81b08a7185b08967d5d2d437646c38b5ced01f706cf39b8ba4a75",
+        "train_median": "7d6a584f419d4e59f1fd27d0606b69cc3f34f2e9baa03c41ce910ab3c24449b9",
+        "prefix_median": "b648b2e5c871f1acb8a8f5ba44fafdd98440dccbdd7659a3a164384c957f9bd7"
+      }
+    }
+  ]
+}

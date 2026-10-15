@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="524" viewBox="0 0 900 524" role="img" aria-label="Common scored outputs by recording">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial,sans-serif" fill="#182637">
+<text x="24" y="34" font-size="21">Common scored outputs by recording</text>
+<text x="24" y="60" font-size="14">Same targets for all five methods; minimum 100</text>
+<text x="24" y="105" font-size="15">Recording 1</text>
+<rect x="230" y="86" width="299.19" height="28" fill="#2563a6" rx="3"/>
+<text x="539.19" y="105" font-size="15">1485.00</text>
+<text x="24" y="151" font-size="15">Recording 2</text>
+<rect x="230" y="132" width="475.67" height="28" fill="#2563a6" rx="3"/>
+<text x="715.67" y="151" font-size="15">2361.00</text>
+<text x="24" y="197" font-size="15">Recording 3</text>
+<rect x="230" y="178" width="477.49" height="28" fill="#2563a6" rx="3"/>
+<text x="717.49" y="197" font-size="15">2370.00</text>
+<text x="24" y="243" font-size="15">Recording 4</text>
+<rect x="230" y="224" width="468.82" height="28" fill="#2563a6" rx="3"/>
+<text x="708.82" y="243" font-size="15">2327.00</text>
+<text x="24" y="289" font-size="15">Recording 5</text>
+<rect x="230" y="270" width="465.60" height="28" fill="#2563a6" rx="3"/>
+<text x="705.60" y="289" font-size="15">2311.00</text>
+<text x="24" y="335" font-size="15">Recording 6</text>
+<rect x="230" y="316" width="396.70" height="28" fill="#2563a6" rx="3"/>
+<text x="636.70" y="335" font-size="15">1969.00</text>
+<text x="24" y="381" font-size="15">Recording 7</text>
+<rect x="230" y="362" width="415.43" height="28" fill="#2563a6" rx="3"/>
+<text x="655.43" y="381" font-size="15">2062.00</text>
+<text x="24" y="427" font-size="15">Recording 8</text>
+<rect x="230" y="408" width="352.17" height="28" fill="#2563a6" rx="3"/>
+<text x="592.17" y="427" font-size="15">1748.00</text>
+<text x="24" y="473" font-size="15">Recording 9</text>
+<rect x="230" y="454" width="486.96" height="28" fill="#2563a6" rx="3"/>
+<text x="726.96" y="473" font-size="15">2417.00</text>
+</g></svg>
