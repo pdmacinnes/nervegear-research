@@ -30,7 +30,9 @@ The October 14, 2026 session ended after that verified delivery. All five comple
 
 The approved October 15 [temporal alignment audit](docs/experiments/temporal-alignment-v1.md) is complete. Aligned ridge scores 17.111 degrees macro MAE versus 18.529 for the mean of the past and future 5-second errors, with seven improved and two worsened folds. All nine folds are supported. Correct timing helps this decoder on aggregate, but the prefix-median constant retains slightly lower MAE at 17.059 degrees on the same targets. Future shifts are diagnostic controls with future access. This result supports temporal information in the fixed decoder without establishing neural latency or live control.
 
-The next scope decision is whether to improve the representation of movement or pursue a separate sensory-encoding simulation. Another experiment requires its own hypothesis and approved protocol. The existing pilot, diagnostic, calibration, and alignment artifacts remain separate so their different scoring subsets and label access stay explicit.
+The proposed next experiment is the [causal history study](specs/005-causal-history-decoder.md). Compare the current 200 ms RMS representation, a 600 ms RMS representation, and five recent 200 ms feature windows spanning 600 ms. Retain training-median and prefix-median controls on common timestamps. Fix regularization before results and test that duplicating current features alone cannot weaken it. The specification awaits approval before implementation or real-data analysis. A sensory-encoding simulation remains a separate possible direction.
+
+The existing pilot, diagnostic, calibration, and alignment artifacts remain separate so their different scoring subsets and label access stay explicit. Every further experiment needs its own bounded hypothesis and approved protocol.
 
 Read source metadata before downloading large recordings. The small starter subset checks software; it is not automatically sufficient for subject or session generalization. If the available subset cannot support a claim, narrow that claim. Do not expand automatically to the full archive or rent compute.
 

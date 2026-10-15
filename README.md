@@ -48,6 +48,8 @@ The [fixed-prefix calibration study](docs/experiments/limited-label-calibration-
 
 The approved [temporal alignment audit](docs/experiments/temporal-alignment-v1.md) is complete. Correctly timed ridge predictions score 17.111 degrees macro MAE versus 18.529 for the mean past/future 5-second shift errors. Timing helps on aggregate and in seven of nine folds. The prefix-median constant still scores slightly lower MAE at 17.059 degrees. All methods use the same narrower scoring subset. Future shifts are diagnostic controls with future access.
 
+The proposed [causal history study](specs/005-causal-history-decoder.md) tests five recent feature windows against the current decoder, a single longer RMS window, and both constant-pose controls. All methods share fitting and scoring timestamps. The spec awaits approval before implementation or new real-data analysis.
+
 The data contain one person in one session, so this work cannot establish new-person or new-session performance. No later hardware stage is required. Offline decoding and simulated perturbations cannot establish live user control, tactile benefit, subjective perception, or clinical safety.
 
 ## Read evidence labels precisely
