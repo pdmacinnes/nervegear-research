@@ -4,6 +4,8 @@
 
 Status: Explicitly approved by the maintainer through the spec-review prompt on October 15, 2026 with "Approve and continue". Implement and run this study against the fixed protocol.
 
+Completed: The [result report](../docs/experiments/causal-history-v1.md) records every fold, independent arithmetic, repeatability, and limits. Linux and Windows checks passed on the [implementation commit](https://github.com/pdmacinnes/nervegear-research/actions/runs/38805222655).
+
 Test whether several recent EMG feature vectors improve held-out pose prediction over the existing single-window decoder. The [temporal alignment audit](../docs/experiments/temporal-alignment-v1.md) found lower aggregate error for aligned predictions than for fixed shifts. That result motivates a bounded history comparison, while the competitive constant-pose controls remain essential.
 
 Use only original custom-pilot training recordings 1-9, holding out each once. These recordings and previous outcomes have already been inspected. This is exploratory analysis of one person and session, not a blind test, an official emg2pose benchmark, or a preregistration. Original custom validation and test files remain excluded from verification, loading, fitting, and scoring.
@@ -54,4 +56,4 @@ An improvement would support this fixed history representation on these recordin
 - [x] All nine folds publish explicit support status, common fitting and scoring counts, dimensions, effective alphas, and five-method metrics. The primary and secondary comparisons follow the fixed definitions without outcome-based selection.
 - [x] Independent direct feature-window calculations and augmented least squares verify at least one supported real-data fold across all five methods. Five complete-process runs and an installed-wheel command outside the checkout reproduce scientific outputs within existing CPU limits.
 - [x] Preserve prior protocols and results. Publish only code, configuration, identifiers, hashes, aggregate metrics, and plots. The report states exposed-data, single-session, common-subset, label-access, and model-capacity limitations, including negative or unsupported findings.
-- [ ] Update the reproduction guide, feature map, README, and roadmap after implementation. Tests, lint, formatting, builds, document links, inspected plots, and Linux and Windows CI pass before delivery through a branch and PR. Keep automatic merging disabled.
+- [x] Update the reproduction guide, feature map, README, and roadmap after implementation. Tests, lint, formatting, builds, document links, inspected plots, and Linux and Windows CI pass before delivery through a branch and PR. Keep automatic merging disabled.
