@@ -65,5 +65,5 @@ Use ordinary descriptive statistics only. Overlapping windows and temporally cor
 - [x] Coverage, per-recording and per-joint errors, target dispersion, feature shifts, prediction ranges, conditioning, and independent solver checks are recorded with units and definitions.
 - [x] A complete CPU run finishes within the existing resource limits without additional data, specialized hardware, GPU, or paid services.
 - [x] The report states what is supported, what remains inconclusive, the known test exposure, and one bounded next hypothesis. It makes no physiological or population-generalization claim.
-- [ ] Documentation and `FEATURE_MAP.md` describe the new command. Meaningful tests, lint, formatting, package builds, an installed-package smoke check, link checks, and Linux/Windows CI pass before delivery. Inspect generated plots.
+- [x] Documentation and `FEATURE_MAP.md` describe the new command. Meaningful tests, lint, formatting, package builds, an installed-package smoke check, link checks, and Linux/Windows CI pass before delivery. Inspect generated plots.
 - [x] Only code, documentation, configuration, aggregate metrics, and plots are published through a branch and PR with automatic merging disabled. Data and per-sample outputs remain excluded.
