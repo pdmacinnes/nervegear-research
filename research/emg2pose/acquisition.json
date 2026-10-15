@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "dataset": "emg2pose",
+  "audit_date": "2026-10-14",
+  "attribution": "Salter et al., emg2pose, Meta Reality Labs, 2024",
+  "source_repository": "https://github.com/facebookresearch/emg2pose",
+  "source_commit": "5f6f62b1a0a08426adffe55900842e75a8adb38c",
+  "source_license": "CC-BY-NC-SA-4.0",
+  "redistribute_recordings": false,
+  "artifacts": [
+    {
+      "name": "metadata.csv",
+      "url": "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_metadata.csv",
+      "bytes": 5674462,
+      "sha256": "0e7ad04a79a0f162385d22ec8d6f43af9b8360978ca11ef9d601bbf9594b09e6"
+    },
+    {
+      "name": "emg2pose_dataset_mini.tar",
+      "url": "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset_mini.tar",
+      "bytes": 647198208,
+      "sha256": "d7400e98508ccbb2139c2d78e552867b23501f637456546fd6680f3fe7fec50d"
+    }
+  ],
+  "regular_extracted_bytes": 647172814,
+  "limits": {
+    "total_download_bytes": 1073741824,
+    "total_project_data_bytes": 5368709120
+  },
+  "members": [
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-10_left.hdf5",
+      "bytes": 18136680,
+      "sha256": "1adf6ccac20f6faea466afb47ac0bd7adb8340693bba5f3da20cb9b8fd76ed68"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-10_right.hdf5",
+      "bytes": 18136680,
+      "sha256": "29668478cd9330174ce62d2836eec94d2eec62ff004b9fd9fea7781564c73d50"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-11_left.hdf5",
+      "bytes": 17812160,
+      "sha256": "6f28d67996b537e6a334d3733e72a60869988bb20e6cb75ea77474998ad16a27"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-11_right.hdf5",
+      "bytes": 17812160,
+      "sha256": "62d629af77433ecad5194f6b3a8dd019e24ce8ac90174def57f64d6814ad605a"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-12_left.hdf5",
+      "bytes": 17481256,
+      "sha256": "fe91197e1ebbd99d8159170f19072df330aa906d07fb50b003c4274dfec041f3"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-12_right.hdf5",
+      "bytes": 17478824,
+      "sha256": "70334a9118fbba9d1b8caccaac0c23433fb399ea8915b0c814b1bbb06eff2c29"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-13_left.hdf5",
+      "bytes": 72027064,
+      "sha256": "b8bca0df2361cda8952c2c53a628c5fd1b0e5d3a82ced4a0704008d856df5108"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-13_right.hdf5",
+      "bytes": 72024632,
+      "sha256": "3f992780ddee43fb0e455fa389b32e528672b477fc0d27525a6a93cbf8bebf64"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-14_left.hdf5",
+      "bytes": 16044856,
+      "sha256": "9f7abae140743ad5c6d6090521fd25f0b6cf2e8d13d8b77d7591d4975173cf8f"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-14_right.hdf5",
+      "bytes": 16043640,
+      "sha256": "2e68251c41242d3b2e08f747a30686e4bacf55c04af221b3e15b3528dfba1755"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-15_left.hdf5",
+      "bytes": 13890104,
+      "sha256": "1ce9dac3da9106f3efceea4e763e54921e6baf4764a7017fe87ac060466f478b"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-15_right.hdf5",
+      "bytes": 13890104,
+      "sha256": "56b368e0556becb3384e25d7289966627b135bf6b82f2f406baa464aaf2821eb"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-1_left.hdf5",
+      "bytes": 21694696,
+      "sha256": "4f873e440f957863a8a11e570410ef36f9583a70a2c38331dcadb48ad54fede3"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-1_right.hdf5",
+      "bytes": 21691352,
+      "sha256": "a085e7ceb77212f6584432263dd9bad587c33c99422b6cd28cc7190311ce7279"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-2_left.hdf5",
+      "bytes": 18111448,
+      "sha256": "bbea87c722f88015724f49e46d2d1e363f549b76514cac6878d15a1c27bed608"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-2_right.hdf5",
+      "bytes": 18113880,
+      "sha256": "7d60e4f2da6fa9b56d6e5211c73a044978fa56e940ae9916e85b0891c01e5687"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-3_left.hdf5",
+      "bytes": 18399336,
+      "sha256": "2750b8ac0d9c8efc5de8c7a55f27924a57ee6f5fc26ccfe50ff96f2dede2f3c2"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-3_right.hdf5",
+      "bytes": 18400552,
+      "sha256": "f10f3fea9c2a2b307d7412250adfc71e9cc4b0df9eea529e2028f0452c93f44f"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-4_left.hdf5",
+      "bytes": 17830248,
+      "sha256": "c0c8c35594e5e0c10fcea3ed80ff8246229e1011ad0f2c7dc8229dc449848c55"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-4_right.hdf5",
+      "bytes": 17830248,
+      "sha256": "d5df38f4e2683f2faa1441bae3dafc539c8e58910cfaf5c4fe1483fe9a20c1b4"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-5_left.hdf5",
+      "bytes": 17366040,
+      "sha256": "e9b32e2974b9f8d0abcde6f67926575f301526d24ee2f676374a07411ab47eb2"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-5_right.hdf5",
+      "bytes": 17363608,
+      "sha256": "e98b4e090644b36c1a96e4b52ad4452dff6ee92ccdff3dde8846e2e17bd12ba8"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-6_left.hdf5",
+      "bytes": 18037120,
+      "sha256": "0f9082b2a12d140a46bcb209d81e894a13f1df874016adcff67ab96833fa1e89"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-6_right.hdf5",
+      "bytes": 18037120,
+      "sha256": "5780e452183174cf10c576d681d5b3eb64e7e22a63af5d36805b1040fb6dd0f3"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-7_left.hdf5",
+      "bytes": 17705152,
+      "sha256": "2fbda7db30f1e0f9d38008f653daaccb8b7a6ae7c7905541cdd30c78bd84fae8"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-7_right.hdf5",
+      "bytes": 17706368,
+      "sha256": "c84411a1c1016775f1eddcc9830e5c4761ffd9373063dd927874788df569ac92"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-8_left.hdf5",
+      "bytes": 17699072,
+      "sha256": "af23a6b3e69895a6dcdd76cdd484510d4467021750e98758aaf2dfec361d4c31"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-8_right.hdf5",
+      "bytes": 17696640,
+      "sha256": "9353b2cf50731506007065af217b6f40d31cc1bad601e95bdeac51f46ff07c89"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-9_left.hdf5",
+      "bytes": 18521088,
+      "sha256": "6caaaa21b48086d2a5b386d4e1487471556c5afa83871c1491fcf01d87526fa1"
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-9_right.hdf5",
+      "bytes": 18516224,
+      "sha256": "934d9b9b7ae09b35f1d7d5978b858b354184945c4c855e1068cb41a22379340c"
+    }
+  ]
+}

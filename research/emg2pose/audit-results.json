@@ -1,0 +1,1000 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-10-14",
+  "method": "Read pinned upstream definitions, inspect CSV metadata, safely extract only regular archive files, inspect all 30 HDF5 files, and compute checksums and data-quality counts. No model training or model scores.",
+  "source_commit": "5f6f62b1a0a08426adffe55900842e75a8adb38c",
+  "software": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "h5py": "3.14.0"
+  },
+  "full_metadata": {
+    "rows": 25253,
+    "users": 193,
+    "sessions": 751,
+    "stages": 29
+  },
+  "starter": {
+    "files": 30,
+    "users": 1,
+    "sessions": 1,
+    "stages": 15,
+    "source_splits": [
+      "val"
+    ],
+    "samples_including_both_hands": 4218756,
+    "invalid_pose_samples_including_both_hands": 659172,
+    "nonfinite_emg_values": 0,
+    "nonfinite_angle_values": 0,
+    "nonpositive_timestamp_steps": 0,
+    "min_timestamp_step_seconds": 0.00044989585876464844,
+    "max_timestamp_step_seconds": 0.0005500316619873047,
+    "median_timestamp_step_seconds": 0.0004999637603759766,
+    "observed_angle_range_radians": [
+      -1.325364351272583,
+      2.056946039199829
+    ]
+  },
+  "files": [
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-10_left.hdf5",
+      "samples": 119266,
+      "valid_pose_samples": 93163,
+      "invalid_pose_samples": 26103,
+      "duration_seconds": 59.63000154495239,
+      "stage": "HandClawGraspFlicks",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            119266
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            119266,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            119266,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-10_right.hdf5",
+      "samples": 119266,
+      "valid_pose_samples": 104804,
+      "invalid_pose_samples": 14462,
+      "duration_seconds": 59.632670402526855,
+      "stage": "HandClawGraspFlicks",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            119266
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            119266,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            119266,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-11_left.hdf5",
+      "samples": 117131,
+      "valid_pose_samples": 98999,
+      "invalid_pose_samples": 18132,
+      "duration_seconds": 58.562495946884155,
+      "stage": "ShakaVulcanPeace",
+      "source_split": "val",
+      "source_generalization": "user_stage",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            117131
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            117131,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            117131,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-11_right.hdf5",
+      "samples": 117131,
+      "valid_pose_samples": 107701,
+      "invalid_pose_samples": 9430,
+      "duration_seconds": 58.56383752822876,
+      "stage": "ShakaVulcanPeace",
+      "source_split": "val",
+      "source_generalization": "user_stage",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            117131
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            117131,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            117131,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-12_left.hdf5",
+      "samples": 114954,
+      "valid_pose_samples": 110952,
+      "invalid_pose_samples": 4002,
+      "duration_seconds": 57.47533202171326,
+      "stage": "HookEmHornsOKScissors",
+      "source_split": "val",
+      "source_generalization": "user_stage",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            114954
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            114954,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            114954,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-12_right.hdf5",
+      "samples": 114938,
+      "valid_pose_samples": 110069,
+      "invalid_pose_samples": 4869,
+      "duration_seconds": 57.472731828689575,
+      "stage": "HookEmHornsOKScissors",
+      "source_split": "val",
+      "source_generalization": "user_stage",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            114938
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            114938,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            114938,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-13_left.hdf5",
+      "samples": 473808,
+      "valid_pose_samples": 395880,
+      "invalid_pose_samples": 77928,
+      "duration_seconds": 236.90878319740295,
+      "stage": "TwoHandedFreeStyle",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            473808
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            473808,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            473808,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-13_right.hdf5",
+      "samples": 473792,
+      "valid_pose_samples": 364353,
+      "invalid_pose_samples": 109439,
+      "duration_seconds": 236.9061884880066,
+      "stage": "TwoHandedFreeStyle",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            473792
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            473792,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            473792,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-14_left.hdf5",
+      "samples": 105504,
+      "valid_pose_samples": 91030,
+      "invalid_pose_samples": 14474,
+      "duration_seconds": 52.750340938568115,
+      "stage": "OneHandedFreeStyle",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            105504
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            105504,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            105504,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-14_right.hdf5",
+      "samples": 105496,
+      "valid_pose_samples": 66597,
+      "invalid_pose_samples": 38899,
+      "duration_seconds": 52.749011754989624,
+      "stage": "unconstrained",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            105496
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            105496,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            105496,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-15_left.hdf5",
+      "samples": 91328,
+      "valid_pose_samples": 55939,
+      "invalid_pose_samples": 35389,
+      "duration_seconds": 45.659669399261475,
+      "stage": "unconstrained",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            91328
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            91328,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            91328,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-15_right.hdf5",
+      "samples": 91328,
+      "valid_pose_samples": 59130,
+      "invalid_pose_samples": 32198,
+      "duration_seconds": 45.66365909576416,
+      "stage": "OneHandedFreeStyle",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            91328
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            91328,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            91328,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-1_left.hdf5",
+      "samples": 142674,
+      "valid_pose_samples": 80441,
+      "invalid_pose_samples": 62233,
+      "duration_seconds": 71.33532428741455,
+      "stage": "ThumbsUpDownThumbRotationsCWCCWP",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            142674
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            142674,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            142674,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-1_right.hdf5",
+      "samples": 142652,
+      "valid_pose_samples": 75692,
+      "invalid_pose_samples": 66960,
+      "duration_seconds": 71.32699084281921,
+      "stage": "ThumbsUpDownThumbRotationsCWCCWP",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            142652
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            142652,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            142652,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-2_left.hdf5",
+      "samples": 119100,
+      "valid_pose_samples": 110000,
+      "invalid_pose_samples": 9100,
+      "duration_seconds": 59.54700708389282,
+      "stage": "CountingUpDownFaceSideAway",
+      "source_split": "val",
+      "source_generalization": "user_stage",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            119100
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            119100,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            119100,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-2_right.hdf5",
+      "samples": 119116,
+      "valid_pose_samples": 114851,
+      "invalid_pose_samples": 4265,
+      "duration_seconds": 59.55899667739868,
+      "stage": "CountingUpDownFaceSideAway",
+      "source_split": "val",
+      "source_generalization": "user_stage",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            119116
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            119116,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            119116,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-3_left.hdf5",
+      "samples": 120994,
+      "valid_pose_samples": 114225,
+      "invalid_pose_samples": 6769,
+      "duration_seconds": 60.49534368515015,
+      "stage": "ThumbsSwipesWholeHand",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            120994
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            120994,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            120994,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-3_right.hdf5",
+      "samples": 121002,
+      "valid_pose_samples": 110968,
+      "invalid_pose_samples": 10034,
+      "duration_seconds": 60.49933743476868,
+      "stage": "ThumbsSwipesWholeHand",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            121002
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            121002,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            121002,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-4_left.hdf5",
+      "samples": 117250,
+      "valid_pose_samples": 114285,
+      "invalid_pose_samples": 2965,
+      "duration_seconds": 58.621994733810425,
+      "stage": "FingerWigglingSpreading",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            117250
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            117250,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            117250,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-4_right.hdf5",
+      "samples": 117250,
+      "valid_pose_samples": 115917,
+      "invalid_pose_samples": 1333,
+      "duration_seconds": 58.62200355529785,
+      "stage": "FingerWigglingSpreading",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            117250
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            117250,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            117250,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-5_left.hdf5",
+      "samples": 114196,
+      "valid_pose_samples": 113663,
+      "invalid_pose_samples": 533,
+      "duration_seconds": 57.096333026885986,
+      "stage": "FingerAbductionSeries",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            114196
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            114196,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            114196,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-5_right.hdf5",
+      "samples": 114180,
+      "valid_pose_samples": 114147,
+      "invalid_pose_samples": 33,
+      "duration_seconds": 57.092329025268555,
+      "stage": "FingerAbductionSeries",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            114180
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            114180,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            114180,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-6_left.hdf5",
+      "samples": 118611,
+      "valid_pose_samples": 99910,
+      "invalid_pose_samples": 18701,
+      "duration_seconds": 59.3078339099884,
+      "stage": "WristFlexionAbduction",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            118611
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            118611,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            118611,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-6_right.hdf5",
+      "samples": 118611,
+      "valid_pose_samples": 111112,
+      "invalid_pose_samples": 7499,
+      "duration_seconds": 59.30516982078552,
+      "stage": "WristFlexionAbduction",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            118611
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            118611,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            118611,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-7_left.hdf5",
+      "samples": 116427,
+      "valid_pose_samples": 102007,
+      "invalid_pose_samples": 14420,
+      "duration_seconds": 58.21855092048645,
+      "stage": "FingerPinchesSingleFingerPinchesMultiple",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            116427
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            116427,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            116427,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-7_right.hdf5",
+      "samples": 116435,
+      "valid_pose_samples": 110369,
+      "invalid_pose_samples": 6066,
+      "duration_seconds": 58.21724200248718,
+      "stage": "FingerPinchesSingleFingerPinchesMultiple",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            116435
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            116435,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            116435,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-8_left.hdf5",
+      "samples": 116387,
+      "valid_pose_samples": 89379,
+      "invalid_pose_samples": 27008,
+      "duration_seconds": 58.18916392326355,
+      "stage": "FingerFreeform",
+      "source_split": "val",
+      "source_generalization": "user_stage",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            116387
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            116387,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            116387,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-8_right.hdf5",
+      "samples": 116371,
+      "valid_pose_samples": 92019,
+      "invalid_pose_samples": 24352,
+      "duration_seconds": 58.19050931930542,
+      "stage": "FingerFreeform",
+      "source_split": "val",
+      "source_generalization": "user_stage",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            116371
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            116371,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            116371,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-9_left.hdf5",
+      "samples": 121795,
+      "valid_pose_samples": 114052,
+      "invalid_pose_samples": 7743,
+      "duration_seconds": 60.88782787322998,
+      "stage": "IndividualFingerPointingSnap",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            121795
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            121795,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            121795,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-9_right.hdf5",
+      "samples": 121763,
+      "valid_pose_samples": 117930,
+      "invalid_pose_samples": 3833,
+      "duration_seconds": 60.88650298118591,
+      "stage": "IndividualFingerPointingSnap",
+      "source_split": "val",
+      "source_generalization": "user",
+      "fields": {
+        "time": {
+          "dtype": "float64",
+          "shape": [
+            121763
+          ]
+        },
+        "joint_angles": {
+          "dtype": "('<f4', (20,))",
+          "shape": [
+            121763,
+            20
+          ]
+        },
+        "emg": {
+          "dtype": "('<f4', (16,))",
+          "shape": [
+            121763,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}
