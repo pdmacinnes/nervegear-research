@@ -6,8 +6,8 @@ from pathlib import Path
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run the software-only causal EMG pilot")
-    parser.add_argument("command", choices=["run"])
+    parser = argparse.ArgumentParser(description="Run the software-only EMG research commands")
+    parser.add_argument("command", choices=["run", "diagnose"])
     parser.add_argument("--manifest", type=Path, default=Path("research/emg2pose/pilot-v1.json"))
     parser.add_argument("--data-dir", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
@@ -29,7 +29,10 @@ def main():
     watchdog.daemon = True
     watchdog.start()
     try:
-        from .pipeline import run
+        if args.command == "diagnose":
+            from .diagnostics import run
+        else:
+            from .pipeline import run
 
         run(args.manifest, args.data_dir, args.output)
     except (OSError, ValueError, KeyError) as error:

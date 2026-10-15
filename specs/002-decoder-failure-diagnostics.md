@@ -2,7 +2,7 @@
 
 ## Requirements & Goals
 
-Status: Issue #6 scope accepted by the maintainer on October 14, 2026. This specification awaits confirmation before implementation. It extends the [completed v1 pilot](001-stationary-virtual-hand.md) and preserves its [frozen protocol](../research/emg2pose/pilot-v1.json) and [negative results](../docs/experiments/emg2pose-pilot-v1.md).
+Status: Specification explicitly approved by the maintainer on October 14, 2026 through the spec-review prompt. It extends the [completed v1 pilot](001-stationary-virtual-hand.md) and preserves its [frozen protocol](../research/emg2pose/pilot-v1.json) and [negative results](../docs/experiments/emg2pose-pilot-v1.md).
 
 Build one reproducible diagnostic command and report to investigate why the simple EMG decoder loses to constant pose. Use the nine training and three validation recordings already acquired. Do not open the three test recordings. Their v1 outcomes are already known and cannot become a fresh blind evaluation.
 
@@ -56,14 +56,14 @@ Use ordinary descriptive statistics only. Overlapping windows and temporally cor
 
 ## Acceptance Criteria
 
-- [ ] The maintainer confirms this specification before implementation code is written.
-- [ ] The diagnostic command succeeds with only the 12 training and validation recordings present; its verified loaded-file inventory contains no test recording.
-- [ ] Synthetic end-to-end tests fail for expected missing behavior before implementation, then pass. They cover test-file absence, train-only statistics, paired masks, bad hashes, missing required files, singular features, empty subgroups, and refusal to overwrite outputs.
-- [ ] Synthetic known-answer tests verify macro versus sample weighting, the residual MSE decomposition, the within-recording constant-pose lower bound, feature shift, range-exclusion counts, and independent solver agreement.
-- [ ] The report contains training and validation scores for all nine fixed ridge configurations and both fair constant-pose baselines, with no replacement-model selection.
-- [ ] The primary model's validation scores reproduce the frozen v1 validation result within numerical tolerance. Frozen v1 protocol and results remain byte-for-byte unchanged.
-- [ ] Coverage, per-recording and per-joint errors, target dispersion, feature shifts, prediction ranges, conditioning, and independent solver checks are recorded with units and definitions.
-- [ ] A complete CPU run finishes within the existing resource limits without additional data, specialized hardware, GPU, or paid services.
-- [ ] The report states what is supported, what remains inconclusive, the known test exposure, and one bounded next hypothesis. It makes no physiological or population-generalization claim.
+- [x] The maintainer confirms this specification before implementation code is written.
+- [x] The diagnostic command succeeds with only the 12 training and validation recordings present; its verified loaded-file inventory contains no test recording.
+- [x] Synthetic end-to-end tests fail for expected missing behavior before implementation, then pass. They cover test-file absence, train-only statistics, paired masks, bad hashes, missing required files, singular features, empty subgroups, and refusal to overwrite outputs.
+- [x] Synthetic known-answer tests verify macro versus sample weighting, the residual MSE decomposition, the within-recording constant-pose lower bound, feature shift, range-exclusion counts, and independent solver agreement.
+- [x] The report contains training and validation scores for all nine fixed ridge configurations and both fair constant-pose baselines, with no replacement-model selection.
+- [x] The primary model's validation scores reproduce the frozen v1 validation result within numerical tolerance. Frozen v1 protocol and results remain byte-for-byte unchanged.
+- [x] Coverage, per-recording and per-joint errors, target dispersion, feature shifts, prediction ranges, conditioning, and independent solver checks are recorded with units and definitions.
+- [x] A complete CPU run finishes within the existing resource limits without additional data, specialized hardware, GPU, or paid services.
+- [x] The report states what is supported, what remains inconclusive, the known test exposure, and one bounded next hypothesis. It makes no physiological or population-generalization claim.
 - [ ] Documentation and `FEATURE_MAP.md` describe the new command. Meaningful tests, lint, formatting, package builds, an installed-package smoke check, link checks, and Linux/Windows CI pass before delivery. Inspect generated plots.
-- [ ] Only code, documentation, configuration, aggregate metrics, and plots are published through a branch and PR with automatic merging disabled. Data and per-sample outputs remain excluded.
+- [x] Only code, documentation, configuration, aggregate metrics, and plots are published through a branch and PR with automatic merging disabled. Data and per-sample outputs remain excluded.

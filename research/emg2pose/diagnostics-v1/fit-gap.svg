@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="386" viewBox="0 0 900 386" role="img" aria-label="Training and validation fit">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial,sans-serif" fill="#182637">
+<text x="24" y="34" font-size="21">Training and validation fit</text>
+<text x="24" y="60" font-size="14">Macro recording MAE in degrees; one person, one session</text>
+<text x="24" y="105" font-size="15">Mean train</text>
+<rect x="230" y="86" width="480.09" height="28" fill="#2563a6" rx="3"/>
+<text x="720.09" y="105" font-size="15">19.64</text>
+<text x="24" y="151" font-size="15">Mean validation</text>
+<rect x="230" y="132" width="470.71" height="28" fill="#2563a6" rx="3"/>
+<text x="710.71" y="151" font-size="15">19.25</text>
+<text x="24" y="197" font-size="15">Median train</text>
+<rect x="230" y="178" width="467.16" height="28" fill="#2563a6" rx="3"/>
+<text x="707.16" y="197" font-size="15">19.11</text>
+<text x="24" y="243" font-size="15">Median validation</text>
+<rect x="230" y="224" width="472.35" height="28" fill="#2563a6" rx="3"/>
+<text x="712.35" y="243" font-size="15">19.32</text>
+<text x="24" y="289" font-size="15">Ridge 200 ms train</text>
+<rect x="230" y="270" width="341.34" height="28" fill="#2563a6" rx="3"/>
+<text x="581.34" y="289" font-size="15">13.96</text>
+<text x="24" y="335" font-size="15">Ridge 200 ms validation</text>
+<rect x="230" y="316" width="486.96" height="28" fill="#2563a6" rx="3"/>
+<text x="726.96" y="335" font-size="15">19.92</text>
+</g></svg>

@@ -22,7 +22,9 @@ The available starter data cover one person in one session. The first pilot ther
 
 Steps 1-6 are complete for the bounded v1 pilot. The next question is why RMS ridge underperforms constant pose. Diagnose training/validation feature shifts and joint-specific residuals before proposing another model. The v1 test outcomes are now known, so future work must disclose that exposure rather than call them an unseen test.
 
-The proposed diagnostic command and report are defined in [spec 002](specs/002-decoder-failure-diagnostics.md). The specification is ready for review before implementation. It uses only the existing training and validation recordings and requires a test proving that test files are never needed.
+The approved diagnostic command in [spec 002](specs/002-decoder-failure-diagnostics.md) is implemented. The [report](docs/experiments/decoder-diagnostics-v1.md) shows better training fit, loss of validation advantage, substantial recording-specific bias, and agreement between independent solvers. The command opens only training and validation recordings. Tests prove that test files are unnecessary and cannot change its scientific outputs.
+
+The next proposed question is whether a small, fixed labeled prefix can reduce recording-specific bias on held-out training recordings. That requires a new exploratory protocol with matched label access for constant-pose controls. It has not been implemented, and no improvement is promised.
 
 Read source metadata before downloading large recordings. The small starter subset checks software; it is not automatically sufficient for subject or session generalization. If the available subset cannot support a claim, narrow that claim. Do not expand automatically to the full archive or rent compute.
 

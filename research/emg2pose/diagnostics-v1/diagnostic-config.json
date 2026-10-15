@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "diagnostic_id": "rms-ridge-train-validation-v1",
+  "base_protocol_sha256": "8396e404478c7622a7e9d7e56788a9c96f3526ba608e57aa65544043f264b72d",
+  "histories": [
+    100,
+    200,
+    400
+  ],
+  "alphas": [
+    0.1,
+    1,
+    10
+  ],
+  "primary": {
+    "history": 400,
+    "alpha": 10
+  },
+  "replacement_model_selected": false,
+  "feature_abs_z_threshold": 3,
+  "quantiles": [
+    0.01,
+    0.99
+  ],
+  "solver_prediction_rtol": 1e-07,
+  "solver_prediction_atol": 1e-09,
+  "files": [
+    {
+      "recording": 1,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-1_left.hdf5",
+      "split": "train",
+      "stage": "ThumbsUpDownThumbRotationsCWCCWP",
+      "source_split": "val",
+      "sha256": "4f873e440f957863a8a11e570410ef36f9583a70a2c38331dcadb48ad54fede3"
+    },
+    {
+      "recording": 2,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-2_left.hdf5",
+      "split": "train",
+      "stage": "CountingUpDownFaceSideAway",
+      "source_split": "val",
+      "sha256": "bbea87c722f88015724f49e46d2d1e363f549b76514cac6878d15a1c27bed608"
+    },
+    {
+      "recording": 3,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-3_left.hdf5",
+      "split": "train",
+      "stage": "ThumbsSwipesWholeHand",
+      "source_split": "val",
+      "sha256": "2750b8ac0d9c8efc5de8c7a55f27924a57ee6f5fc26ccfe50ff96f2dede2f3c2"
+    },
+    {
+      "recording": 4,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-4_left.hdf5",
+      "split": "train",
+      "stage": "FingerWigglingSpreading",
+      "source_split": "val",
+      "sha256": "c0c8c35594e5e0c10fcea3ed80ff8246229e1011ad0f2c7dc8229dc449848c55"
+    },
+    {
+      "recording": 5,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-5_left.hdf5",
+      "split": "train",
+      "stage": "FingerAbductionSeries",
+      "source_split": "val",
+      "sha256": "e9b32e2974b9f8d0abcde6f67926575f301526d24ee2f676374a07411ab47eb2"
+    },
+    {
+      "recording": 6,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-6_left.hdf5",
+      "split": "train",
+      "stage": "WristFlexionAbduction",
+      "source_split": "val",
+      "sha256": "0f9082b2a12d140a46bcb209d81e894a13f1df874016adcff67ab96833fa1e89"
+    },
+    {
+      "recording": 7,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-7_left.hdf5",
+      "split": "train",
+      "stage": "FingerPinchesSingleFingerPinchesMultiple",
+      "source_split": "val",
+      "sha256": "2fbda7db30f1e0f9d38008f653daaccb8b7a6ae7c7905541cdd30c78bd84fae8"
+    },
+    {
+      "recording": 8,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-8_left.hdf5",
+      "split": "train",
+      "stage": "FingerFreeform",
+      "source_split": "val",
+      "sha256": "af23a6b3e69895a6dcdd76cdd484510d4467021750e98758aaf2dfec361d4c31"
+    },
+    {
+      "recording": 9,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-9_left.hdf5",
+      "split": "train",
+      "stage": "IndividualFingerPointingSnap",
+      "source_split": "val",
+      "sha256": "6caaaa21b48086d2a5b386d4e1487471556c5afa83871c1491fcf01d87526fa1"
+    },
+    {
+      "recording": 10,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-10_left.hdf5",
+      "split": "validation",
+      "stage": "HandClawGraspFlicks",
+      "source_split": "val",
+      "sha256": "1adf6ccac20f6faea466afb47ac0bd7adb8340693bba5f3da20cb9b8fd76ed68"
+    },
+    {
+      "recording": 11,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-11_left.hdf5",
+      "split": "validation",
+      "stage": "ShakaVulcanPeace",
+      "source_split": "val",
+      "sha256": "6f28d67996b537e6a334d3733e72a60869988bb20e6cb75ea77474998ad16a27"
+    },
+    {
+      "recording": 12,
+      "filename": "2022-12-06-1670313600-e3096-cv-emg-pose-train@2-recording-12_left.hdf5",
+      "split": "validation",
+      "stage": "HookEmHornsOKScissors",
+      "source_split": "val",
+      "sha256": "fe91197e1ebbd99d8159170f19072df330aa906d07fb50b003c4274dfec041f3"
+    }
+  ],
+  "test_recordings_excluded": [
+    13,
+    14,
+    15
+  ]
+}

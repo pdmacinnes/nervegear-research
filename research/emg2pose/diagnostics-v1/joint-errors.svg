@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1030" viewBox="0 0 900 1030" role="img" aria-label="Primary model validation errors by joint">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial,sans-serif" fill="#182637">
+<text x="24" y="34" font-size="21">Primary model validation errors by joint</text>
+<text x="24" y="60" font-size="14">Equal recording weight; angular MAE in degrees; audited joint order</text>
+<text x="24" y="105" font-size="15">Joint 0</text>
+<rect x="230" y="86" width="158.99" height="28" fill="#2563a6" rx="3"/>
+<text x="398.99" y="105" font-size="15">12.57</text>
+<text x="24" y="151" font-size="15">Joint 1</text>
+<rect x="230" y="132" width="142.34" height="28" fill="#2563a6" rx="3"/>
+<text x="382.34" y="151" font-size="15">11.26</text>
+<text x="24" y="197" font-size="15">Joint 2</text>
+<rect x="230" y="178" width="118.96" height="28" fill="#2563a6" rx="3"/>
+<text x="358.96" y="197" font-size="15">9.41</text>
+<text x="24" y="243" font-size="15">Joint 3</text>
+<rect x="230" y="224" width="195.07" height="28" fill="#2563a6" rx="3"/>
+<text x="435.07" y="243" font-size="15">15.43</text>
+<text x="24" y="289" font-size="15">Joint 4</text>
+<rect x="230" y="270" width="103.63" height="28" fill="#2563a6" rx="3"/>
+<text x="343.63" y="289" font-size="15">8.20</text>
+<text x="24" y="335" font-size="15">Joint 5</text>
+<rect x="230" y="316" width="278.60" height="28" fill="#2563a6" rx="3"/>
+<text x="518.60" y="335" font-size="15">22.03</text>
+<text x="24" y="381" font-size="15">Joint 6</text>
+<rect x="230" y="362" width="486.96" height="28" fill="#2563a6" rx="3"/>
+<text x="726.96" y="381" font-size="15">38.51</text>
+<text x="24" y="427" font-size="15">Joint 7</text>
+<rect x="230" y="408" width="139.30" height="28" fill="#2563a6" rx="3"/>
+<text x="379.30" y="427" font-size="15">11.02</text>
+<text x="24" y="473" font-size="15">Joint 8</text>
+<rect x="230" y="454" width="85.57" height="28" fill="#2563a6" rx="3"/>
+<text x="325.57" y="473" font-size="15">6.77</text>
+<text x="24" y="519" font-size="15">Joint 9</text>
+<rect x="230" y="500" width="290.87" height="28" fill="#2563a6" rx="3"/>
+<text x="530.87" y="519" font-size="15">23.00</text>
+<text x="24" y="565" font-size="15">Joint 10</text>
+<rect x="230" y="546" width="392.63" height="28" fill="#2563a6" rx="3"/>
+<text x="632.63" y="565" font-size="15">31.05</text>
+<text x="24" y="611" font-size="15">Joint 11</text>
+<rect x="230" y="592" width="240.14" height="28" fill="#2563a6" rx="3"/>
+<text x="480.14" y="611" font-size="15">18.99</text>
+<text x="24" y="657" font-size="15">Joint 12</text>
+<rect x="230" y="638" width="101.38" height="28" fill="#2563a6" rx="3"/>
+<text x="341.38" y="657" font-size="15">8.02</text>
+<text x="24" y="703" font-size="15">Joint 13</text>
+<rect x="230" y="684" width="256.58" height="28" fill="#2563a6" rx="3"/>
+<text x="496.58" y="703" font-size="15">20.29</text>
+<text x="24" y="749" font-size="15">Joint 14</text>
+<rect x="230" y="730" width="440.01" height="28" fill="#2563a6" rx="3"/>
+<text x="680.01" y="749" font-size="15">34.80</text>
+<text x="24" y="795" font-size="15">Joint 15</text>
+<rect x="230" y="776" width="256.91" height="28" fill="#2563a6" rx="3"/>
+<text x="496.91" y="795" font-size="15">20.32</text>
+<text x="24" y="841" font-size="15">Joint 16</text>
+<rect x="230" y="822" width="171.90" height="28" fill="#2563a6" rx="3"/>
+<text x="411.90" y="841" font-size="15">13.59</text>
+<text x="24" y="887" font-size="15">Joint 17</text>
+<rect x="230" y="868" width="356.22" height="28" fill="#2563a6" rx="3"/>
+<text x="596.22" y="887" font-size="15">28.17</text>
+<text x="24" y="933" font-size="15">Joint 18</text>
+<rect x="230" y="914" width="438.62" height="28" fill="#2563a6" rx="3"/>
+<text x="678.62" y="933" font-size="15">34.69</text>
+<text x="24" y="979" font-size="15">Joint 19</text>
+<rect x="230" y="960" width="382.19" height="28" fill="#2563a6" rx="3"/>
+<text x="622.19" y="979" font-size="15">30.22</text>
+</g></svg>

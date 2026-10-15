@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="248" viewBox="0 0 900 248" role="img" aria-label="Validation feature mean shift">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial,sans-serif" fill="#182637">
+<text x="24" y="34" font-size="21">Validation feature mean shift</text>
+<text x="24" y="60" font-size="14">Largest absolute training-standardized channel mean; 200 ms history</text>
+<text x="24" y="105" font-size="15">Recording 10</text>
+<rect x="230" y="86" width="366.79" height="28" fill="#2563a6" rx="3"/>
+<text x="606.79" y="105" font-size="15">0.80</text>
+<text x="24" y="151" font-size="15">Recording 11</text>
+<rect x="230" y="132" width="268.44" height="28" fill="#2563a6" rx="3"/>
+<text x="508.44" y="151" font-size="15">0.59</text>
+<text x="24" y="197" font-size="15">Recording 12</text>
+<rect x="230" y="178" width="486.96" height="28" fill="#2563a6" rx="3"/>
+<text x="726.96" y="197" font-size="15">1.07</text>
+</g></svg>
