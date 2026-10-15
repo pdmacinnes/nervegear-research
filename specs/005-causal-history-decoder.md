@@ -2,7 +2,7 @@
 
 ## Requirements & Goals
 
-Status: Proposed on October 15, 2026. Awaiting maintainer approval before implementation or real-data analysis.
+Status: Explicitly approved by the maintainer through the spec-review prompt on October 15, 2026 with "Approve and continue". Implement and run this study against the fixed protocol.
 
 Test whether several recent EMG feature vectors improve held-out pose prediction over the existing single-window decoder. The [temporal alignment audit](../docs/experiments/temporal-alignment-v1.md) found lower aggregate error for aligned predictions than for fixed shifts. That result motivates a bounded history comparison, while the competitive constant-pose controls remain essential.
 
